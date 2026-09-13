@@ -1,0 +1,102 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "guru_parampara": "Guru Parampara",
+    "tapobhoomi": "Tapobhoomi",
+    "sadhana": "Sadhana",
+    "narmada": "Maa Narmada",
+    "seva": "Seva",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "title": "KALAP GRAM",
+    "subtitle": "GURUKULAM ASHRAM",
+    "description": "An ancient tapobhoomi and spiritual retreat on the sacred banks of Maa Narmada",
+    "cta_about": "Discover the Ashram",
+    "cta_visit": "Visit the Ashram"
+  },
+  "About": {
+    "title": "Welcome to an Ancient Tapobhoomi",
+    "description_1": "Kalap Gram Gurukulam Ashram was established in 1996 on the sacred banks of Maa Narmada in the village of Surela Kishor by Param Pujya Swami Somendra Teerth Maharaj Ji.",
+    "description_2": "Swami Somendra Teerth Maharaj Ji is a highly revered saint of the Shaktipat tradition and a Sannyasi of the Shankaracharya tradition.",
+    "est_year": "1996",
+    "est_label": "Established"
+  },
+  "Philosophy": {
+    "quote": "“Less Modernity, More Nature.”",
+    "description": "Here, nature is not merely a part of the ashram, but an integral part of the spiritual atmosphere."
+  },
+  "Tapobhoomi": {
+    "title": "The Spiritual Heritage of an Ancient Tapobhoomi",
+    "description": "According to tradition, this land is associated with Maharishi Shandilya. It is believed that this tapobhoomi is deeply ancient and spiritually awakened. It is said that meditating here brings a unique spiritual energy."
+  },
+  "GuruParampara": {
+    "title": "Guru Parampara & Guru Kripa",
+    "subtitle": "Param Pujya Swami Somendra Teerth Maharaj Ji",
+    "description": "Swami Somendra Teerth Maharaj Ji is an exalted saint of the Shaktipat tradition and a Sannyasi of the Shankaracharya tradition. The Guru-Shishya tradition highly values sadhana, discipline, and direct experience. Without the grace of the Guru, this inner journey is impossible."
+  },
+  "Narmada": {
+    "title": "The Sacred Presence of Maa Narmada",
+    "description": "The sandy banks of the Narmada River, the chirping of birds, the presence of peacocks and deer, and the shade of ancient trees create a serene environment that is ideal for meditation and silence."
+  },
+  "Silence": {
+    "title": "Here, Silence is a Sadhana",
+    "description": "The flow of the Narmada, the shade of the trees, the sound of the birds, and the surrounding peace provide an environment that slowly leads the mind inward."
+  },
+  "Sadhana": {
+    "title": "Sadhana & Spiritual Training",
+    "programs": {
+      "shrividya": {
+        "title": "Shri Vidya Sadhana",
+        "desc": "The sadhana, mantras, meditation, and worship of the Shri Vidya tradition."
+      },
+      "shaktipat": {
+        "title": "Shaktipat Sadhana",
+        "desc": "The awakening of consciousness and the inner journey in the Guru-Shishya tradition."
+      },
+      "ashirwad": {
+        "title": "Ashirwad Vidya",
+        "desc": "Blessings, intention (sankalpa), spiritual touch, and subtle sadhana."
+      },
+      "vigyan_bhairav": {
+        "title": "Vigyan Bhairav Tantra",
+        "desc": "The practice of turning inward through various meditation techniques and experiments."
+      },
+      "pranayama": {
+        "title": "Pranayama",
+        "desc": "Balancing the prana and the mind through yogic breathing exercises."
+      },
+      "yogasana": {
+        "title": "Yogasana",
+        "desc": "Practices to make the body healthy, stable, and conducive for deep meditation."
+      },
+      "mudra": {
+        "title": "Mudra Sadhana",
+        "desc": "Practices to establish harmony between the body, breath, mind, and meditation."
+      }
+    }
+  },
+  "Seva": {
+    "title": "Annakshetra — The Tradition of Seva",
+    "quote": "“Service with Sadhana, and Sadhana with Service”",
+    "description": "Kalap Gram Gurukulam Ashram operates an Annakshetra (free food kitchen) for saints, sadhus, and Narmada Parikrama pilgrims."
+  },
+  "SpiritualFamily": {
+    "title": "Your Spiritual Family",
+    "description": "Kalap Gram Gurukulam Ashram is an opportunity to connect with Guru's grace, sadhana, seva, nature, and higher spiritual consciousness.",
+    "cta": "Visit the Ashram"
+  },
+  "Visit": {
+    "title": "Welcome to the Sacred Banks of Maa Narmada",
+    "contact": "Contact Us",
+    "view_map": "View on Google Maps",
+    "location": "Gram Surela Kishor, on the banks of Maa Narmada"
+  },
+  "Footer": {
+    "tagline": "Sadhana • Seva • Nature • Guru Parampara",
+    "end_1": "🕉️ Hari Om Tat Sat",
+    "end_2": "🙏 Jai Gurudev"
+  }
+}
