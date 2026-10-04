@@ -25,11 +25,11 @@ const notoDevanagari = Noto_Serif_Devanagari({
 });
 
 export const metadata: Metadata = {
-  title: "Kalap Gram Gurukulam Ashram | Narmada Spiritual Retreat",
+  title: "Shridhyan Ashram | Narmada Spiritual Retreat",
   description:
-    "Kalap Gram Gurukulam Ashram — a sacred spiritual retreat on the banks of Maa Narmada, dedicated to sadhana, meditation, yoga, seva and the Guru-Shishya tradition.",
+    "Shridhyan Ashram — a sacred spiritual retreat on the banks of Maa Narmada, dedicated to sadhana, meditation, yoga, seva and the Guru-Shishya tradition.",
   openGraph: {
-    title: "Kalap Gram Gurukulam Ashram",
+    title: "Shridhyan Ashram",
     description: "A sacred spiritual retreat on the banks of Maa Narmada.",
     type: "website",
     locale: "hi_IN",

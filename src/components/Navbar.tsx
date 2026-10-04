@@ -7,9 +7,9 @@ export function Navbar() {
 <div className="flex justify-between items-center w-full px-6 md:px-margin max-w-7xl mx-auto h-20">
 
 <a className="flex items-center gap-3.5 group" href="#hero">
-<img alt="Kalap Gram Gurukulam Ashram Emblem Logo" className="w-11 h-11 object-contain rounded-sm border border-tertiary/30 p-0.5 bg-surface-container-lowest" src="https://ui-avatars.com/api/?name=KG&background=1f382b&color=c4a865"/>
+<img alt="Shridhyan Ashram Emblem Logo" className="w-11 h-11 object-contain rounded-sm border border-tertiary/30 p-0.5 bg-surface-container-lowest" src="https://ui-avatars.com/api/?name=SD&background=1f382b&color=c4a865"/>
 <div className="flex flex-col">
-<span className="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary tracking-wide leading-tight">Kalap Gram Gurukulam</span>
+<span className="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary tracking-wide leading-tight">Shridhyan</span>
 <span className="font-devanagari text-[11px] tracking-wider text-secondary">श्री माँ नर्मदा तपोभूमि • आश्रम</span>
 </div>
 </a>
@@ -25,18 +25,11 @@ export function Navbar() {
 
 <div className="flex items-center gap-3 sm:gap-4">
 
-<button className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-primary transition-all duration-200" id="soundToggle" title="ध्वनि: नर्मदा प्रवाह">
-<span className="material-symbols-outlined text-[18px]">volume_up</span>
-</button>
 
-<a className="hidden sm:flex items-center justify-center w-9 h-9 rounded-full bg-surface-container border border-outline-variant/40 text-on-surface-variant hover:text-tertiary transition-all duration-200" href="#mauna" title="पवित्र मौन स्थल">
-<span className="material-symbols-outlined text-[18px]">spa</span>
-</a>
 
 <div className="relative group">
 <button className="flex items-center gap-1 text-label-md font-label-md text-on-surface px-2.5 py-1.5 rounded-lg border border-outline-variant/40 hover:border-tertiary transition-colors">
 <span>हिन्दी / EN</span>
-<span className="material-symbols-outlined text-[16px]">expand_more</span>
 </button>
 <div className="absolute right-0 top-full mt-1.5 w-36 bg-surface-container-lowest border border-outline-variant/30 rounded-lg shadow-lg py-1.5 hidden group-hover:block z-50">
 <a className="block px-3 py-1.5 text-body-sm font-body-sm hover:bg-surface-container font-medium text-primary" href="#">हिन्दी (India)</a>
@@ -48,7 +41,6 @@ export function Navbar() {
 
 <a className="inline-flex items-center gap-2 bg-primary-container hover:bg-primary text-on-primary text-label-md font-label-md px-4 sm:px-5 py-2.5 rounded-sm gilded-inset transition-all duration-200 shadow-sm active:scale-95" href="#visit">
 <span>Plan Pilgrimage</span>
-<span className="material-symbols-outlined text-[16px]">north_east</span>
 </a>
 </div>
 </div>

@@ -14,14 +14,8 @@ export default function HomePage() {
 
 <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center flex flex-col items-center">
 
-<div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface/10 backdrop-blur-md border border-tertiary-fixed/30 mb-6 animate-pulse">
-<span className="text-tertiary-fixed text-sm">✦</span>
-<span className="font-devanagari text-tertiary-fixed text-body-sm font-medium tracking-widest">॥ श्री माँ नर्मदा तपोभूमि ॥ ओंकारेश्वर महाक्षेत्र</span>
-<span className="text-tertiary-fixed text-sm">✦</span>
-</div>
-
 <h1 className="text-surface font-headline-lg md:text-display-lg font-display-lg tracking-tight mb-4 text-balance drop-shadow-md">
-        KALAP GRAM GURUKULAM ASHRAM
+        SHRIDHYAN
       </h1>
 
 <p className="font-devanagari text-tertiary-fixed text-xl md:text-2xl font-medium tracking-wide mb-3 text-balance max-w-3xl leading-relaxed">
@@ -69,7 +63,7 @@ export default function HomePage() {
           एक प्राचीन तपोभूमि की ओर आपका स्वागत है
         </h2>
 <p className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
-          The consecrated grounds of <strong className="text-primary font-semibold">Kalap Gram Gurukulam</strong> were sanctified in <span className="text-tertiary font-bold">1996</span> on the sacred northern banks of Maa Narmada under the direct divine sankalpa of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी सोमेंद्र तीर्थ महाराज जी</span>.
+          The consecrated grounds of <strong className="text-primary font-semibold">Shridhyan</strong> were sanctified in <span className="text-tertiary font-bold">1996</span> on the sacred northern banks of Maa Narmada under the direct divine sankalpa of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी सोमेंद्र तीर्थ महाराज जी</span>.
         </p>
 <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed font-devanagari">
           यहाँ की भूमि सदियों से तपस्वी संतों, ऋषि-मुनियों और आत्म-जिज्ञासुओं की मौन साधना से अभिमंत्रित है। यहाँ कोई कृत्रिम कोलाहल नहीं, केवल माँ नर्मदा की कल-कल ध्वनि, प्राचीन वटवृक्षों की छाया और गुरु-कृपा की निरंतर बहती धारा है।
@@ -156,7 +150,7 @@ export default function HomePage() {
         प्राचीन तपोभूमि की आध्यात्मिक विरासत
       </h2>
 <p className="text-body-md font-body-md text-on-surface-variant">
-        Rooted in ancient Vedic history, Kalap Gram stands upon ground revered through millennia for ascetic endurance, silence, and communion with the eternal.
+        Rooted in ancient Vedic history, Shridhyan stands upon ground revered through millennia for ascetic endurance, silence, and communion with the eternal.
       </p>
 </div>
 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -241,7 +235,7 @@ export default function HomePage() {
             गुरु-परंपरा एवं दिव्य गुरु-कृपा
           </h2>
 <p className="text-body-md font-body-md text-on-surface-variant leading-relaxed">
-            Kalap Gram Gurukulam functions not as an academic institution, but as a living channel of sacred transmission. Knowledge is awakened through the subtle spiritual presence of the Guru lineage, rooted in unbroken Guru-Shishya parampara.
+            Shridhyan functions not as an academic institution, but as a living channel of sacred transmission. Knowledge is awakened through the subtle spiritual presence of the Guru lineage, rooted in unbroken Guru-Shishya parampara.
           </p>
 
 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
@@ -332,7 +326,7 @@ export default function HomePage() {
         “यहाँ मौन भी एक साधना है”
       </h2>
 <p className="text-surface-container-high text-body-lg font-body-lg font-light max-w-2xl mx-auto leading-relaxed mb-8">
-        Words cease where pure presence begins. In Kalap Gram, silence is not merely the absence of speech, but the luminous awakening of internal awareness.
+        Words cease where pure presence begins. In Shridhyan, silence is not merely the absence of speech, but the luminous awakening of internal awareness.
       </p>
 <div className="inline-flex items-center gap-6 text-tertiary-fixed-dim text-sm font-label-md">
 <span>वाक् मौन (Silence of Speech)</span>
@@ -712,6 +706,11 @@ export default function HomePage() {
 <a className="flex items-center gap-1.5 text-secondary hover:text-primary font-medium" href="tel:+919876543210">
 <span className="material-symbols-outlined text-sm">call</span>
 <span>आश्रम कार्यालय: +91 94250 XXXXX</span>
+</a>
+<span className="text-outline">|</span>
+<a className="flex items-center gap-1.5 text-secondary hover:text-primary font-medium" href="mailto:shridhyan.com@gmail.com">
+<span className="material-symbols-outlined text-sm">mail</span>
+<span className="font-sans">shridhyan.com@gmail.com</span>
 </a>
 </div>
 </div>

@@ -10,9 +10,9 @@ export function Footer() {
 
 <div className="md:col-span-5 flex flex-col gap-4">
 <div className="flex items-center gap-3">
-<img alt="Kalap Gram Gurukulam Ashram Emblem Logo" className="w-10 h-10 object-contain rounded-sm bg-surface-container-lowest p-1" src="https://ui-avatars.com/api/?name=KG&background=1f382b&color=c4a865"/>
+<img alt="Shridhyan Ashram Emblem Logo" className="w-10 h-10 object-contain rounded-sm bg-surface-container-lowest p-1" src="https://ui-avatars.com/api/?name=SD&background=1f382b&color=c4a865"/>
 <span className="text-headline-md font-headline-md text-tertiary-fixed dark:text-tertiary tracking-widest leading-none">
-              KALAP GRAM GURUKULAM
+              SHRIDHYAN
             </span>
 </div>
 <p className="font-devanagari text-tertiary-fixed-dim text-sm tracking-wider">
@@ -61,7 +61,7 @@ export function Footer() {
 
 <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-label-sm font-label-sm text-on-primary-container/70">
 <div>
-          © 2024 Kalap Gram Gurukulam. Consecrated on the sacred banks of Narmada River.
+          © 2024 Shridhyan. Consecrated on the sacred banks of Narmada River.
         </div>
 <div className="flex items-center gap-4">
 <span className="font-devanagari">॥ नर्मदे हर हर ॥</span>
