@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { AboutSection } from '@/components/AboutSection';
 
 export default function HomePage() {
   return (
@@ -51,78 +52,11 @@ export default function HomePage() {
 <span className="material-symbols-outlined text-sm">expand_more</span>
 </div>
 </div>
-</section><section className="py-space-xl px-6 md:px-margin max-w-7xl mx-auto ashram-pattern" id="about">
-<div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+</section>
 
-<div className="lg:col-span-7 flex flex-col gap-6">
-<div className="inline-flex items-center gap-2">
-<span className="w-8 h-[1px] bg-tertiary"></span>
-<span className="font-devanagari text-tertiary text-label-md font-label-md tracking-wider">पावन उद्गम एवं दर्शन</span>
-</div>
-<h2 className="text-headline-lg font-headline-lg text-primary tracking-tight font-devanagari">
-          एक प्राचीन तपोभूमि की ओर आपका स्वागत है
-        </h2>
-<p className="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
-          The consecrated grounds of <strong className="text-primary font-semibold">Shridhyan</strong> were sanctified in <span className="text-tertiary font-bold">1996</span> on the sacred northern banks of Maa Narmada under the direct divine sankalpa of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी सोमेंद्र तीर्थ महाराज जी</span>.
-        </p>
-<p className="text-body-md font-body-md text-on-surface-variant leading-relaxed font-devanagari">
-          यहाँ की भूमि सदियों से तपस्वी संतों, ऋषि-मुनियों और आत्म-जिज्ञासुओं की मौन साधना से अभिमंत्रित है। यहाँ कोई कृत्रिम कोलाहल नहीं, केवल माँ नर्मदा की कल-कल ध्वनि, प्राचीन वटवृक्षों की छाया और गुरु-कृपा की निरंतर बहती धारा है।
-        </p>
+<AboutSection />
 
-<div className="p-6 bg-surface-container-low border border-outline-variant/30 rounded-sm flex items-start gap-4 gilded-inset">
-<div className="w-12 h-12 rounded-sm bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0">
-<span className="material-symbols-outlined text-2xl">temple_hindu</span>
-</div>
-<div>
-<span className="text-label-md font-label-md text-tertiary tracking-wider font-semibold">1996 — स्थापना वर्ष (Consecration Year)</span>
-<p className="text-body-sm font-body-sm text-on-surface mt-1">
-              Sanctified as an authentic forest gurukulam preserving Shankaracharya monastic sannyasa discipline, Vedic contemplation, and experiential Shaktipat transmission.
-            </p>
-</div>
-</div>
-
-<div className="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-4">
-<div className="bg-surface-container border border-outline-variant/20 p-3 rounded text-center hover:border-tertiary transition-all">
-<span className="material-symbols-outlined text-tertiary mb-1 block">self_improvement</span>
-<span className="font-devanagari text-sm font-semibold text-primary block">साधना</span>
-<span className="text-[10px] text-outline font-label-sm">Sadhana</span>
-</div>
-<div className="bg-surface-container border border-outline-variant/20 p-3 rounded text-center hover:border-tertiary transition-all">
-<span className="material-symbols-outlined text-tertiary mb-1 block">fitbit_push_ups</span>
-<span className="font-devanagari text-sm font-semibold text-primary block">ध्यान</span>
-<span className="text-[10px] text-outline font-label-sm">Dhyana</span>
-</div>
-<div className="bg-surface-container border border-outline-variant/20 p-3 rounded text-center hover:border-tertiary transition-all">
-<span className="material-symbols-outlined text-tertiary mb-1 block">vital_signs</span>
-<span className="font-devanagari text-sm font-semibold text-primary block">योग</span>
-<span className="text-[10px] text-outline font-label-sm">Yoga</span>
-</div>
-<div className="bg-surface-container border border-outline-variant/20 p-3 rounded text-center hover:border-tertiary transition-all">
-<span className="material-symbols-outlined text-tertiary mb-1 block">volunteer_activism</span>
-<span className="font-devanagari text-sm font-semibold text-primary block">सेवा</span>
-<span className="text-[10px] text-outline font-label-sm">Seva</span>
-</div>
-<div className="bg-surface-container border border-outline-variant/20 p-3 rounded text-center hover:border-tertiary transition-all col-span-2 sm:col-span-1">
-<span className="material-symbols-outlined text-tertiary mb-1 block">account_tree</span>
-<span className="font-devanagari text-sm font-semibold text-primary block">गुरु-परंपरा</span>
-<span className="text-[10px] text-outline font-label-sm">Parampara</span>
-</div>
-</div>
-</div>
-
-<div className="lg:col-span-5 relative">
-<div className="relative bg-surface-container-low border border-outline-variant/40 rounded-sm p-4 shadow-sm">
-<img className="w-full h-96 object-cover rounded-sm border border-outline-variant/30" data-alt="A tranquil stone ashram courtyard courtyard beside sacred river Narmada with Vedic oil lamps burning softly at twilight, surrounded by ancient verdant banyan trees and carved sandstone pillars in timeless monastic Indian spiritual elegance, soft warm ambient lighting and meditative stillness." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcDrGInrfZVpQQ-F9cJxItJ6qcx-MF_cT3xJmV0SbUgqIevwwVD1kqlPEnkxEGhus1qnkiu4X3BxGJocvfrs-sv5LNd4CQJfcrlsbqCLt2VDP9mPpdhpY-SsjGwSF_tshSgt2QVOF1sYeWQ2eARU0eatofj5r3l0m-70krw_wvKhNAxr3Wkn_LPLVTkkjT4NbsAWmlkS2KuhQrvkFbQSxlhn_sV2G9PsdGECJu5jQZ7nI6Hs85a4xWw"/>
-<div className="absolute -bottom-6 -left-6 bg-primary-container text-on-primary p-5 rounded-sm shadow-xl max-w-xs border border-tertiary/30 hidden sm:block">
-<p className="font-devanagari text-body-sm leading-snug font-light italic">
-              "तपस्या और प्राकृतिक शांति की गोद में आत्मा का पुनर्जन्म होता है।"
-            </p>
-<span className="block text-[11px] text-tertiary-fixed font-label-sm mt-2 tracking-widest">— गुरु आश्रम संहिता</span>
-</div>
-</div>
-</div>
-</div>
-</section><section className="bg-primary-container text-on-primary py-24 relative overflow-hidden">
+<section className="bg-primary-container text-on-primary py-24 relative overflow-hidden">
 
 <div className="absolute inset-0 opacity-10 pointer-events-none">
 <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 100 100">
@@ -212,11 +146,11 @@ export default function HomePage() {
 
 <div className="lg:col-span-5">
 <div className="relative bg-primary-container p-6 rounded-sm shadow-xl gilded-inset text-center">
-<div className="w-44 h-44 mx-auto rounded-full p-1.5 border-2 border-tertiary-fixed mb-6 overflow-hidden bg-primary">
-<img className="w-full h-full object-cover rounded-full" data-alt="Venerable enlightened Hindu ascetic guru with peaceful gaze and white beard dressed in traditional ochre sannyasin robes seated in deep meditation near river Narmada with sacred rudraksha beads in serene divine glow and minimalist golden lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBik2wPNRzGEoFbt31TmN9-XiwhUWcWtRua3GBbLDwrnbRHU_-DdJegkdq1rrr7xVh6QEGsw1wBEQ1r4E8l-OBoqmKntJd5QzSaP02D6RDaPkKKBiK4Opjyc8irSy3JzI6ctiYquBJgpESp5c8gr7vV1ZF08gpkO3NZ35SHn0ST0vP9xKhpDnGgQT0PIqlLtuMqsfVW2doFT7lWAbDvMn3PzU9MAYFy_5zCbO_n-yolnok4iTMINbTk3g"/>
+<div className="w-56 h-56 mx-auto rounded-xl p-1.5 border-2 border-tertiary-fixed mb-6 overflow-hidden bg-primary">
+<img alt="Param Pujya Swami Ji" className="w-full h-full object-cover rounded-xl" src="/images/maharaj/swami_ji.jpeg"/>
 </div>
 <span className="font-devanagari text-tertiary-fixed text-label-md font-label-md tracking-widest block mb-1">संस्थापक एवं पथप्रदर्शक</span>
-<h3 className="font-devanagari text-2xl font-semibold text-on-primary mb-2">परम पूज्य स्वामी सोमेंद्र तीर्थ महाराज जी</h3>
+<h3 className="font-devanagari text-2xl font-semibold text-on-primary mb-2">परम पूज्य स्वामी जी</h3>
 <p className="text-surface-container-high text-body-sm font-body-sm max-w-xs mx-auto">
               Lineage Holder of Shaktipat Parampara and Monk of the Venerable Shankaracharya Order.
             </p>

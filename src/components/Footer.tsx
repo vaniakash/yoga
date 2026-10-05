@@ -10,7 +10,7 @@ export function Footer() {
 
 <div className="md:col-span-5 flex flex-col gap-4">
 <div className="flex items-center gap-3">
-<img alt="Shridhyan Ashram Emblem Logo" className="w-10 h-10 object-contain rounded-sm bg-surface-container-lowest p-1" src="https://ui-avatars.com/api/?name=SD&background=1f382b&color=c4a865"/>
+<img alt="Shridhyan Ashram Emblem Logo" className="w-10 h-10 object-contain rounded-sm bg-surface-container-lowest p-1" src="/images/two-removebg-preview.svg"/>
 <span className="text-headline-md font-headline-md text-tertiary-fixed dark:text-tertiary tracking-widest leading-none">
               SHRIDHYAN
             </span>

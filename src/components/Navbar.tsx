@@ -7,7 +7,7 @@ export function Navbar() {
 <div className="flex justify-between items-center w-full px-6 md:px-margin max-w-7xl mx-auto h-20">
 
 <a className="flex items-center gap-3.5 group" href="#hero">
-<img alt="Shridhyan Ashram Emblem Logo" className="w-11 h-11 object-contain rounded-sm border border-tertiary/30 p-0.5 bg-surface-container-lowest" src="https://ui-avatars.com/api/?name=SD&background=1f382b&color=c4a865"/>
+<img alt="Shridhyan Ashram Emblem Logo" className="w-11 h-11 object-contain rounded-sm border border-tertiary/30 p-0.5 bg-surface-container-lowest" src="/images/two-removebg-preview.svg"/>
 <div className="flex flex-col">
 <span className="text-headline-sm font-headline-sm text-primary dark:text-inverse-primary tracking-wide leading-tight">Shridhyan</span>
 <span className="font-devanagari text-[11px] tracking-wider text-secondary">श्री माँ नर्मदा तपोभूमि • आश्रम</span>

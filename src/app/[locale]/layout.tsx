@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { FloatingSocial } from "@/components/FloatingSocial";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -53,15 +54,17 @@ export default async function LocaleLayout(props: {
     <html
       lang={locale}
       className={`${playfair.variable} ${plusJakarta.variable} ${notoDevanagari.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1">{props.children}</main>
           <Footer />
+          <FloatingSocial />
         </NextIntlClientProvider>
       </body>
     </html>
