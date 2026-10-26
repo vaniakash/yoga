@@ -37,16 +37,28 @@ export function Visit() {
                 </svg>
                 {t("contact")}
               </Button>
-              <Button variant="outline" className="border-primary text-primary px-8 py-6 rounded-none text-lg">
-                {t("view_map")}
-              </Button>
+              <a
+                href="https://maps.google.com/?q=30.821991,78.609482"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" className="border-primary text-primary px-8 py-6 rounded-none text-lg">
+                  {t("view_map")}
+                </Button>
+              </a>
             </div>
           </div>
-          <div className="relative h-[400px] w-full rounded-sm overflow-hidden shadow-lg border border-border/50">
-            {/* Map Placeholder */}
-            <div className="absolute inset-0 bg-muted flex items-center justify-center">
-              <MapPin className="w-16 h-16 text-muted-foreground/50" />
-            </div>
+          <div className="relative h-[400px] w-full rounded-sm overflow-hidden shadow-lg border border-border/50 bg-muted">
+            <iframe
+              title="Mathali Uttarakhand Map"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=30.821991,78.609482&hl=en&z=14&output=embed"
+            />
           </div>
         </div>
       </div>

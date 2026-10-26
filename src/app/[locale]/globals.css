@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 @import "tailwindcss";
 
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/container-queries";
 
 @custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-plus-jakarta: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-noto-devanagari: 'Noto Serif Devanagari', serif;
+}
 
 @theme {
   --color-inverse-primary: #b1cdbb;
@@ -69,6 +76,8 @@
   --spacing-space-xl: 3.5rem;
   --spacing-space-sm: 0.75rem;
 
+  --font-sans: var(--font-plus-jakarta), sans-serif;
+  --font-serif: var(--font-playfair), serif;
   --font-label-lg: var(--font-plus-jakarta), sans-serif;
   --font-headline-sm: var(--font-playfair), serif;
   --font-headline-md: var(--font-playfair), serif;
@@ -144,12 +153,20 @@
   --text-body-md--font-weight: 400;
 }
 
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 100 700;
+  src: url('https://fonts.gstatic.com/s/materialsymbolsoutlined/v380/kJEhBvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oFsLjBuVY.woff2') format('woff2');
+  font-display: swap;
+}
+
 /* Custom classes from design.html */
 .material-symbols-outlined {
-  font-family: 'Material Symbols Outlined';
+  font-family: 'Material Symbols Outlined' !important;
   font-weight: normal;
   font-style: normal;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1;
   display: inline-block;
   text-transform: none;
@@ -157,6 +174,8 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
   -webkit-font-smoothing: antialiased;
 }
 

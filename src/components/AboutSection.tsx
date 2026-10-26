@@ -8,7 +8,7 @@ const features = [
   { icon: Flower2, title: "साधना", subtitle: "Sadhana" },
   { icon: Sparkles, title: "ध्यान", subtitle: "Dhyana" },
   { icon: Trees, title: "योग", subtitle: "Yoga" },
-  { icon: Heart, title: "सेवा", subtitle: "Seva" },
+  { icon: Heart, title: "मौन", subtitle: "Mauna" },
   { icon: BookOpen, title: "गुरु-परंपरा", subtitle: "Parampara" },
 ];
 
@@ -50,10 +50,10 @@ export function AboutSection() {
               एक प्राचीन तपोभूमि की ओर आपका स्वागत है
             </h2>
             <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-              The consecrated grounds of <strong className="text-primary font-semibold">Shridhyan</strong> were sanctified in <span className="text-tertiary font-bold">1996</span> on the sacred northern banks of Maa Narmada under the direct divine sankalpa of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी जी</span>.
+              The sacred sanctuary of <strong className="text-primary font-semibold">Shridhyan</strong> is situated in Mathali, Uttarkashi amidst the serene heights of the Himalayas, consecrated under the guidance of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी जी महाराज</span>.
             </p>
             <p className="text-lg font-devanagari text-on-surface-variant leading-relaxed opacity-90">
-              यहाँ की भूमि सदियों से तपस्वी संतों, ऋषि-मुनियों और आत्म-जिज्ञासुओं की मौन साधना से अभिमंत्रित है। यहाँ कोई कृत्रिम कोलाहल नहीं, केवल माँ नर्मदा की कल-कल ध्वनि, प्राचीन वटवृक्षों की छाया और गुरु-कृपा की निरंतर बहती धारा है।
+              यहाँ की भूमि तपस्वी संतों और आत्म-जिज्ञासुओं की मौन साधना से अभिमंत्रित है। यहाँ कोई कृत्रिम कोलाहल नहीं, केवल हिमालयी वायु की निर्मलता, देवदार और चीड़ के वनों की शांत छाया और गुरु-कृपा की निरंतर बहती धारा है।
             </p>
           </div>
 
@@ -66,9 +66,9 @@ export function AboutSection() {
               <Trees className="w-7 h-7" />
             </div>
             <div className="relative z-10">
-              <span className="text-sm md:text-base font-bold text-tertiary tracking-wide uppercase">1996 — स्थापना वर्ष (Consecration Year)</span>
+              <span className="text-sm md:text-base font-bold text-tertiary tracking-wide uppercase">हिमालयी तपोभूमि • मथाली (उत्तरकाशी)</span>
               <p className="text-sm md:text-base text-on-surface-variant mt-2 leading-relaxed">
-                Sanctified as an authentic forest gurukulam preserving Shankaracharya monastic sannyasa discipline, Vedic contemplation, and experiential Shaktipat transmission.
+                A consecrated Himalayan hermitage preserving traditional meditation practices, inner silence, and experiential yogic contemplation.
               </p>
             </div>
           </motion.div>
@@ -108,11 +108,11 @@ export function AboutSection() {
           className="lg:col-span-5 relative mt-16 lg:mt-0"
         >
           <div className="relative rounded-3xl p-3 bg-surface-container-lowest border border-outline-variant/30 shadow-2xl before:absolute before:-inset-4 before:bg-gradient-to-br before:from-tertiary/20 before:to-transparent before:rounded-[2.5rem] before:-z-10">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] group shadow-inner">
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/4] group shadow-inner">
               <img 
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" 
-                alt="A tranquil stone ashram courtyard courtyard beside sacred river Narmada" 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhcDrGInrfZVpQQ-F9cJxItJ6qcx-MF_cT3xJmV0SbUgqIevwwVD1kqlPEnkxEGhus1qnkiu4X3BxGJocvfrs-sv5LNd4CQJfcrlsbqCLt2VDP9mPpdhpY-SsjGwSF_tshSgt2QVOF1sYeWQ2eARU0eatofj5r3l0m-70krw_wvKhNAxr3Wkn_LPLVTkkjT4NbsAWmlkS2KuhQrvkFbQSxlhn_sV2G9PsdGECJu5jQZ7nI6Hs85a4xWw"
+                alt="A tranquil stone ashram courtyard in Himalayan quietude" 
+                src="/images/ashram_courtyard.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
@@ -125,11 +125,9 @@ export function AboutSection() {
               className="absolute -bottom-8 -left-4 sm:-left-12 bg-primary text-on-primary p-6 rounded-2xl shadow-2xl max-w-[280px] border border-tertiary/20 backdrop-blur-md z-10"
             >
               <Sparkles className="w-6 h-6 text-tertiary mb-3 opacity-90" />
-              <p className="font-devanagari text-[15px] leading-relaxed font-light italic mb-3">
+              <p className="font-devanagari text-[15px] leading-relaxed font-light italic">
                 "तपस्या और प्राकृतिक शांति की गोद में आत्मा का पुनर्जन्म होता है।"
               </p>
-              <div className="w-12 h-[1px] bg-tertiary/50 mb-3"></div>
-              <span className="block text-[11px] text-tertiary-fixed font-bold uppercase tracking-[0.2em]">— गुरु आश्रम संहिता</span>
             </motion.div>
           </div>
         </motion.div>
