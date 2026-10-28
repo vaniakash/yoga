@@ -1,4 +1,3 @@
-import { auth } from "@/auth";
 import createMiddleware from 'next-intl/middleware';
 import { routing } from './i18n/routing';
 import { NextResponse } from 'next/server';
@@ -6,7 +5,7 @@ import type { NextRequest } from 'next/server';
 
 const intlMiddleware = createMiddleware(routing);
 
-export default auth(async function proxy(req: NextRequest) {
+export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
   // Let NextAuth handle its own /api/auth/* routes
@@ -21,7 +20,7 @@ export default auth(async function proxy(req: NextRequest) {
 
   // Apply next-intl locale routing for all other paths
   return intlMiddleware(req);
-});
+}
 
 export const config = {
   matcher: [

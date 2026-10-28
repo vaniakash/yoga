@@ -9,6 +9,7 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   // in your MongoDB database automatically.
   // ---------------------------------------------------------------
   adapter: MongoDBAdapter(client),
+  trustHost: true,
 
   // Use database sessions (stored in MongoDB) instead of JWT cookies
   session: {
