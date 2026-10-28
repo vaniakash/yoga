@@ -26,19 +26,19 @@ export function Sadhana() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-center">
-          {programs.map((prog, index) => (
+          {programs.map((prog) => (
             <Card key={prog.id} className="bg-background border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
               <CardHeader>
                 <div className="mb-4 p-3 bg-card rounded-full w-fit group-hover:bg-primary/5 transition-colors">
                   {prog.icon}
                 </div>
                 <CardTitle className="font-heading text-xl text-primary">
-                  {t(`programs.${prog.id}.title` as any)}
+                  {t.raw(`programs.${prog.id}.title`)}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed">
-                  {t(`programs.${prog.id}.desc` as any)}
+                  {t.raw(`programs.${prog.id}.desc`)}
                 </p>
               </CardContent>
             </Card>

@@ -3,14 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Flower2, Heart, Trees, Sparkles, BookOpen } from 'lucide-react';
-
-const features = [
-  { icon: Flower2, title: "साधना", subtitle: "Sadhana" },
-  { icon: Sparkles, title: "ध्यान", subtitle: "Dhyana" },
-  { icon: Trees, title: "योग", subtitle: "Yoga" },
-  { icon: Heart, title: "मौन", subtitle: "Mauna" },
-  { icon: BookOpen, title: "गुरु-परंपरा", subtitle: "Parampara" },
-];
+import { useTranslations, useLocale } from 'next-intl';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -26,6 +19,18 @@ const itemVariants: Variants = {
 };
 
 export function AboutSection() {
+  const t = useTranslations('About');
+  const locale = useLocale();
+  const isHi = locale === 'hi';
+
+  const features = [
+    { icon: Flower2, title: t('f1_title'), subtitle: t('f1_sub') },
+    { icon: Sparkles, title: t('f2_title'), subtitle: t('f2_sub') },
+    { icon: Trees, title: t('f3_title'), subtitle: t('f3_sub') },
+    { icon: Heart, title: t('f4_title'), subtitle: t('f4_sub') },
+    { icon: BookOpen, title: t('f5_title'), subtitle: t('f5_sub') },
+  ];
+
   return (
     <section className="py-24 px-6 md:px-margin max-w-7xl mx-auto overflow-hidden" id="about">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
@@ -40,20 +45,20 @@ export function AboutSection() {
         >
           <div className="inline-flex items-center gap-3">
             <span className="w-10 h-[2px] bg-tertiary rounded-full"></span>
-            <span className="font-devanagari text-tertiary text-sm font-semibold tracking-[0.2em] uppercase">
-              पावन उद्गम एवं दर्शन
+            <span className={`text-tertiary text-sm font-semibold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+              {t('tagline')}
             </span>
           </div>
           
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl font-devanagari font-bold text-primary leading-tight tracking-tight">
-              एक प्राचीन तपोभूमि की ओर आपका स्वागत है
+            <h2 className={`text-4xl md:text-5xl font-bold text-primary leading-tight tracking-tight ${isHi ? 'font-devanagari' : 'font-serif'}`}>
+              {t('title')}
             </h2>
             <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-              The sacred sanctuary of <strong className="text-primary font-semibold">Shridhyan</strong> is situated in Mathali, Uttarkashi amidst the serene heights of the Himalayas, consecrated under the guidance of <span className="font-devanagari text-primary font-medium">परम पूज्य स्वामी जी महाराज</span>.
+              {t('description_1')}
             </p>
-            <p className="text-lg font-devanagari text-on-surface-variant leading-relaxed opacity-90">
-              यहाँ की भूमि तपस्वी संतों और आत्म-जिज्ञासुओं की मौन साधना से अभिमंत्रित है। यहाँ कोई कृत्रिम कोलाहल नहीं, केवल हिमालयी वायु की निर्मलता, देवदार और चीड़ के वनों की शांत छाया और गुरु-कृपा की निरंतर बहती धारा है।
+            <p className="text-lg text-on-surface-variant leading-relaxed opacity-90">
+              {t('description_2')}
             </p>
           </div>
 
@@ -66,9 +71,11 @@ export function AboutSection() {
               <Trees className="w-7 h-7" />
             </div>
             <div className="relative z-10">
-              <span className="text-sm md:text-base font-bold text-tertiary tracking-wide uppercase">हिमालयी तपोभूमि • मथाली (उत्तरकाशी)</span>
+              <span className={`text-sm md:text-base font-bold text-tertiary tracking-wide uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                {t('badge')}
+              </span>
               <p className="text-sm md:text-base text-on-surface-variant mt-2 leading-relaxed">
-                A consecrated Himalayan hermitage preserving traditional meditation practices, inner silence, and experiential yogic contemplation.
+                {t('badge_desc')}
               </p>
             </div>
           </motion.div>
@@ -91,8 +98,12 @@ export function AboutSection() {
                   <feature.icon className="w-6 h-6 text-tertiary/70 group-hover:text-tertiary transition-colors" />
                 </div>
                 <div>
-                  <span className="font-devanagari text-sm font-bold text-primary block group-hover:text-tertiary transition-colors">{feature.title}</span>
-                  <span className="text-[10px] text-outline font-semibold uppercase tracking-widest">{feature.subtitle}</span>
+                  <span className={`text-sm font-bold text-primary block group-hover:text-tertiary transition-colors ${isHi ? 'font-devanagari' : ''}`}>
+                    {feature.title}
+                  </span>
+                  <span className="text-[10px] text-outline font-semibold uppercase tracking-widest">
+                    {feature.subtitle}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -125,8 +136,8 @@ export function AboutSection() {
               className="absolute -bottom-8 -left-4 sm:-left-12 bg-primary text-on-primary p-6 rounded-2xl shadow-2xl max-w-[280px] border border-tertiary/20 backdrop-blur-md z-10"
             >
               <Sparkles className="w-6 h-6 text-tertiary mb-3 opacity-90" />
-              <p className="font-devanagari text-[15px] leading-relaxed font-light italic">
-                "तपस्या और प्राकृतिक शांति की गोद में आत्मा का पुनर्जन्म होता है।"
+              <p className={`text-[15px] leading-relaxed font-light italic ${isHi ? 'font-devanagari' : ''}`}>
+                {t('quote')}
               </p>
             </motion.div>
           </div>

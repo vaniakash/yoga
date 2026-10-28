@@ -1,28 +1,21 @@
 "use client";
 
 import React from 'react';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
 import {
   Sparkles,
   MapPin,
-  Phone,
   Mail,
   ArrowUp,
-  Clock,
-  HeartHandshake,
-  Compass,
-  Sun,
-  Flame,
-  Moon,
-  UtensilsCrossed,
   ShieldCheck,
   ChevronRight,
   ExternalLink,
-  MessageCircle,
 } from 'lucide-react';
 
 export function Footer() {
   const locale = useLocale();
+  const t = useTranslations('Footer');
 
   const scrollToTop = () => {
     if (typeof window !== 'undefined') {
@@ -31,7 +24,6 @@ export function Footer() {
   };
 
   const isHi = locale === 'hi';
-  const isJa = locale === 'ja';
 
   return (
     <footer className="relative bg-gradient-to-b from-[#061910] via-[#092217] to-[#04120b] text-[#fcf9f3] overflow-hidden border-t border-amber-500/20 shadow-2xl">
@@ -58,8 +50,8 @@ export function Footer() {
             <span className="hidden sm:block flex-1 h-[1px] bg-gradient-to-r from-transparent via-amber-400/30 to-amber-400/60" />
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-950/60 via-amber-900/40 to-amber-950/60 border border-amber-400/40 shadow-[0_0_15px_rgba(212,175,55,0.25)]">
               <span className="text-amber-300 text-base font-serif select-none">ॐ</span>
-              <span className="font-devanagari text-xs sm:text-sm font-medium tracking-widest text-amber-200">
-                वैदिक शांति पाठ • Brihadaranyaka Upanishad
+              <span className={`text-xs sm:text-sm font-medium tracking-widest text-amber-200 ${isHi ? 'font-devanagari' : ''}`}>
+                {t('shanti_mantra_label')}
               </span>
               <span className="text-amber-300 text-base font-serif select-none">ॐ</span>
             </div>
@@ -71,9 +63,7 @@ export function Footer() {
             ॥ ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥
           </p>
           <p className="text-xs sm:text-sm text-amber-200/70 tracking-wide mt-1 font-light italic">
-            {isHi && "असत्य से सत्य की ओर ले चलें, अंधकार से प्रकाश की ओर ले चलें, मृत्यु से अमरत्व की ओर ले चलें।"}
-            {isJa && "偽りから真理へ、暗闇から光へ、死から不死へと我らを導きたまえ。オーム・シャンティ・シャンティ・シャンティ。"}
-            {!isHi && !isJa && "From untruth lead us to Truth, from darkness lead us to Light, from mortality to Immortality."}
+            {t('shanti_mantra_trans')}
           </p>
         </div>
       </div>
@@ -98,8 +88,8 @@ export function Footer() {
                 <span className="font-serif text-2xl font-bold tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-amber-200 to-yellow-100 leading-tight">
                   SHRIDHYAN
                 </span>
-                <span className="font-devanagari text-xs text-amber-300/90 tracking-widest font-medium">
-                  श्री ध्यान आश्रम • हिमालयी तपोभूमि
+                <span className={`text-xs text-amber-300/90 tracking-widest font-medium ${isHi ? 'font-devanagari' : ''}`}>
+                  {t('subbrand')}
                 </span>
               </div>
             </div>
@@ -107,28 +97,22 @@ export function Footer() {
             {/* Sacred Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-400/25 w-fit">
               <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              <span className="font-devanagari text-xs font-medium text-amber-200 tracking-wider">
-                साधना • ध्यान • योग • गुरु-परंपरा
+              <span className={`text-xs font-medium text-amber-200 tracking-wider ${isHi ? 'font-devanagari' : ''}`}>
+                {t('tagline')}
               </span>
             </div>
 
             {/* Ashram Description */}
             <p className="text-sm text-surface-container-high/85 leading-relaxed font-light">
-              {isHi
-                ? "उत्तरकाशी के पावन मथाली अंचल में स्थित एक शांत हिमालयी तपोभूमि। परम पूज्य स्वामी जी महाराज के मार्गदर्शन में प्रामाणिक ध्यान, मौन एवं योग-साधना को समर्पित।"
-                : isJa
-                ? "ヒマラヤの静寂に抱かれたウッタラーカーシー・マタリのアシュラム。スワミジの指導のもと、本格的な瞑想と沈黙の修行に捧げられています。"
-                : "A sacred Himalayan retreat located in Mathali, Uttarkashi. Dedicated to authentic meditation, inner silence, yogic contemplation, and the timeless Guru-Shishya tradition under the guidance of Swami Ji Maharaj."}
+              {t('description')}
             </p>
 
             {/* Consecration & Traditional Credentials */}
             <div className="space-y-2 pt-1 text-xs text-surface-container-high/80">
               <div className="flex items-center gap-2 text-amber-300/90">
                 <ShieldCheck className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <span>
-                  {isHi 
-                    ? "हिमालयी तपोभूमि • मथाली (उत्तरकाशी)" 
-                    : "Himalayan Tapobhoomi • Mathali, Uttarkashi"}
+                <span className={isHi ? 'font-devanagari' : ''}>
+                  {t('badge_tapobhoomi')}
                 </span>
               </div>
               <a
@@ -139,7 +123,7 @@ export function Footer() {
               >
                 <MapPin className="w-4 h-4 text-amber-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="underline decoration-dotted underline-offset-4">
-                  Mathali, Uttarkashi, Uttarakhand, Bharat
+                  {t('address_short')}
                 </span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
               </a>
@@ -147,18 +131,18 @@ export function Footer() {
 
             {/* Sacred Chant Pill */}
             <div className="mt-2 flex flex-wrap items-center gap-2">
-              <span className="font-devanagari text-xs px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-amber-200">
-                🕉️ हरिओम् तत्सत् 🙏 जय गुरुदेव
+              <span className={`text-xs px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-amber-200 ${isHi ? 'font-devanagari' : ''}`}>
+                {t('chant_pill')}
               </span>
             </div>
           </div>
 
-          {/* Col 2: आश्रम दर्शन • Sacred Links (2 cols) */}
+          {/* Col 2: Ashram Portals • Links (2 cols) */}
           <div className="md:col-span-6 lg:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-1 border-b border-amber-400/20">
               <span className="w-2 h-2 rounded-full bg-amber-400" />
-              <h4 className="font-devanagari text-sm font-semibold tracking-wider text-amber-300 uppercase">
-                {isHi ? "आश्रम दर्शन" : isJa ? "アシュラム巡礼" : "Ashram Portals"}
+              <h4 className={`text-sm font-semibold tracking-wider text-amber-300 uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                {t('portals_title')}
               </h4>
             </div>
 
@@ -169,8 +153,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">मुखपृष्ठ</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Home)</span>
+                  <span>{t('link_home')}</span>
                 </a>
               </li>
               <li>
@@ -179,8 +162,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">गुरु परंपरा</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Parampara)</span>
+                  <span>{t('link_parampara')}</span>
                 </a>
               </li>
               <li>
@@ -189,8 +171,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">तपोभूमि</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Tapobhoomi)</span>
+                  <span>{t('link_tapobhoomi')}</span>
                 </a>
               </li>
               <li>
@@ -199,8 +180,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">पाठ्यक्रम</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Courses)</span>
+                  <span>{t('link_courses')}</span>
                 </a>
               </li>
               <li>
@@ -209,8 +189,7 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">मौन साधना</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Silence)</span>
+                  <span>{t('link_silence')}</span>
                 </a>
               </li>
               <li>
@@ -219,63 +198,62 @@ export function Footer() {
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">चित्रावली</span>
-                  <span className="text-xs text-amber-200/50 font-sans">(Gallery)</span>
+                  <span>{t('link_gallery')}</span>
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Col 3: पाठ्यक्रम • Courses (2 cols) */}
+          {/* Col 3: Courses (2 cols) */}
           <div className="md:col-span-6 lg:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-1 border-b border-amber-400/20">
               <span className="w-2 h-2 rounded-full bg-amber-400" />
-              <h4 className="font-devanagari text-sm font-semibold tracking-wider text-amber-300 uppercase">
-                {isHi ? "पाठ्यक्रम" : "Courses"}
+              <h4 className={`text-sm font-semibold tracking-wider text-amber-300 uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                {t('courses_title')}
               </h4>
             </div>
 
             <ul className="flex flex-col gap-2.5 text-sm">
               <li>
-                <a
-                  href="#courses"
+                <Link
+                  href="/courses/vedic-bio-healing"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">Vedic Bio Healing</span>
-                </a>
+                  <span>Vedic Bio Healing</span>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#courses"
+                <Link
+                  href="/courses/meditation-teacher-training"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">Meditation TTC</span>
-                </a>
+                  <span>Meditation TTC</span>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#courses"
+                <Link
+                  href="/courses/shri-vidya"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">Shri Vidya</span>
-                </a>
+                  <span>Shri Vidya</span>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#contact"
+                <Link
+                  href="/#contact"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span className="font-devanagari">संपर्क एवं पूछताछ</span>
-                </a>
+                  <span>{t('contact_btn')}</span>
+                </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: आश्रम संपर्क (Contact Ashram) Card (4 cols) */}
+          {/* Col 4: Ashram Contact Card (4 cols) */}
           <div className="md:col-span-12 lg:col-span-4">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-emerald-950/70 via-black/50 to-emerald-950/70 border border-amber-400/30 p-5 sm:p-6 backdrop-blur-md shadow-2xl">
               {/* Header */}
@@ -283,11 +261,11 @@ export function Footer() {
                 <div className="flex items-center gap-2.5">
                   <MapPin className="w-4 h-4 text-amber-400" />
                   <div>
-                    <h4 className="font-devanagari text-sm font-bold text-amber-200 tracking-wide leading-tight">
-                      {isHi ? "आश्रम संपर्क" : "Ashram Contact"}
+                    <h4 className={`text-sm font-bold text-amber-200 tracking-wide leading-tight ${isHi ? 'font-devanagari' : ''}`}>
+                      {t('contact_title')}
                     </h4>
                     <span className="text-[11px] text-amber-200/60 font-sans">
-                      मथाली, उत्तरकाशी, उत्तराखण्ड
+                      {t('contact_city')}
                     </span>
                   </div>
                 </div>
@@ -301,8 +279,8 @@ export function Footer() {
               <div className="py-4 space-y-3 text-xs sm:text-sm">
                 <div className="flex items-start gap-2.5 text-surface-container-high/90">
                   <MapPin className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                  <span className="font-devanagari text-xs leading-relaxed">
-                    मथाली, उत्तरकाशी, उत्तराखण्ड 249135, भारत
+                  <span className={`text-xs leading-relaxed ${isHi ? 'font-devanagari' : ''}`}>
+                    {t('address_short')}
                   </span>
                 </div>
 
@@ -315,8 +293,8 @@ export function Footer() {
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[11px] text-amber-200/70 font-devanagari leading-none">
-                        आश्रम कार्यालय ईमेल
+                      <p className={`text-[11px] text-amber-200/70 leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                        {t('email_label')}
                       </p>
                       <p className="text-xs font-semibold text-[#fcf9f3] mt-0.5 font-sans">
                         shridhyan.com@gmail.com
@@ -337,8 +315,8 @@ export function Footer() {
                       <ExternalLink className="w-4 h-4" />
                     </div>
                     <div className="text-left">
-                      <p className="text-[11px] text-amber-200/70 font-devanagari leading-none">
-                        Google Maps लोकेशन
+                      <p className={`text-[11px] text-amber-200/70 leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                        {t('maps_label')}
                       </p>
                       <p className="text-xs font-semibold text-[#fcf9f3] mt-0.5 font-mono">
                         30.821991, 78.609482
@@ -352,8 +330,8 @@ export function Footer() {
                   href="#contact"
                   className="mt-2 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/20 hover:from-amber-500/30 to-amber-600/20 hover:to-amber-600/30 text-amber-200 hover:text-amber-100 border border-amber-400/40 font-semibold text-xs tracking-wide transition-all duration-200"
                 >
-                  <span className="font-devanagari">
-                    {isHi ? "संपर्क करें (Contact Ashram)" : "Contact Ashram"}
+                  <span className={isHi ? 'font-devanagari' : ''}>
+                    {t('contact_btn')}
                   </span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </a>
@@ -368,15 +346,15 @@ export function Footer() {
           {/* Copyright & Consecrated Notice */}
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
             <span className="font-medium text-amber-100/90">
-              © {new Date().getFullYear()} Shridhyan Ashram.
+              © {new Date().getFullYear()} {t('copyright')}
             </span>
             <span className="hidden sm:inline text-amber-400/40">•</span>
-            <span className="font-devanagari text-amber-200/80">
-              मथाली, उत्तरकाशी, उत्तराखण्ड
+            <span className={isHi ? 'font-devanagari text-amber-200/80' : 'text-amber-200/80'}>
+              {t('contact_city')}
             </span>
             <span className="hidden sm:inline text-amber-400/40">•</span>
-            <span className="font-devanagari text-amber-300/80 italic">
-              ॥ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः ॥
+            <span className="text-amber-300/80 italic">
+              {t('shanti_path')}
             </span>
           </div>
 
@@ -407,10 +385,10 @@ export function Footer() {
             {/* Interactive Return to Top Button */}
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 hover:text-amber-100 border border-amber-400/30 hover:border-amber-400/60 font-devanagari font-medium transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500/10 hover:bg-amber-500/20 text-amber-200 hover:text-amber-100 border border-amber-400/30 hover:border-amber-400/60 font-medium transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
               aria-label="Scroll back to top"
             >
-              <span>{isHi ? "शीर्ष पर जाएँ" : isJa ? "トップへ" : "Back to Top"}</span>
+              <span>{t('back_to_top')}</span>
               <ArrowUp className="w-3.5 h-3.5" />
             </button>
           </div>
