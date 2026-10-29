@@ -319,9 +319,9 @@ export default function VedicBioHealingPage() {
               </h2>
               <p className="text-on-surface-variant leading-relaxed">
                 {isHi
-                  ? "परम पूज्य स्वामी जी महाराज ने हिमालय के पवित्र मथाली अंचल में पांच दशकों से अधिक समय तक अथर्ववेदीय सूक्तों और पारंपरिक ध्यान विधियों की अविरल साधना की है। उनका दृष्टिकोण पूर्णतः पारदर्शी, आदरपूर्ण और जिम्मेदार है।"
+                  ? "परम पूज्य स्वामी जी महाराज ने हिमालय के पवित्र उत्तरकाशी अंचल में पांच दशकों से अधिक समय तक अथर्ववेदीय सूक्तों और पारंपरिक ध्यान विधियों की अविरल साधना की है। उनका दृष्टिकोण पूर्णतः पारदर्शी, आदरपूर्ण और जिम्मेदार है।"
                   : isJa
-                  ? "パラマ・プージャ・スワミ・ジ・マハラジは、ヒマラヤの聖地マタリにおいて半世紀以上にわたりアタルヴァ・ヴェーダの伝統的実践を修められてきました。誇大広告を排した真摯で責任ある指導を行っています。"
+                  ? "パラマ・プージャ・スワミ・ジ・マハラジは、ヒマラヤの聖地ウッタラーカーシーにおいて半世紀以上にわたりアタルヴァ・ヴェーダの伝統的実践を修められてきました。誇大広告を排した真摯で責任ある指導を行っています。"
                   : "Param Pujya Swami Ji Maharaj's journey represents five decades of continuous contemplative practice, dedication to Vedic texts, and guiding sincere seekers in the sacred heights of Uttarkashi. His teaching philosophy emphasizes grounded ethics, patient practice, and genuine inner stillness over sensationalism."}
               </p>
               <div className="p-4 rounded-xl bg-surface-container border border-outline-variant/30 text-xs text-on-surface-variant space-y-1">

@@ -287,10 +287,10 @@ export default function MeditationTeacherTrainingPage() {
     {
       q: isHi ? "क्या यह पाठ्यक्रम ऑनलाइन है या आवासीय?" : isJa ? "講座はオンラインですか、それとも滞在型ですか？" : "Is the course online or residential?",
       a: isHi
-        ? "यह दोनों प्रारूपों में उपलब्ध है: (1) इंटरैक्टिव लाइव ऑनलाइन सेशंस, और (2) उत्तरकाशी की पावन तपोभूमि मथाली में आयोजित होने वाले विशेष आवासीय रिट्रीट्स।"
+        ? "यह दोनों प्रारूपों में उपलब्ध है: (1) इंटरैक्टिव लाइव ऑनलाइन सेशंस, और (2) उत्तरकाशी की पावन तपोभूमि में आयोजित होने वाले विशेष आवासीय रिट्रीट्स।"
         : isJa
         ? "両方の形式に対応しています。(1) 自宅から受講できるインタラクティブなライブオンライン講義、および (2) 北インド・ウッタラーカーシーの修道院（アシュラム）での滞在型集中研修です。"
-        : "Both formats are offered: (1) Interactive live online sessions with real-time feedback, and (2) Periodic residential intensive retreats at our sacred Tapobhoomi in Mathali, Uttarkashi."
+        : "Both formats are offered: (1) Interactive live online sessions with real-time feedback, and (2) Periodic residential intensive retreats at our sacred Tapobhoomi in Uttarkashi."
     },
     {
       q: isHi ? "क्या समापन पर प्रमाण पत्र प्रदान किया जाता है?" : isJa ? "修了証（サーティフィケート）は発行されますか？" : "Is a certificate included?",
@@ -435,7 +435,7 @@ export default function MeditationTeacherTrainingPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
                   <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold mb-1">
-                    {isHi ? "मथाली तपोभूमि, उत्तरकाशी" : isJa ? "マタリ・タポブーミ（北インド・ウッタラーカーシー）" : "Mathali Tapobhoomi, Uttarkashi"}
+                    {isHi ? "तपोभूमि, उत्तरकाशी" : isJa ? "タポブーミ（北インド・ウッタラーカーシー）" : "Tapobhoomi, Uttarkashi"}
                   </span>
                   <h3 className="text-lg font-serif font-bold text-white">
                     {isHi ? "पवित्र ध्यान साधना कक्ष" : isJa ? "ヒマラヤの静寂に包まれた瞑想堂" : "Sacred Himalayan Meditation Hall"}
@@ -957,14 +957,14 @@ export default function MeditationTeacherTrainingPage() {
                 </h3>
                 <p className="text-xs text-stone-600 leading-relaxed">
                   {isHi
-                    ? "मथाली (उत्तरकाशी) आश्रम में आयोजित गहन आवासीय साधना जहां हिमालय की ऊर्जा में प्रत्यक्ष अभ्यास होता है।"
+                    ? "उत्तरकाशी आश्रम में आयोजित गहन आवासीय साधना जहां हिमालय की ऊर्जा में प्रत्यक्ष अभ्यास होता है।"
                     : isJa
                     ? "北インド・ウッタラーカーシーの聖なるアシュラムにて、ヒマラヤの静寂に浸る集中合宿。"
-                    : "Optional residential training intensives at our sacred retreat in Mathali, Uttarkashi beside the Ganga."}
+                    : "Optional residential training intensives at our sacred retreat in Uttarkashi beside the Ganga."}
                 </p>
               </div>
               <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-amber-800 font-medium">
-                {isHi ? "मथाली, उत्तरकाशी" : isJa ? "ウッタラーカーシー現地" : "Mathali, Uttarkashi"}
+                {isHi ? "उत्तरकाशी" : isJa ? "ウッタラーカーシー現地" : "Uttarkashi"}
               </div>
             </div>
 

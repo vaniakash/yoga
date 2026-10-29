@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/i18n/routing';
+import { Hero } from '@/components/Hero';
 import { AboutSection } from '@/components/AboutSection';
 import {
   Sparkles,
@@ -22,22 +24,23 @@ import {
   AlertCircle,
   Quote,
   Flame,
-  Check
+  Check,
+  MapPin
 } from 'lucide-react';
 
 export default function HomePage() {
   const locale = useLocale();
   const isHi = locale === 'hi';
+  const isJa = locale === 'ja';
 
-  const tHero = useTranslations('Hero');
   const tGuide = useTranslations('Guide');
+  const tTeach = useTranslations('SpiritualTeachings');
   const tBenefits = useTranslations('Benefits');
   const tCurriculum = useTranslations('Curriculum');
   const tEnroll = useTranslations('Enrollment');
   const tTestimonials = useTranslations('Testimonials');
   const tPositioning = useTranslations('Positioning');
   const tFAQ = useTranslations('FAQ');
-  const tCatch = useTranslations('Catchphrases');
   const tPhil = useTranslations('Philosophy');
   const tTap = useTranslations('Tapobhoomi');
   const tGuru = useTranslations('GuruParampara');
@@ -81,250 +84,380 @@ export default function HomePage() {
     { q: tFAQ('q5'), a: tFAQ('a5') }
   ];
 
+  const lineageGurus = [
+    {
+      name: isHi
+        ? "परम पूज्य स्वामी योगानन्द जी महाराज"
+        : isJa
+        ? "パラム・プージャ・スワミ・ヨーガーナンダ・ジ・マハラジ"
+        : "Param Pujya Swami Yogananda Ji Maharaj",
+      role: isHi
+        ? "ऋषिकेश तपोनिष्ठ परंपरा"
+        : isJa
+        ? "リシケシの聖なる伝統"
+        : "Rishikesh Tapasya Lineage",
+      image: "/images/yoganand_maharaj.jpeg",
+      desc: isHi
+        ? "हिमालयी महायोगी एवं प्रामाणिक तपस्या व साधना की अखंड प्रेरणा।"
+        : isJa
+        ? "ヒマラヤの偉大なヨーギであり、本格的な苦行と瞑想の不滅のインスピレーション。"
+        : "Himalayan Mahayogi and divine source of unbroken tapasya and sadhana.",
+      footer: isHi ? "ऋषिकेश की तपोनिष्ठ आध्यात्मिक परंपरा" : isJa ? "リシケシ伝統" : "Rishikesh Lineage",
+    },
+    {
+      name: isHi
+        ? "परम पूज्य स्वामी विष्णु तीर्थ जी महाराज"
+        : isJa
+        ? "パラム・プージャ・スワミ・ヴィシュヌ・ティールタ・ジ・マハラジ"
+        : "Param Pujya Swami Vishnu Teerth Ji Maharaj",
+      role: isHi
+        ? "साधन-शिखर एवं शक्तिपात आचार्य"
+        : isJa
+        ? "シャクティパート・サダナの巨星"
+        : "Master of Sadhana & Shaktipat",
+      image: "/images/vishnu_theert.jpeg",
+      desc: isHi
+        ? "साधना शिखर के दिव्य स्तम्भ, जिन्होंने प्राण एवं शक्तिपात विज्ञान को आलोकित किया।"
+        : isJa
+        ? "プラーナとシャクティパートの神聖な科学を照らした偉大な覚者。"
+        : "Pillar of divine sadhana who illuminated the science of prana and spiritual transmission.",
+      footer: isHi ? "साधन-शिखर एवं शक्तिपात परंपरा" : isJa ? "シャクティパート伝承" : "Shaktipat Tradition",
+    },
+    {
+      name: isHi
+        ? "परम पूज्य स्वामी शिवोम तीर्थ जी महाराज"
+        : isJa
+        ? "パラム・プージャ・スワミ・シヴォーム・ティールタ・ジ・マハラジ"
+        : "Param Pujya Swami Shivom Teerth Ji Maharaj",
+      role: isHi
+        ? "तीर्थ परंपरा के महान संवाहक"
+        : isJa
+        ? "ティールタ伝統の偉大なる導師"
+        : "Revered Torchbearer of Tirtha Lineage",
+      image: "/images/swami_shivom_teerth.jpeg",
+      desc: isHi
+        ? "उच्च कोटि के आत्मज्ञानी संत, जिन्होंने आंतरिक समर्पण और मौन का पथ प्रशस्त किया।"
+        : isJa
+        ? "内なる降伏と静寂の道を切り拓いた、崇高なる悟りの聖者。"
+        : "Realized sage who illuminated the path of inner surrender, grace, and silence.",
+      footer: isHi ? "तीर्थ परंपरा की पावन आध्यात्मिक धारा" : isJa ? "ティールタ聖流" : "Sacred Tirtha Stream",
+    },
+    {
+      name: isHi
+        ? "पूजनीय गोविंदानंद तीर्थ जी महाराज"
+        : isJa
+        ? "プージャ・ゴヴィンダナンダ・ティールタ・ジ・マハラジ"
+        : "Pujaniya Govindanand Teerth Ji Maharaj",
+      role: isHi
+        ? "संस्थापक एवं आध्यात्मिक मार्गदर्शक"
+        : isJa
+        ? "シュリディヤン創設者・霊的指導者"
+        : "Founder & Spiritual Guide",
+      image: "/images/maharaj/swami_ji.jpeg",
+      desc: isHi
+        ? "श्रीध्यान आश्रम के संस्थापक, पांच दशकों की सतत हिमालयी तपस्या में प्रतिष्ठित।"
+        : isJa
+        ? "シュリディヤン創設者。50年にわたるヒマラヤの継続的修行に根ざす。"
+        : "Founder of Shridhyan Ashram, rooted in 50 years of dedicated Himalayan penance.",
+      footer: isHi ? "50 वर्षों की सतत हिमालयी तपस्या" : isJa ? "50年のヒマラヤ修行" : "50 Years Himalayan Sadhana",
+    },
+    {
+      name: isHi
+        ? "पूज्या साध्वी राधिका जी"
+        : isJa
+        ? "プージャ・サーディヴィ・ラーディカー・ジ"
+        : "Pujya Sadhvi Radhika Ji",
+      role: isHi
+        ? "साधना एवं मौन मार्गदर्शिका"
+        : isJa
+        ? "瞑想と静寂の女性指導者"
+        : "Spiritual Guide of Meditation & Silence",
+      image: "/images/sadhvi_radhika.jpeg",
+      desc: isHi
+        ? "साधकों को ध्यान, योगिक अनुशासन एवं भक्तिमय अंतर्यात्रा के पथ पर मार्गदर्शन प्रदान करती हैं।"
+        : isJa
+        ? "探求者を瞑想、規律、そして献身的な内なる旅の道へと導く。"
+        : "Guiding sincere seekers on the inner path of meditation, discipline, and devotional life.",
+      footer: isHi ? "समर्पण, मौन एवं साधना मार्गदर्शन" : isJa ? "瞑想と沈黙の指導" : "Silence & Contemplation",
+    },
+  ];
+
+  const coursesData = [
+    {
+      title: tTeach('c1_title'),
+      category: tTeach('c1_category'),
+      desc: tTeach('c1_desc'),
+      href: '/courses/vedic-bio-healing',
+      image: '/images/ashram_courtyard.jpg',
+    },
+    {
+      title: tTeach('c2_title'),
+      category: tTeach('c2_category'),
+      desc: tTeach('c2_desc'),
+      href: '/courses/meditation-teacher-training',
+      image: '/images/meditation_hall.jpg',
+    },
+    {
+      title: tTeach('c3_title'),
+      category: tTeach('c3_category'),
+      desc: tTeach('c3_desc'),
+      href: '/courses/shri-vidya',
+      image: '/images/sri_chakra.jpg',
+    },
+  ];
+
   return (
     <div className="bg-[#fcfbf7] text-[#1c2e24] flex flex-col min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
       {/* 1. HERO SECTION */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f3eee2] via-[#faf7f0] to-[#fcfbf7] pt-12 pb-20 md:pt-16 md:pb-28 border-b border-[#e8e2d4]" id="hero">
-        <div className="max-w-7xl mx-auto px-6 md:px-margin">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left Column: Text */}
-            <div className="lg:col-span-7">
-              {/* Top Trust Pill */}
-              <div className="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs font-semibold tracking-wider uppercase mb-5">
-                <Sparkles className="w-3.5 h-3.5 text-amber-700" />
-                <span>{tHero('badge_experience')}</span>
-                <span className="text-amber-400/50">•</span>
-                <span className="text-amber-700 font-bold">{tHero('badge_batch')}</span>
-                <span className="text-amber-400/50">•</span>
-                <span className="text-stone-600">{tHero('badge_place')}</span>
-              </div>
+      <Hero onOpenMasterclass={() => setMasterclassOpen(true)} />
 
-              {/* Main Headline */}
-              <h1 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary tracking-tight leading-[1.15] mb-5 text-balance ${isHi ? 'font-devanagari' : ''}`}>
-                {tHero('headline')}
-              </h1>
+      {/* 2. MEET YOUR GUIDE: MINIMAL SPIRITUAL MASTER SANCTUM */}
+      <section className="py-20 md:py-28 bg-[#faf7f0] border-y border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="guide">
+        {/* Subtle Ambient Warm Glow */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
+        />
 
-              {/* Subheadline */}
-              <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-sans mb-8 max-w-2xl text-balance">
-                {tHero('subheadline')}
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 mb-10">
-                <a
-                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 flex items-center gap-2"
-                  href="#enroll"
-                >
-                  <Calendar className="w-4 h-4 text-white" />
-                  <span>{tHero('cta_enroll')}</span>
-                </a>
-
-                <button
-                  onClick={() => setMasterclassOpen(true)}
-                  className="px-6 py-3.5 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest border border-outline-variant text-primary font-semibold text-sm transition-all flex items-center gap-2 group shadow-sm"
-                >
-                  <Play className="w-4 h-4 text-amber-600 fill-current" />
-                  <span>{tHero('cta_masterclass')}</span>
-                </button>
-              </div>
-
-              {/* Trust Badges */}
-              <div className="pt-6 border-t border-stone-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
-                    <ShieldCheck className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-medium text-stone-700 leading-snug">
-                    {tHero('badge_experience')}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
-                    <BookOpen className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-medium text-stone-700 leading-snug">
-                    Atharvaveda Sukta 13
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-4 h-4" />
-                  </div>
-                  <span className="text-xs font-medium text-stone-700 leading-snug">
-                    Guided Practical Sessions
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right Column: Hero Visual Card */}
-            <div className="lg:col-span-5">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/80 bg-stone-900 group">
-                <img
-                  src="/images/shridhyan_hero.webp"
-                  alt="Shridhyan Ashram Himalayan sanctuary"
-                  className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold mb-1">
-                    Mathali Tapobhoomi, Uttarkashi
-                  </span>
-                  <h3 className="text-lg font-serif font-bold text-white">
-                    Shridhyan Himalayan Sanctuary
-                  </h3>
-                  <p className="text-xs text-white/80 mt-1">
-                    Traditional healing wisdom and meditation rooted in ancient Atharvaveda tradition.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Catchphrase Strip in Clean Warm Palette */}
-        <div className="mt-12 pt-4 border-t border-[#e8e2d4] bg-[#f7f3ea]/60 hidden md:block">
-          <div className="max-w-7xl mx-auto px-6 text-center text-xs text-stone-600 tracking-widest uppercase flex items-center justify-center gap-6 font-medium">
-            <span>{tCatch('c1')}</span>
-            <span className="text-amber-500">✦</span>
-            <span>{tCatch('c2')}</span>
-            <span className="text-amber-500">✦</span>
-            <span>{tCatch('c3')}</span>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. MEET YOUR GUIDE: AUTHORITY & TRUST SECTION */}
-      <section className="py-20 bg-[#f7f3ea] border-y border-[#e8e2d4] text-[#1c2e24] relative overflow-hidden" id="guide">
-        <div className="max-w-7xl mx-auto px-6 md:px-margin relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <div className="inline-flex items-center gap-2 mb-2">
-              <span className="w-8 h-[1px] bg-amber-500"></span>
-              <span className={`text-tertiary text-xs sm:text-sm font-semibold tracking-widest uppercase ${isHi ? 'font-devanagari' : ''}`}>
-                {tGuide('label')}
-              </span>
-              <span className="w-8 h-[1px] bg-amber-500"></span>
-            </div>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-primary mb-3 leading-tight ${isHi ? 'font-devanagari' : ''}`}>
-              {tGuide('title')}
-            </h2>
-            <p className="text-stone-600 text-sm sm:text-base font-medium">
-              {tGuide('subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Guide Image with Warm White Frame */}
+        <div className="max-w-6xl mx-auto px-6 md:px-margin relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            {/* Left Column: Monastic Portrait Frame (5 cols) */}
             <div className="lg:col-span-5 flex flex-col items-center">
-              <div className="relative rounded-3xl p-3 bg-white border-2 border-stone-200/90 shadow-xl max-w-md w-full">
-                <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-md bg-stone-800">
-                  <img
-                    alt="Param Pujya Swami Ji Maharaj"
-                    className="w-full h-full object-cover object-top"
-                    src="/images/maharaj/swami_ji.jpeg"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                  <div className="absolute bottom-5 left-5 right-5 text-center sm:text-left">
-                    <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold">
-                      Founder & Spiritual Guide
-                    </span>
-                    <h3 className={`text-xl sm:text-2xl font-bold text-white mt-1 ${isHi ? 'font-devanagari' : ''}`}>
-                      Param Pujya Swami Ji Maharaj
-                    </h3>
-                    <p className="text-xs text-amber-200/80 mt-1">
-                      Shridhyan Ashram • Mathali, Uttarkashi
-                    </p>
+              <div className="relative group w-full max-w-sm">
+                {/* Soft Ambient Golden Ring */}
+                <div
+                  aria-hidden="true"
+                  className="absolute -inset-2 bg-gradient-to-tr from-amber-500/20 via-amber-300/10 to-orange-400/20 rounded-[2.5rem] blur-xl opacity-60 group-hover:opacity-90 transition-opacity"
+                />
+
+                {/* The Framed Portrait */}
+                <div className="relative rounded-[2rem] overflow-hidden bg-white p-3 shadow-xl border border-amber-400/30">
+                  <div className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-stone-900 shadow-inner">
+                    <img
+                      alt={isHi ? "पूजनीय गोविंदानंद तीर्थ जी महाराज" : "Pujaniya Govindanand Teerth Ji Maharaj"}
+                      className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                      src="/images/maharaj/swami_ji.jpeg"
+                    />
+                    
+                    {/* Subtle Gradient & Location Badge */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
+                      <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold mb-1">
+                        {tGuide('subtitle')}
+                      </span>
+                      <h3 className={`text-xl font-serif font-bold text-white ${isHi ? 'font-devanagari' : ''}`}>
+                        {tGuide('title')}
+                      </h3>
+                      <p className="text-xs text-amber-200/90 mt-1 flex items-center gap-1.5">
+                        <MapPin className="w-3 h-3 text-amber-400 inline" />
+                        <span>{tGuide('location')}</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
 
                 {/* Floating Experience Badge */}
-                <div className="absolute -bottom-5 -right-4 sm:-right-5 bg-gradient-to-r from-amber-500 to-amber-600 text-stone-950 p-3.5 rounded-2xl shadow-xl border border-amber-300 font-bold flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-black/10 flex items-center justify-center">
-                    <Award className="w-6 h-6 text-stone-950" />
+                <div className="absolute -bottom-4 right-4 sm:-right-3 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-amber-400/40 flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-lg bg-amber-500/15 text-amber-800 flex items-center justify-center">
+                    <Award className="w-3.5 h-3.5" />
                   </div>
-                  <div>
-                    <div className="text-2xl font-extrabold leading-none">50+</div>
-                    <div className="text-[10px] uppercase tracking-wider font-semibold">Years Sadhana</div>
-                  </div>
+                  <span className="text-xs font-bold text-stone-900 tracking-wide">
+                    {tGuide('badge_exp')}
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* Guide Authority & The 3 Pillars */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <div className="space-y-4">
-                <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-sans">
-                  {tGuide('desc')}
-                </p>
+            {/* Right Column: Clean, Minimalist Typography & 3 Pillars (7 cols) */}
+            <div className="lg:col-span-7 flex flex-col justify-center">
+              
+              {/* Category Tag */}
+              <div className="inline-flex items-center gap-2 mb-3">
+                <span className="w-6 h-[1.5px] bg-amber-600"></span>
+                <span className={`text-amber-800 text-xs font-bold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                  {tGuide('label')}
+                </span>
               </div>
 
-              {/* 3 Core Authority Pillars */}
-              <div className="grid grid-cols-1 gap-4">
-                <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:border-amber-400/60 transition-colors flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-400/30">
-                    <Flame className="w-5 h-5" />
+              {/* Master Name / Main Headline */}
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-2 ${isHi ? 'font-devanagari' : ''}`}>
+                {tGuide('title')}
+              </h2>
+
+              {/* Master Subtitle */}
+              <p className={`text-amber-800 text-sm sm:text-base font-medium mb-5 ${isHi ? 'font-devanagari' : ''}`}>
+                {tGuide('subtitle')}
+              </p>
+
+              {/* Lead Essence Description */}
+              <p className="text-stone-700 text-base sm:text-lg font-sans leading-relaxed mb-8 max-w-xl text-balance">
+                {tGuide('desc')}
+              </p>
+
+              {/* The 3 Pillars as Sleek, Elegant Hairline List (Minimalist & Uncluttered) */}
+              <div className="space-y-4 pt-1">
+                
+                {/* Pillar 1 */}
+                <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
+                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                    <Flame className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-primary mb-1 ${isHi ? 'font-devanagari' : ''}`}>
+                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar1_title')}
                     </h4>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
                       {tGuide('pillar1_desc')}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:border-amber-400/60 transition-colors flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-400/30">
-                    <Users className="w-5 h-5" />
+                {/* Pillar 2 */}
+                <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
+                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                    <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-primary mb-1 ${isHi ? 'font-devanagari' : ''}`}>
+                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar2_title')}
                     </h4>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
                       {tGuide('pillar2_desc')}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-5 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:border-amber-400/60 transition-colors flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 mt-0.5 border border-amber-400/30">
-                    <ShieldCheck className="w-5 h-5" />
+                {/* Pillar 3 */}
+                <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
+                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                    <BookOpen className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-primary mb-1 ${isHi ? 'font-devanagari' : ''}`}>
+                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar3_title')}
                     </h4>
-                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                    <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
                       {tGuide('pillar3_desc')}
                     </p>
                   </div>
                 </div>
+
               </div>
 
-              {/* 4 Trust Metrics */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-amber-700 font-serif">{tGuide('stat1_num')}</div>
-                  <div className="text-xs text-stone-600 mt-1">{tGuide('stat1_label')}</div>
+              {/* Minimal Footnote Assurance Bar */}
+              <div className="mt-8 pt-5 border-t border-amber-500/20 flex flex-wrap items-center gap-4 text-xs text-stone-600">
+                <span className="font-semibold text-amber-800 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-amber-700" />
+                  <span>{tGuide('location')}</span>
+                </span>
+                <span className="text-stone-300">•</span>
+                <span className="font-medium text-stone-700">
+                  {tGuide('badge_exp')}
+                </span>
+                <span className="text-stone-300">•</span>
+                <a
+                  href="#guru-parampara"
+                  className="text-amber-800 hover:text-amber-600 font-semibold underline underline-offset-4 flex items-center gap-1 transition-colors"
+                >
+                  <span>{isHi ? "गुरु परंपरा देखें" : "View Guru Parampara"}</span>
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* OUR SPIRITUAL TEACHINGS / हमारे आध्यात्मिक पाठ्यक्रम */}
+      <section className="py-20 md:py-28 bg-[#fcfbf7] border-b border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="courses">
+        {/* Soft Ambient Warm Glow */}
+        <div
+          aria-hidden="true"
+          className="absolute top-1/3 right-0 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
+        />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-margin relative z-10">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-800 text-xs font-bold tracking-[0.2em] uppercase mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+              <span className={isHi ? 'font-devanagari' : ''}>{tTeach('label')}</span>
+            </div>
+            
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+              {tTeach('heading')}
+            </h2>
+            
+            <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              {tTeach('description')}
+            </p>
+          </div>
+
+          {/* Three Course Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+            {coursesData.map((course, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl overflow-hidden border border-[#e8e2d4] hover:border-amber-400/50 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
+              >
+                <div>
+                  {/* Card Image */}
+                  <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
+                    <img
+                      src={course.image}
+                      alt={course.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+                    
+                    {/* Category Badge */}
+                    <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-900 border border-amber-400/30 shadow-sm flex items-center gap-1.5">
+                      <Sparkles className="w-3 h-3 text-amber-600" />
+                      <span className={isHi ? 'font-devanagari' : ''}>{course.category}</span>
+                    </div>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-6 sm:p-7">
+                    <h3 className={`text-xl sm:text-2xl font-serif font-bold text-[#092217] group-hover:text-amber-800 transition-colors mb-3 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
+                      {course.title}
+                    </h3>
+                    <p className="text-stone-600 text-sm leading-relaxed font-sans">
+                      {course.desc}
+                    </p>
+                  </div>
                 </div>
-                <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-amber-700 font-serif">{tGuide('stat2_num')}</div>
-                  <div className="text-xs text-stone-600 mt-1">{tGuide('stat2_label')}</div>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-amber-700 font-serif">{tGuide('stat3_num')}</div>
-                  <div className="text-xs text-stone-600 mt-1">{tGuide('stat3_label')}</div>
-                </div>
-                <div className="p-4 rounded-xl bg-white border border-stone-200 shadow-sm text-center">
-                  <div className="text-2xl sm:text-3xl font-bold text-amber-700 font-serif">{tGuide('stat4_num')}</div>
-                  <div className="text-xs text-stone-600 mt-1">{tGuide('stat4_label')}</div>
+
+                {/* Card Action */}
+                <div className="px-6 pb-6 pt-2">
+                  <div className="pt-4 border-t border-stone-100">
+                    <Link
+                      href={course.href}
+                      className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#faf7f0] group-hover:bg-[#092217] text-[#092217] group-hover:text-white font-semibold text-sm transition-all duration-300 border border-[#e8e2d4] group-hover:border-[#092217]"
+                    >
+                      <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
+                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
+
+          {/* Bottom Link: View All Courses */}
+          <div className="mt-14 text-center">
+            <a
+              href="#enroll"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-[#faf7f0] text-amber-900 border border-amber-300/60 shadow-sm hover:shadow font-semibold text-sm transition-all duration-200 group"
+            >
+              <span className={isHi ? 'font-devanagari' : ''}>{tTeach('view_all')}</span>
+              <ArrowRight className="w-4 h-4 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+
         </div>
       </section>
 
@@ -884,83 +1017,42 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* 1. Yogananda Ji Maharaj */}
-            <div className="bg-white border border-stone-200/90 p-6 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col justify-between">
-              <div>
-                <div className="w-48 h-48 mx-auto rounded-2xl p-1.5 border-2 border-amber-300/60 mb-6 overflow-hidden bg-stone-100 flex items-center justify-center relative shadow-sm">
-                  <div className="w-full h-full rounded-xl bg-gradient-to-b from-[#fdfbf7] to-[#f5f0e4] flex flex-col items-center justify-center p-4 text-center border border-amber-300/40">
-                    <span className="text-4xl text-amber-600 font-serif mb-2 select-none">ॐ</span>
-                    <span className={`text-xs text-stone-600 tracking-widest ${isHi ? 'font-devanagari' : ''}`}>
-                      {tGuru('guru1_footer')}
-                    </span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            {lineageGurus.map((guru, idx) => (
+              <div
+                key={idx}
+                className="bg-white border-2 border-stone-200/90 hover:border-amber-400 p-5 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="w-full aspect-[4/5] mx-auto rounded-2xl p-1 border-2 border-amber-300/60 mb-5 overflow-hidden bg-stone-100 shadow-md relative">
+                    <img
+                      alt={guru.name}
+                      className="w-full h-full object-cover object-top rounded-xl group-hover:scale-105 transition-transform duration-500"
+                      src={guru.image}
+                    />
                   </div>
+                  <span className={`text-amber-800 text-[11px] font-bold tracking-widest block mb-1 uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                    {guru.role}
+                  </span>
+                  <h3 className={`text-base sm:text-lg font-serif font-bold text-primary mb-2 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
+                    {guru.name}
+                  </h3>
+                  <p className="text-stone-600 text-xs leading-relaxed font-sans">
+                    {guru.desc}
+                  </p>
                 </div>
-                <span className={`text-amber-800 text-xs font-semibold tracking-widest block mb-1 uppercase ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru1_label')}
-                </span>
-                <h3 className={`text-2xl font-serif font-bold text-primary mb-2 ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru1_name')}
-                </h3>
-                <p className="text-stone-600 text-sm max-w-xs mx-auto leading-relaxed">
-                  {tGuru('guru1_desc')}
-                </p>
+                <div className={`mt-5 pt-3 border-t border-stone-100 text-amber-900 text-[11px] font-semibold tracking-wider ${isHi ? 'font-devanagari' : ''}`}>
+                  {guru.footer}
+                </div>
               </div>
-              <div className={`mt-6 pt-4 border-t border-stone-200 text-amber-800 text-xs font-medium ${isHi ? 'font-devanagari' : ''}`}>
-                {tGuru('guru1_footer')}
-              </div>
-            </div>
+            ))}
+          </div>
 
-            {/* 2. Swami Ji Maharaj */}
-            <div className="bg-white border-2 border-amber-400/50 p-6 rounded-2xl shadow-md text-center flex flex-col justify-between">
-              <div>
-                <div className="w-48 h-48 mx-auto rounded-2xl p-1.5 border-2 border-amber-400 mb-6 overflow-hidden bg-stone-100 shadow-md">
-                  <img
-                    alt="Param Pujya Swami Ji Maharaj"
-                    className="w-full h-full object-cover rounded-xl"
-                    src="/images/maharaj/swami_ji.jpeg"
-                  />
-                </div>
-                <span className={`text-amber-800 text-xs font-semibold tracking-widest block mb-1 uppercase ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru2_label')}
-                </span>
-                <h3 className={`text-2xl font-serif font-bold text-primary mb-2 ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru2_name')}
-                </h3>
-                <p className="text-stone-600 text-sm max-w-xs mx-auto leading-relaxed">
-                  {tGuru('guru2_desc')}
-                </p>
-              </div>
-              <div className={`mt-6 pt-4 border-t border-stone-200 text-amber-800 text-xs font-medium ${isHi ? 'font-devanagari' : ''}`}>
-                {tGuru('guru2_footer')}
-              </div>
-            </div>
-
-            {/* 3. Sadhvi Radhika */}
-            <div className="bg-white border border-stone-200/90 p-6 rounded-2xl shadow-sm hover:shadow-md text-center flex flex-col justify-between">
-              <div>
-                <div className="w-48 h-48 mx-auto rounded-2xl p-1.5 border-2 border-amber-300/60 mb-6 overflow-hidden bg-stone-100 flex items-center justify-center relative shadow-sm">
-                  <div className="w-full h-full rounded-xl bg-gradient-to-b from-[#fdfbf7] to-[#f5f0e4] flex flex-col items-center justify-center p-4 text-center border border-amber-300/40">
-                    <span className="text-4xl text-amber-600 font-serif mb-2 select-none">ॐ</span>
-                    <span className={`text-xs text-stone-600 tracking-widest ${isHi ? 'font-devanagari' : ''}`}>
-                      {tGuru('guru3_footer')}
-                    </span>
-                  </div>
-                </div>
-                <span className={`text-amber-800 text-xs font-semibold tracking-widest block mb-1 uppercase ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru3_label')}
-                </span>
-                <h3 className={`text-2xl font-serif font-bold text-primary mb-2 ${isHi ? 'font-devanagari' : ''}`}>
-                  {tGuru('guru3_name')}
-                </h3>
-                <p className="text-stone-600 text-sm max-w-xs mx-auto leading-relaxed">
-                  {tGuru('guru3_desc')}
-                </p>
-              </div>
-              <div className={`mt-6 pt-4 border-t border-stone-200 text-amber-800 text-xs font-medium ${isHi ? 'font-devanagari' : ''}`}>
-                {tGuru('guru3_footer')}
-              </div>
-            </div>
+          <div className="mt-12 text-center max-w-2xl mx-auto p-6 rounded-2xl bg-amber-500/10 border border-amber-500/20">
+            <Quote className="w-6 h-6 text-amber-700 mx-auto mb-2" />
+            <p className={`text-sm text-stone-800 font-serif italic leading-relaxed ${isHi ? 'font-devanagari' : ''}`}>
+              {tGuru('quote')}
+            </p>
           </div>
         </div>
       </section>

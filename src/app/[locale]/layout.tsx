@@ -25,10 +25,10 @@ export async function generateMetadata(props: {
     : "Shridhyan Ashram | Himalayan Spiritual Retreat & Tapobhoomi, Uttarkashi";
 
   const description = isHi
-    ? "श्री ध्यान आश्रम — मथाली, उत्तरकाशी (हिमालय) स्थित पावन तपोभूमि। परम पूज्य स्वामी जी महाराज के मार्गदर्शन में प्रामाणिक ध्यान, मौन एवं साधना को समर्पित।"
+    ? "श्री ध्यान आश्रम — उत्तरकाशी (हिमालय) स्थित पावन तपोभूमि। परम पूज्य स्वामी जी महाराज के मार्गदर्शन में प्रामाणिक ध्यान, मौन एवं साधना को समर्पित।"
     : isJa
-    ? "シュリディヤン・アシュラム — 北インド・ウッタラーカーシーのマタリに位置するヒマラヤの静寂な修行地。本格的な瞑想、サダナ、師弟相承の伝統を継承するアシュラム。"
-    : "Shridhyan Ashram — a sacred spiritual retreat in Mathali, Uttarkashi, Himalayas, dedicated to authentic meditation, sadhana, and the Guru-Shishya tradition.";
+    ? "シュリディヤン・アシュラム — 北インド・ウッタラーカーシーに位置するヒマラヤの静寂な修行地。本格的な瞑想、サダナ、師弟相承の伝統を継承するアシュラム。"
+    : "Shridhyan Ashram — a sacred spiritual retreat in Uttarkashi, Himalayas, dedicated to authentic meditation, sadhana, and the Guru-Shishya tradition.";
 
   return {
     title: {
@@ -45,7 +45,6 @@ export async function generateMetadata(props: {
       "श्री ध्यान आश्रम",
       "Himalayan Spiritual Retreat",
       "Uttarkashi Ashram",
-      "Mathali Uttarkashi",
       "Meditation in Himalayas",
       "Tapobhoomi",
       "Swami Ji Maharaj",
@@ -105,7 +104,7 @@ export default async function LocaleLayout(props: {
   return (
     <html
       lang={locale}
-      className="h-full antialiased"
+      className="h-full antialiased scroll-smooth"
       suppressHydrationWarning
     >
       <head>
