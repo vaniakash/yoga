@@ -28,22 +28,37 @@ export function Navbar() {
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(true);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const langDropdownRef = useRef<HTMLDivElement>(null);
+  const userMenuRef = useRef<HTMLDivElement>(null);
 
   const { data: session, status } = useSession();
 
   const isHi = locale === 'hi';
   const isJa = locale === 'ja';
 
-  // Close dropdown on click outside
+  // Close dropdowns on click or touch outside
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
+      const target = event.target as Node;
+      if (dropdownRef.current && !dropdownRef.current.contains(target)) {
         setCoursesDropdownOpen(false);
+      }
+      if (langDropdownRef.current && !langDropdownRef.current.contains(target)) {
+        setLangDropdownOpen(false);
+      }
+      if (userMenuRef.current && !userMenuRef.current.contains(target)) {
+        setUserMenuOpen(false);
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
   }, []);
 
   const courseItems = [
@@ -205,47 +220,82 @@ export function Navbar() {
         {/* Right Actions */}
         <div className="flex items-center gap-3 sm:gap-4">
           {/* Language Selector */}
-          <div className="relative group">
+          <div ref={langDropdownRef} className="relative">
             <button
-              className="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-on-surface dark:text-[#fcf9f3] px-2.5 py-1.5 rounded-lg border border-amber-400/30 hover:border-amber-400 transition-colors bg-surface-container-lowest/40 dark:bg-black/20"
+              type="button"
+              onClick={() => {
+                setLangDropdownOpen((prev) => !prev);
+                setCoursesDropdownOpen(false);
+                setUserMenuOpen(false);
+              }}
+              className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium px-2.5 py-1.5 sm:px-3 sm:py-1.5 rounded-lg border transition-colors select-none ${
+                langDropdownOpen
+                  ? 'border-amber-400 bg-amber-500/15 text-amber-800 dark:text-amber-300'
+                  : 'border-amber-400/30 hover:border-amber-400 text-on-surface dark:text-[#fcf9f3] bg-surface-container-lowest/40 dark:bg-black/20'
+              }`}
               aria-label="Select Language"
+              aria-expanded={langDropdownOpen}
+              aria-haspopup="true"
             >
-              <Globe className="w-3.5 h-3.5 text-amber-500 dark:text-amber-300" />
+              <Globe className="w-3.5 h-3.5 text-amber-500 dark:text-amber-300 flex-shrink-0" />
               <span>{currentLangLabel}</span>
+              <ChevronDown
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                  langDropdownOpen ? 'rotate-180 text-amber-500' : 'text-stone-400'
+                }`}
+              />
             </button>
-            <div className="absolute right-0 top-full mt-1.5 w-44 bg-surface-container-lowest dark:bg-[#0c2419] border border-amber-400/30 rounded-lg shadow-xl py-1.5 hidden group-hover:block z-50">
-              <a
-                className={`block px-3.5 py-2 text-xs sm:text-sm hover:bg-surface-container dark:hover:bg-[#143a28] font-medium transition-colors ${
-                  isHi ? 'text-amber-600 dark:text-amber-300 font-semibold' : 'text-on-surface-variant dark:text-[#d0c9bc]'
-                }`}
-                href={`/hi${pathname}`}
-              >
-                हिन्दी (Hindi)
-              </a>
-              <a
-                className={`block px-3.5 py-2 text-xs sm:text-sm hover:bg-surface-container dark:hover:bg-[#143a28] font-medium transition-colors ${
-                  locale === 'en' ? 'text-amber-600 dark:text-amber-300 font-semibold' : 'text-on-surface-variant dark:text-[#d0c9bc]'
-                }`}
-                href={`/en${pathname}`}
-              >
-                English
-              </a>
-              <a
-                className={`block px-3.5 py-2 text-xs sm:text-sm hover:bg-surface-container dark:hover:bg-[#143a28] font-medium transition-colors ${
-                  isJa ? 'text-amber-600 dark:text-amber-300 font-semibold' : 'text-on-surface-variant dark:text-[#d0c9bc]'
-                }`}
-                href={`/ja${pathname}`}
-              >
-                日本語 (Japanese)
-              </a>
-            </div>
+
+            {langDropdownOpen && (
+              <div className="absolute right-0 top-full mt-2 w-48 bg-surface-container-lowest dark:bg-[#0c2419] border border-amber-400/40 rounded-xl shadow-2xl py-1.5 z-50 animate-fade-in backdrop-blur-xl">
+                <Link
+                  className={`flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm hover:bg-amber-500/10 font-medium transition-colors ${
+                    isHi
+                      ? 'text-amber-700 dark:text-amber-300 font-bold bg-amber-500/10'
+                      : 'text-on-surface dark:text-[#d0c9bc]'
+                  }`}
+                  href={pathname}
+                  locale="hi"
+                  onClick={() => setLangDropdownOpen(false)}
+                >
+                  <span>हिन्दी (Hindi)</span>
+                  {isHi && <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />}
+                </Link>
+                <Link
+                  className={`flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm hover:bg-amber-500/10 font-medium transition-colors ${
+                    locale === 'en'
+                      ? 'text-amber-700 dark:text-amber-300 font-bold bg-amber-500/10'
+                      : 'text-on-surface dark:text-[#d0c9bc]'
+                  }`}
+                  href={pathname}
+                  locale="en"
+                  onClick={() => setLangDropdownOpen(false)}
+                >
+                  <span>English (EN)</span>
+                  {locale === 'en' && <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />}
+                </Link>
+                <Link
+                  className={`flex items-center justify-between px-4 py-2.5 text-xs sm:text-sm hover:bg-amber-500/10 font-medium transition-colors ${
+                    isJa
+                      ? 'text-amber-700 dark:text-amber-300 font-bold bg-amber-500/10'
+                      : 'text-on-surface dark:text-[#d0c9bc]'
+                  }`}
+                  href={pathname}
+                  locale="ja"
+                  onClick={() => setLangDropdownOpen(false)}
+                >
+                  <span>日本語 (Japanese)</span>
+                  {isJa && <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />}
+                </Link>
+              </div>
+            )}
           </div>
 
           {/* Auth Button */}
           {status === 'loading' ? (
             <div className="w-24 h-9 rounded-lg bg-amber-400/10 animate-pulse hidden sm:block" />
           ) : session ? (
-            <div className="relative">
+            <div ref={userMenuRef} className="relative">
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
                 className="flex items-center gap-2 p-1.5 sm:px-3 sm:py-1.5 rounded-lg border border-amber-400/40 hover:border-amber-400 transition-colors bg-surface-container-lowest/40 dark:bg-black/20"
@@ -398,6 +448,51 @@ export function Navbar() {
           >
             {t('contact')}
           </Link>
+
+          {/* Mobile Language Switcher */}
+          <div className="py-2.5 border-t border-outline-variant/20 dark:border-amber-400/20">
+            <span className="text-xs font-semibold text-secondary dark:text-amber-300 uppercase tracking-wider block mb-2">
+              भाषा / Language
+            </span>
+            <div className="grid grid-cols-3 gap-2">
+              <Link
+                href={pathname}
+                locale="hi"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-center py-2 px-3 rounded-lg text-xs font-semibold border transition-all ${
+                  isHi
+                    ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-400 shadow-xs'
+                    : 'bg-surface-container-lowest/40 dark:bg-black/20 text-on-surface dark:text-[#d0c9bc] border-outline-variant/30 hover:border-amber-400/40'
+                }`}
+              >
+                हिन्दी
+              </Link>
+              <Link
+                href={pathname}
+                locale="en"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-center py-2 px-3 rounded-lg text-xs font-semibold border transition-all ${
+                  locale === 'en'
+                    ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-400 shadow-xs'
+                    : 'bg-surface-container-lowest/40 dark:bg-black/20 text-on-surface dark:text-[#d0c9bc] border-outline-variant/30 hover:border-amber-400/40'
+                }`}
+              >
+                English
+              </Link>
+              <Link
+                href={pathname}
+                locale="ja"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`flex items-center justify-center py-2 px-3 rounded-lg text-xs font-semibold border transition-all ${
+                  isJa
+                    ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 border-amber-400 shadow-xs'
+                    : 'bg-surface-container-lowest/40 dark:bg-black/20 text-on-surface dark:text-[#d0c9bc] border-outline-variant/30 hover:border-amber-400/40'
+                }`}
+              >
+                日本語
+              </Link>
+            </div>
+          </div>
 
           {/* Mobile Auth & CTA Buttons */}
           <div className="pt-3 space-y-2.5">
