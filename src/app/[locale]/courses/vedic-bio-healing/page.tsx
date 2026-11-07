@@ -664,7 +664,7 @@ export default function VedicBioHealingPage() {
                 <span>Watch Free Masterclass</span>
               </button>
               <span className="text-amber-400/40">•</span>
-              <Link href="/#contact" className="text-amber-300 hover:underline">
+              <Link href="/contact" className="text-amber-300 hover:underline">
                 Contact the Ashram
               </Link>
             </div>

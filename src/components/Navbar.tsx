@@ -131,16 +131,24 @@ export function Navbar() {
 
           {/* Guru Parampara */}
           <Link
-            className="text-on-surface-variant dark:text-[#e0dacd] font-medium tracking-wide text-sm hover:text-amber-600 dark:hover:text-amber-300 transition-colors py-1"
-            href="/#guru-parampara"
+            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+              pathname === '/guru-parampara'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+            }`}
+            href="/guru-parampara"
           >
             {t('guru_parampara')}
           </Link>
 
           {/* Tapobhoomi */}
           <Link
-            className="text-on-surface-variant dark:text-[#e0dacd] font-medium tracking-wide text-sm hover:text-amber-600 dark:hover:text-amber-300 transition-colors py-1"
-            href="/#tapobhoomi"
+            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+              pathname === '/tapobhoomi'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+            }`}
+            href="/tapobhoomi"
           >
             {t('tapobhoomi')}
           </Link>
@@ -210,8 +218,12 @@ export function Navbar() {
 
           {/* Contact */}
           <Link
-            className="text-on-surface-variant dark:text-[#e0dacd] font-medium tracking-wide text-sm hover:text-amber-600 dark:hover:text-amber-300 transition-colors py-1"
-            href="/#contact"
+            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+              pathname === '/contact'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+            }`}
+            href="/contact"
           >
             {t('contact')}
           </Link>
@@ -354,7 +366,7 @@ export function Navbar() {
           {/* Contact Ashram Button */}
           <Link
             className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white text-xs sm:text-sm font-medium px-4 sm:px-5 py-2.5 rounded-lg shadow-md hover:shadow-amber-500/20 transition-all duration-200 active:scale-95"
-            href="/#contact"
+            href="/contact"
           >
             <Sparkles className="w-3.5 h-3.5 text-amber-200" />
             <span>{contactBtnLabel}</span>
@@ -377,7 +389,11 @@ export function Navbar() {
           {/* Home */}
           <Link
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-on-surface-variant dark:text-[#e0dacd] font-medium text-base hover:text-amber-500 dark:hover:text-amber-300 py-1.5"
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/' || pathname === ''
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
             href="/"
           >
             {t('home')}
@@ -386,8 +402,12 @@ export function Navbar() {
           {/* Guru Parampara */}
           <Link
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-on-surface-variant dark:text-[#e0dacd] font-medium text-base hover:text-amber-500 dark:hover:text-amber-300 py-1.5"
-            href="/#guru-parampara"
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/guru-parampara'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
+            href="/guru-parampara"
           >
             {t('guru_parampara')}
           </Link>
@@ -395,8 +415,12 @@ export function Navbar() {
           {/* Tapobhoomi */}
           <Link
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-on-surface-variant dark:text-[#e0dacd] font-medium text-base hover:text-amber-500 dark:hover:text-amber-300 py-1.5"
-            href="/#tapobhoomi"
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/tapobhoomi'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
+            href="/tapobhoomi"
           >
             {t('tapobhoomi')}
           </Link>
@@ -443,8 +467,12 @@ export function Navbar() {
           {/* Contact */}
           <Link
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-on-surface-variant dark:text-[#e0dacd] font-medium text-base hover:text-amber-500 dark:hover:text-amber-300 py-1.5"
-            href="/#contact"
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/contact'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
+            href="/contact"
           >
             {t('contact')}
           </Link>

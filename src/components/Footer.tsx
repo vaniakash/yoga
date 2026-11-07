@@ -148,58 +148,58 @@ export function Footer() {
 
             <ul className="flex flex-col gap-2.5 text-sm">
               <li>
-                <a
-                  href="#hero"
+                <Link
+                  href="/"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_home')}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#guru-parampara"
+                <Link
+                  href="/guru-parampara"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_parampara')}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#tapobhoomi"
+                <Link
+                  href="/tapobhoomi"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_tapobhoomi')}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#courses"
+                <Link
+                  href="/#courses"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_courses')}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#mauna"
+                <Link
+                  href="/tapobhoomi#mauna"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_silence')}</span>
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#gallery"
+                <Link
+                  href="/tapobhoomi#gallery"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_gallery')}</span>
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -243,7 +243,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
@@ -326,15 +326,15 @@ export function Footer() {
                   <ChevronRight className="w-4 h-4 text-amber-400/60 group-hover:text-amber-300 group-hover:translate-x-1 transition-all" />
                 </a>
 
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact"
                   className="mt-2 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500/20 hover:from-amber-500/30 to-amber-600/20 hover:to-amber-600/30 text-amber-200 hover:text-amber-100 border border-amber-400/40 font-semibold text-xs tracking-wide transition-all duration-200"
                 >
                   <span className={isHi ? 'font-devanagari' : ''}>
                     {t('contact_btn')}
                   </span>
                   <ChevronRight className="w-3.5 h-3.5" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

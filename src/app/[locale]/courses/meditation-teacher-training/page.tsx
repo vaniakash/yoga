@@ -1171,7 +1171,7 @@ export default function MeditationTeacherTrainingPage() {
                 </span>
               </button>
               <span className="text-amber-400/40">•</span>
-              <Link href="/#contact" className="text-amber-300 hover:underline">
+              <Link href="/contact" className="text-amber-300 hover:underline">
                 {isHi ? "आश्रम से सीधा संपर्क" : isJa ? "アシュラムへのお問い合わせ" : "Contact the Ashram"}
               </Link>
             </div>
