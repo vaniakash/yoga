@@ -356,6 +356,10 @@ export function Footer() {
             <span className="text-amber-300/80 italic">
               {t('shanti_path')}
             </span>
+            <span className="hidden sm:inline text-amber-400/40">•</span>
+            <Link href="/admin/login" className="text-amber-400/40 hover:text-amber-300 transition-colors text-[11px]">
+              प्रशासन
+            </Link>
           </div>
 
           {/* Action Buttons & Back to Top */}

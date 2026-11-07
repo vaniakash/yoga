@@ -8,13 +8,13 @@ const intlMiddleware = createMiddleware(routing);
 export default function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Let NextAuth handle its own /api/auth/* routes
-  if (pathname.startsWith('/api/auth')) {
+  // Let all /api/* routes through without locale processing
+  if (pathname.startsWith('/api')) {
     return NextResponse.next();
   }
 
-  // Let the standalone /login page through without locale processing
-  if (pathname === '/login') {
+  // Let the standalone /login and /admin pages through without locale processing
+  if (pathname === '/login' || pathname.startsWith('/admin')) {
     return NextResponse.next();
   }
 
@@ -24,7 +24,7 @@ export default function proxy(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all paths except Next.js internals, static files, and api/auth
-    '/((?!_next|_vercel|api/auth|.*\\..*).*)',
+    // Match all paths except Next.js internals, static files, and api
+    '/((?!_next|_vercel|api|.*\\..*).*)',
   ],
 };

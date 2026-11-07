@@ -40,15 +40,29 @@ export default function ContactPage() {
   });
 
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleFormSubmit = (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await fetch('/api/inquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.error("Failed to save inquiry:", err);
+    } finally {
+      setIsSubmitting(false);
+      setFormSubmitted(true);
+    }
+
     const mailtoSubject = encodeURIComponent(`Shridhyan Enrollment Inquiry: ${formData.course} - ${formData.name}`);
     const mailtoBody = encodeURIComponent(
       `Name: ${formData.name}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nSelected Course/Subject: ${formData.course}\nMessage:\n${formData.message}`
     );
     window.location.href = `mailto:shridhyan.com@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-    setFormSubmitted(true);
   };
 
   const faqItems = [
@@ -380,3 +394,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

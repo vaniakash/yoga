@@ -1,0 +1,29 @@
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { ADMIN_COOKIE_NAME } from "@/lib/adminAuth";
+
+export async function POST() {
+  const cookieStore = await cookies();
+  cookieStore.set(ADMIN_COOKIE_NAME, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
+
+  return NextResponse.json({ success: true, message: "Logged out" });
+}
+
+export async function GET() {
+  const cookieStore = await cookies();
+  cookieStore.set(ADMIN_COOKIE_NAME, "", {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+    sameSite: "lax",
+    maxAge: 0,
+    path: "/",
+  });
+
+  return NextResponse.redirect(new URL("/admin/login", "http://localhost:3000"));
+}

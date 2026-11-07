@@ -340,6 +340,16 @@ export function Navbar() {
                       {session.user?.email}
                     </p>
                   </div>
+                  {session.user?.email === "shridhyan108@gmail.com" && (
+                    <Link
+                      href="/admin"
+                      onClick={() => setUserMenuOpen(false)}
+                      className="flex items-center gap-2 w-full px-3.5 py-2 text-xs text-amber-700 dark:text-amber-300 hover:bg-surface-container dark:hover:bg-[#143a28] transition-colors border-b border-outline-variant/10 font-semibold"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                      <span>प्रशासनिक पैनल (Admin)</span>
+                    </Link>
+                  )}
                   <button
                     onClick={() => {
                       setUserMenuOpen(false);
