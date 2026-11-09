@@ -6,6 +6,7 @@ import {
   MapPin,
   Mail,
   Phone,
+  PhoneCall,
   Compass,
   ChevronDown,
   AlertCircle,
@@ -158,6 +159,33 @@ export default function ContactPage() {
                   उत्तरकाशी, उत्तराखण्ड 249135 • भारत
                 </span>
               </div>
+            </div>
+
+            {/* Direct Phone & Calling Card */}
+            <div className="bg-[#faf7f0] border border-amber-300/60 rounded-2xl p-6 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-3.5">
+                <div className="w-11 h-11 rounded-xl bg-[#6b2a0c] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <PhoneCall className="w-5 h-5 text-amber-300" />
+                </div>
+                <div>
+                  <span className={`text-[11px] font-bold text-amber-800 tracking-wider uppercase block ${isHi ? 'font-devanagari' : ''}`}>
+                    {isHi ? "प्रत्यक्ष आश्रम संपर्क फोन" : "Direct Ashram Helpline"}
+                  </span>
+                  <a
+                    href="tel:+919301605957"
+                    className="text-lg sm:text-xl font-bold text-[#092217] hover:text-amber-700 transition-colors font-sans"
+                  >
+                    +91 93016 05957
+                  </a>
+                </div>
+              </div>
+              <a
+                href="tel:+919301605957"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#6b2a0c] hover:bg-[#521f07] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-95"
+              >
+                <PhoneCall className="w-4 h-4 text-amber-300" />
+                <span className={isHi ? 'font-devanagari' : ''}>{isHi ? "अभी कॉल करें" : "Call Now"}</span>
+              </a>
             </div>
 
             {/* How to Reach Guide */}

@@ -15,7 +15,10 @@ import {
   Wind,
   Flower2,
   BookOpen,
-  Compass
+  Compass,
+  Phone,
+  PhoneCall,
+  MapPin
 } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 
@@ -94,6 +97,56 @@ export function Navbar() {
 
   return (
     <header className="bg-surface/95 dark:bg-[#061910]/95 backdrop-blur-md text-primary dark:text-[#fcf9f3] docked full-width top-0 sticky z-50 shadow-sm border-b border-amber-500/20">
+      {/* ========================================================================= */}
+      {/* TOP UTILITY & INFO BAR (Shridhyan Ashram • Phone, Location & Call Button) */}
+      {/* ========================================================================= */}
+      <div className="bg-[#6b2a0c] dark:bg-[#4a1c06] text-white border-b border-amber-950/40 text-xs py-1.5 sm:py-2 px-4 sm:px-6 md:px-margin">
+        <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-3">
+          
+          {/* Left: General Name / Estd Text */}
+          <div className="flex items-center gap-2">
+            <span className={`font-serif tracking-wide text-xs sm:text-[13px] text-amber-100 font-semibold truncate ${isHi ? 'font-devanagari' : ''}`}>
+              {t('top_bar_title')}
+            </span>
+          </div>
+
+          {/* Right: Phone, Location & Call Button */}
+          <div className="flex items-center gap-2.5 sm:gap-4 md:gap-5 flex-shrink-0">
+            {/* Phone Number */}
+            <a
+              href="tel:+919301605957"
+              className="flex items-center gap-1.5 text-white/95 hover:text-amber-200 transition-colors font-medium text-xs sm:text-[13px] group"
+              title="Call Shridhyan Ashram"
+            >
+              <Phone className="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform" />
+              <span className="tracking-wide font-sans">+91 93016 05957</span>
+            </a>
+
+            {/* Separator */}
+            <span className="text-white/30 hidden md:inline">|</span>
+
+            {/* Location Link */}
+            <Link
+              href="/contact"
+              className="hidden md:flex items-center gap-1.5 text-white/90 hover:text-amber-200 transition-colors text-xs sm:text-[13px] group"
+            >
+              <MapPin className="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform" />
+              <span className={isHi ? 'font-devanagari' : ''}>{t('top_bar_location')}</span>
+            </Link>
+
+            {/* Dedicated Call Button (Like Brochure Button in reference) */}
+            <a
+              href="tel:+919301605957"
+              className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-md bg-[#541f08] hover:bg-[#3f1604] border border-white/25 hover:border-amber-400/50 text-white font-semibold text-[11px] sm:text-xs tracking-wider transition-all shadow-2xs active:scale-95 group"
+            >
+              <PhoneCall className="w-3 h-3 text-amber-300 group-hover:animate-pulse" />
+              <span className={isHi ? 'font-devanagari' : ''}>{t('top_bar_call_btn')}</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
       <div className="flex justify-between items-center w-full px-6 md:px-margin max-w-7xl mx-auto h-20">
         
         {/* Brand Logo & Name */}

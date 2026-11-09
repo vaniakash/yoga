@@ -11,6 +11,7 @@ import {
   ShieldCheck,
   ChevronRight,
   ExternalLink,
+  Phone,
 } from 'lucide-react';
 
 export function Footer() {
@@ -283,6 +284,26 @@ export function Footer() {
                     {t('address_short')}
                   </span>
                 </div>
+
+                <a
+                  href="tel:+919301605957"
+                  className="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-amber-400/40 transition-colors duration-200 group"
+                >
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-7 h-7 rounded-lg bg-amber-400/20 text-amber-300 flex items-center justify-center">
+                      <Phone className="w-4 h-4" />
+                    </div>
+                    <div className="text-left">
+                      <p className={`text-[11px] text-amber-200/70 leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                        {isHi ? "आश्रम संपर्क फोन" : "Ashram Contact Phone"}
+                      </p>
+                      <p className="text-xs font-semibold text-[#fcf9f3] mt-0.5 font-sans">
+                        +91 93016 05957
+                      </p>
+                    </div>
+                  </div>
+                  <ChevronRight className="w-4 h-4 text-amber-400/60 group-hover:text-amber-300 group-hover:translate-x-1 transition-all" />
+                </a>
 
                 <a
                   href="mailto:shridhyan.com@gmail.com"
