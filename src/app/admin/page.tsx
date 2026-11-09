@@ -27,8 +27,28 @@ import {
   Save,
   MessageSquare,
   Eye,
-  Check
+  Check,
+  Plus,
+  MapPin
 } from "lucide-react";
+
+export interface AshramEvent {
+  _id: string;
+  title: string;
+  subtitle?: string;
+  category: string;
+  startDate?: string;
+  endDate?: string;
+  dateDisplay?: string;
+  time?: string;
+  location?: string;
+  description?: string;
+  capacity?: string;
+  status: "active" | "draft" | "past" | "cancelled";
+  registrationOpen: boolean;
+  featured?: boolean;
+  createdAt?: string;
+}
 
 interface Inquiry {
   _id: string;
@@ -57,35 +77,60 @@ interface Stats {
   newInquiries: number;
   enrolledCount: number;
   totalUsers: number;
+  totalEvents?: number;
+  activeEvents?: number;
 }
 
 export default function AdminDashboardPage() {
   const router = useRouter();
 
   // Navigation & View States
-  const [activeTab, setActiveTab] = useState<"inquiries" | "courses" | "users" | "settings">("inquiries");
+  const [activeTab, setActiveTab] = useState<"inquiries" | "events" | "courses" | "users" | "settings">("inquiries");
   const [statusFilter, setStatusFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
 
   // Data States
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
+  const [events, setEvents] = useState<AshramEvent[]>([]);
   const [users, setUsers] = useState<UserItem[]>([]);
   const [stats, setStats] = useState<Stats>({
     totalInquiries: 0,
     newInquiries: 0,
     enrolledCount: 0,
     totalUsers: 0,
+    totalEvents: 0,
+    activeEvents: 0,
   });
 
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
 
-  // Modal / Detail States
+  // Inquiry Modal / Detail States
   const [selectedInquiry, setSelectedInquiry] = useState<Inquiry | null>(null);
   const [modalNotes, setModalNotes] = useState("");
   const [modalStatus, setModalStatus] = useState<Inquiry["status"]>("new");
   const [isSavingModal, setIsSavingModal] = useState(false);
   const [saveSuccessMessage, setSaveSuccessMessage] = useState(false);
+
+  // Event Modal States
+  const [eventModalOpen, setEventModalOpen] = useState(false);
+  const [editingEvent, setEditingEvent] = useState<AshramEvent | null>(null);
+  const [eventForm, setEventForm] = useState({
+    title: "",
+    subtitle: "",
+    category: "साधना शिविर",
+    dateDisplay: "",
+    startDate: "",
+    endDate: "",
+    time: "प्रातः ०६:०० – सायं ०७:३०",
+    location: "श्रीध्यान आश्रम, उत्तरकाशी, उत्तराखण्ड",
+    description: "",
+    capacity: "25 साधक",
+    status: "active" as AshramEvent["status"],
+    registrationOpen: true,
+  });
+  const [isSavingEvent, setIsSavingEvent] = useState(false);
+  const [eventSaveSuccess, setEventSaveSuccess] = useState(false);
 
   // Authenticate & Load Data
   const loadData = useCallback(async () => {
@@ -120,6 +165,13 @@ export default function AdminDashboardPage() {
       if (usersData.success) {
         setUsers(usersData.users);
       }
+
+      // 5. Fetch events (admin: all=true)
+      const eventsRes = await fetch("/api/events?all=true");
+      const eventsData = await eventsRes.json();
+      if (eventsData.success && Array.isArray(eventsData.events)) {
+        setEvents(eventsData.events);
+      }
     } catch (err) {
       console.error("[Dashboard Load Error]:", err);
     } finally {
@@ -132,7 +184,7 @@ export default function AdminDashboardPage() {
     loadData();
   }, [loadData]);
 
-  // Open detail modal
+  // Open detail modal for Inquiry
   const handleOpenModal = (inq: Inquiry) => {
     setSelectedInquiry(inq);
     setModalStatus(inq.status);
@@ -140,13 +192,13 @@ export default function AdminDashboardPage() {
     setSaveSuccessMessage(false);
   };
 
-  // Close modal
+  // Close Inquiry Modal
   const handleCloseModal = () => {
     setSelectedInquiry(null);
     setSaveSuccessMessage(false);
   };
 
-  // Save Modal changes
+  // Save Modal changes for Inquiry
   const handleSaveModal = async () => {
     if (!selectedInquiry) return;
     setIsSavingModal(true);
@@ -162,7 +214,6 @@ export default function AdminDashboardPage() {
       });
 
       if (res.ok) {
-        // Update local state
         setInquiries((prev) =>
           prev.map((item) =>
             item._id === selectedInquiry._id
@@ -177,7 +228,6 @@ export default function AdminDashboardPage() {
         setSaveSuccessMessage(true);
         setTimeout(() => setSaveSuccessMessage(false), 2500);
 
-        // Refresh stats
         const statsRes = await fetch("/api/admin/stats");
         const statsData = await statsRes.json();
         if (statsData.success) setStats(statsData.stats);
@@ -204,7 +254,6 @@ export default function AdminDashboardPage() {
             item._id === id ? { ...item, status: newStatus } : item
           )
         );
-        // Refresh stats
         const statsRes = await fetch("/api/admin/stats");
         const statsData = await statsRes.json();
         if (statsData.success) setStats(statsData.stats);
@@ -230,7 +279,6 @@ export default function AdminDashboardPage() {
         if (selectedInquiry?._id === id) {
           handleCloseModal();
         }
-        // Refresh stats
         const statsRes = await fetch("/api/admin/stats");
         const statsData = await statsRes.json();
         if (statsData.success) setStats(statsData.stats);
@@ -240,7 +288,134 @@ export default function AdminDashboardPage() {
     }
   };
 
-  // Export to CSV
+  // =========================================================================
+  // EVENT MANAGEMENT HANDLERS
+  // =========================================================================
+
+  const handleOpenEventModal = (ev?: AshramEvent) => {
+    if (ev) {
+      setEditingEvent(ev);
+      setEventForm({
+        title: ev.title,
+        subtitle: ev.subtitle || "",
+        category: ev.category || "साधना शिविर",
+        dateDisplay: ev.dateDisplay || "",
+        startDate: ev.startDate || "",
+        endDate: ev.endDate || "",
+        time: ev.time || "प्रातः ०६:०० – सायं ०७:३०",
+        location: ev.location || "श्रीध्यान आश्रम, उत्तरकाशी, उत्तराखण्ड",
+        description: ev.description || "",
+        capacity: ev.capacity || "25 साधक",
+        status: ev.status || "active",
+        registrationOpen: ev.registrationOpen !== false,
+      });
+    } else {
+      setEditingEvent(null);
+      setEventForm({
+        title: "",
+        subtitle: "",
+        category: "साधना शिविर",
+        dateDisplay: "",
+        startDate: "",
+        endDate: "",
+        time: "प्रातः ०६:०० – सायं ०७:३०",
+        location: "श्रीध्यान आश्रम, उत्तरकाशी, उत्तराखण्ड",
+        description: "",
+        capacity: "25 साधक",
+        status: "active",
+        registrationOpen: true,
+      });
+    }
+    setEventSaveSuccess(false);
+    setEventModalOpen(true);
+  };
+
+  const handleSaveEvent = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!eventForm.title.trim()) return;
+    setIsSavingEvent(true);
+
+    try {
+      const url = editingEvent ? `/api/events/${editingEvent._id}` : "/api/events";
+      const method = editingEvent ? "PATCH" : "POST";
+
+      const res = await fetch(url, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(eventForm),
+      });
+
+      if (res.ok) {
+        setEventSaveSuccess(true);
+        // Refresh events
+        const eventsRes = await fetch("/api/events?all=true");
+        const eventsData = await eventsRes.json();
+        if (eventsData.success && Array.isArray(eventsData.events)) {
+          setEvents(eventsData.events);
+        }
+        // Refresh stats
+        const statsRes = await fetch("/api/admin/stats");
+        const statsData = await statsRes.json();
+        if (statsData.success) setStats(statsData.stats);
+
+        setTimeout(() => {
+          setEventModalOpen(false);
+          setEventSaveSuccess(false);
+        }, 1000);
+      }
+    } catch (err) {
+      console.error("Save event error:", err);
+    } finally {
+      setIsSavingEvent(false);
+    }
+  };
+
+  const handleToggleEventStatus = async (ev: AshramEvent) => {
+    const newStatus = ev.status === "active" ? "draft" : "active";
+    try {
+      const res = await fetch(`/api/events/${ev._id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: newStatus }),
+      });
+
+      if (res.ok) {
+        setEvents((prev) =>
+          prev.map((item) =>
+            item._id === ev._id ? { ...item, status: newStatus } : item
+          )
+        );
+        const statsRes = await fetch("/api/admin/stats");
+        const statsData = await statsRes.json();
+        if (statsData.success) setStats(statsData.stats);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteEvent = async (id: string) => {
+    if (!confirm("Are you sure you want to delete this event? It will be removed from the public website.")) {
+      return;
+    }
+
+    try {
+      const res = await fetch(`/api/events/${id}`, {
+        method: "DELETE",
+      });
+
+      if (res.ok) {
+        setEvents((prev) => prev.filter((item) => item._id !== id));
+        const statsRes = await fetch("/api/admin/stats");
+        const statsData = await statsRes.json();
+        if (statsData.success) setStats(statsData.stats);
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  // Export Inquiries to CSV
   const handleExportCSV = () => {
     if (inquiries.length === 0) return;
 
@@ -397,7 +572,7 @@ export default function AdminDashboardPage() {
             <button
               onClick={loadData}
               disabled={isRefreshing}
-              className="p-2 rounded-lg border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 transition-colors"
+              className="p-2 rounded-lg border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 transition-colors cursor-pointer"
               title="Refresh Data"
             >
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
@@ -425,6 +600,7 @@ export default function AdminDashboardPage() {
 
         {/* Navigation Tabs Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5 flex gap-1 sm:gap-4 overflow-x-auto no-scrollbar">
+          {/* Tab 1: Inquiries */}
           <button
             onClick={() => setActiveTab("inquiries")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
@@ -442,6 +618,21 @@ export default function AdminDashboardPage() {
             )}
           </button>
 
+          {/* Tab 2: Upcoming Events (NEW!) */}
+          <button
+            onClick={() => setActiveTab("events")}
+            className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
+              activeTab === "events"
+                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                : "border-transparent text-stone-400 hover:text-stone-200"
+            }`}
+          >
+            <Calendar className="w-4 h-4" />
+            <span>आगामी कार्यक्रम (Events)</span>
+            <span className="text-[11px] text-stone-400">({events.length})</span>
+          </button>
+
+          {/* Tab 3: Courses */}
           <button
             onClick={() => setActiveTab("courses")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
@@ -454,6 +645,7 @@ export default function AdminDashboardPage() {
             <span>पाठ्यक्रम व बैच (Courses)</span>
           </button>
 
+          {/* Tab 4: Users */}
           <button
             onClick={() => setActiveTab("users")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
@@ -467,6 +659,7 @@ export default function AdminDashboardPage() {
             <span className="text-[11px] text-stone-400">({stats.totalUsers})</span>
           </button>
 
+          {/* Tab 5: Settings */}
           <button
             onClick={() => setActiveTab("settings")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
@@ -526,21 +719,22 @@ export default function AdminDashboardPage() {
             </p>
           </div>
 
-          {/* Card 3: Enrolled Seekers */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-emerald-500/30 shadow-lg backdrop-blur-sm">
+          {/* Card 3: Events Status */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-amber-400/25 shadow-lg backdrop-blur-sm">
             <div className="flex items-center justify-between text-stone-400 mb-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-emerald-300">
-                स्वीकृत / नामांकित (Enrolled)
+              <span className="text-xs font-semibold uppercase tracking-wider text-amber-200/70">
+                सक्रिय कार्यक्रम (Active Events)
               </span>
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center">
-                <CheckCircle2 className="w-4 h-4" />
+              <div className="w-8 h-8 rounded-lg bg-amber-400/10 text-amber-300 flex items-center justify-center">
+                <Calendar className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-serif font-bold text-emerald-300">
-              {stats.enrolledCount}
+            <div className="text-2xl sm:text-3xl font-serif font-bold text-white">
+              {events.filter((e) => e.status === "active").length}
+              <span className="text-xs text-stone-400 font-normal ml-1">/ {events.length} total</span>
             </div>
             <p className="text-[11px] text-stone-400 mt-1">
-              Confirmed for upcoming cohorts
+              Live on website /upcoming
             </p>
           </div>
 
@@ -585,7 +779,7 @@ export default function AdminDashboardPage() {
                   <button
                     key={tab.id}
                     onClick={() => setStatusFilter(tab.id)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       statusFilter === tab.id
                         ? "bg-amber-500 text-stone-950 shadow-md font-bold"
                         : "bg-white/5 text-stone-300 hover:bg-white/10"
@@ -620,7 +814,7 @@ export default function AdminDashboardPage() {
                 <button
                   onClick={handleExportCSV}
                   disabled={inquiries.length === 0}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-amber-400/20 text-amber-200 border border-amber-400/30 text-xs font-semibold transition-colors disabled:opacity-40"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-amber-400/20 text-amber-200 border border-amber-400/30 text-xs font-semibold transition-colors disabled:opacity-40 cursor-pointer"
                   title="Export all inquiries to CSV"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -719,7 +913,7 @@ export default function AdminDashboardPage() {
                                 onChange={(e) =>
                                   handleQuickStatus(inq._id, e.target.value as Inquiry["status"])
                                 }
-                                className="bg-black/50 border border-white/15 rounded-lg px-2 py-1 text-[11px] text-stone-300 focus:outline-none focus:border-amber-400"
+                                className="bg-black/50 border border-white/15 rounded-lg px-2 py-1 text-[11px] text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
                               >
                                 <option value="new">New</option>
                                 <option value="contacted">Contacted</option>
@@ -730,7 +924,7 @@ export default function AdminDashboardPage() {
 
                               <button
                                 onClick={() => handleOpenModal(inq)}
-                                className="p-1.5 rounded-lg text-stone-400 hover:text-amber-300 hover:bg-white/5"
+                                className="p-1.5 rounded-lg text-stone-400 hover:text-amber-300 hover:bg-white/5 cursor-pointer"
                                 title="View Details"
                               >
                                 <Eye className="w-4 h-4" />
@@ -738,7 +932,7 @@ export default function AdminDashboardPage() {
 
                               <button
                                 onClick={() => handleDeleteInquiry(inq._id)}
-                                className="p-1.5 rounded-lg text-stone-500 hover:text-red-400 hover:bg-red-500/10"
+                                className="p-1.5 rounded-lg text-stone-500 hover:text-red-400 hover:bg-red-500/10 cursor-pointer"
                                 title="Delete Inquiry"
                               >
                                 <Trash2 className="w-4 h-4" />
@@ -757,7 +951,160 @@ export default function AdminDashboardPage() {
         )}
 
         {/* ===================================================================== */}
-        {/* TAB 2: COURSES & CAPACITY MANAGEMENT */}
+        {/* TAB 2: UPCOMING EVENTS MANAGEMENT (NEW!) */}
+        {/* ========================================================================= */}
+        {activeTab === "events" && (
+          <div className="space-y-6">
+            
+            {/* Header with Add Event Button */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#061910]/70 border border-white/10 backdrop-blur-sm">
+              <div>
+                <h2 className="text-xl font-serif font-bold text-white flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-amber-400" />
+                  <span>आश्रम कार्यक्रम प्रबंधन (Upcoming Events)</span>
+                </h2>
+                <p className="text-xs text-stone-400 mt-1">
+                  Control all public retreats and workshops on /upcoming and /events
+                </p>
+              </div>
+
+              <button
+                onClick={() => handleOpenEventModal()}
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs sm:text-sm tracking-wide shadow-md transition-all cursor-pointer"
+              >
+                <Plus className="w-4 h-4" />
+                <span>+ नया कार्यक्रम जोड़ें (Add Event)</span>
+              </button>
+            </div>
+
+            {/* Events Content */}
+            {events.length === 0 ? (
+              // Empty State in Admin
+              <div className="p-12 rounded-3xl bg-[#061910]/60 border border-white/10 text-center max-w-2xl mx-auto shadow-lg">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
+                  <Calendar className="w-8 h-8" />
+                </div>
+                <h3 className="text-lg font-serif font-bold text-white mb-2">
+                  वर्तमान में कोई कार्यक्रम नहीं है
+                </h3>
+                <p className="text-xs sm:text-sm text-stone-400 max-w-md mx-auto leading-relaxed mb-6 font-sans">
+                  जब तक आप यहाँ कोई कार्यक्रम नहीं जोड़ते, तब तक वेबसाइट के <strong className="text-amber-300">/upcoming</strong> और <strong className="text-amber-300">/events</strong> पृष्ठ पर साधकों को <em>“वर्तमान में कोई आगामी कार्यक्रम निर्धारित नहीं है”</em> का शांत संदेश दिखाई देगा।
+                </p>
+                <button
+                  onClick={() => handleOpenEventModal()}
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all cursor-pointer"
+                >
+                  <Plus className="w-4 h-4" />
+                  <span>पहला कार्यक्रम जोड़ें (Create First Event)</span>
+                </button>
+              </div>
+            ) : (
+              // Events List Grid
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {events.map((ev) => (
+                  <div
+                    key={ev._id}
+                    className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/25 hover:border-amber-400/50 shadow-lg flex flex-col justify-between transition-all"
+                  >
+                    <div>
+                      {/* Top Badges */}
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/15 text-amber-300 border border-amber-400/30">
+                          {ev.category}
+                        </span>
+
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => handleToggleEventStatus(ev)}
+                            className={`px-2.5 py-0.5 rounded-full text-[11px] font-bold border transition-colors cursor-pointer ${
+                              ev.status === "active"
+                                ? "bg-emerald-500/20 text-emerald-300 border-emerald-500/40"
+                                : "bg-stone-500/20 text-stone-400 border-stone-500/40"
+                            }`}
+                            title="Click to toggle Active/Draft"
+                          >
+                            {ev.status === "active" ? "● Active (Live)" : "○ Draft (Hidden)"}
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Title & Subtitle */}
+                      <h3 className="text-lg font-serif font-bold text-white mb-1">
+                        {ev.title}
+                      </h3>
+                      {ev.subtitle && (
+                        <p className="text-xs text-amber-300/80 mb-3 font-medium">
+                          {ev.subtitle}
+                        </p>
+                      )}
+
+                      {/* Info Pills */}
+                      <div className="space-y-1.5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs text-stone-300 mb-4 font-mono">
+                        {ev.dateDisplay && (
+                          <div className="flex items-center gap-2">
+                            <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                            <span>{ev.dateDisplay}</span>
+                          </div>
+                        )}
+                        {ev.time && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-3.5 h-3.5 text-amber-400" />
+                            <span>{ev.time}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                          <span className="truncate">{ev.location}</span>
+                        </div>
+                        {ev.capacity && (
+                          <div className="flex items-center gap-2">
+                            <Users className="w-3.5 h-3.5 text-amber-400" />
+                            <span>{ev.capacity}</span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Description preview */}
+                      {ev.description && (
+                        <p className="text-xs text-stone-400 line-clamp-2 leading-relaxed font-sans mb-4">
+                          {ev.description}
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Card Actions */}
+                    <div className="pt-3 border-t border-white/10 flex items-center justify-between">
+                      <span className="text-[11px] text-stone-500">
+                        {ev.registrationOpen ? "पंजीकरण खुला" : "पंजीकरण बंद"}
+                      </span>
+
+                      <div className="flex items-center gap-2">
+                        <button
+                          onClick={() => handleOpenEventModal(ev)}
+                          className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-stone-200 text-xs font-semibold border border-white/10 transition-colors cursor-pointer"
+                        >
+                          <Edit3 className="w-3.5 h-3.5" />
+                          <span>Edit</span>
+                        </button>
+                        <button
+                          onClick={() => handleDeleteEvent(ev._id)}
+                          className="p-1.5 rounded-lg text-stone-500 hover:text-red-400 hover:bg-red-500/10 transition-colors cursor-pointer"
+                          title="Delete Event"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+          </div>
+        )}
+
+        {/* ===================================================================== */}
+        {/* TAB 3: COURSES & CAPACITY MANAGEMENT */}
         {/* ===================================================================== */}
         {activeTab === "courses" && (
           <div className="space-y-6">
@@ -893,7 +1240,7 @@ export default function AdminDashboardPage() {
         )}
 
         {/* ===================================================================== */}
-        {/* TAB 3: REGISTERED USERS */}
+        {/* TAB 4: REGISTERED USERS */}
         {/* ===================================================================== */}
         {activeTab === "users" && (
           <div className="space-y-6">
@@ -962,7 +1309,7 @@ export default function AdminDashboardPage() {
         )}
 
         {/* ===================================================================== */}
-        {/* TAB 4: ASHRAM SETTINGS & SYSTEM INFO */}
+        {/* TAB 5: ASHRAM SETTINGS & SYSTEM INFO */}
         {/* ===================================================================== */}
         {activeTab === "settings" && (
           <div className="max-w-3xl space-y-6">
@@ -1036,7 +1383,7 @@ export default function AdminDashboardPage() {
               </div>
               <button
                 onClick={handleCloseModal}
-                className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-stone-300 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-stone-300 hover:text-white transition-colors cursor-pointer"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
@@ -1125,7 +1472,7 @@ export default function AdminDashboardPage() {
                         key={st}
                         type="button"
                         onClick={() => setModalStatus(st)}
-                        className={`py-2 px-2.5 rounded-xl text-xs font-semibold capitalize border transition-all ${
+                        className={`py-2 px-2.5 rounded-xl text-xs font-semibold capitalize border transition-all cursor-pointer ${
                           modalStatus === st
                             ? "bg-amber-500 text-stone-950 border-amber-400 font-bold shadow-md"
                             : "bg-black/30 text-stone-400 border-white/10 hover:border-white/30"
@@ -1168,7 +1515,7 @@ export default function AdminDashboardPage() {
               <button
                 type="button"
                 onClick={() => handleDeleteInquiry(selectedInquiry._id)}
-                className="text-xs text-red-400 hover:text-red-300 flex items-center gap-1.5 self-start sm:self-center"
+                className="text-xs text-red-400 hover:text-red-300 flex items-center gap-1.5 self-start sm:self-center cursor-pointer"
               >
                 <Trash2 className="w-3.5 h-3.5" />
                 <span>Delete Inquiry</span>
@@ -1178,7 +1525,7 @@ export default function AdminDashboardPage() {
                 <button
                   type="button"
                   onClick={handleCloseModal}
-                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-white/15 text-stone-300 hover:bg-white/5 text-xs font-semibold transition-colors"
+                  className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-white/15 text-stone-300 hover:bg-white/5 text-xs font-semibold transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1186,13 +1533,235 @@ export default function AdminDashboardPage() {
                   type="button"
                   onClick={handleSaveModal}
                   disabled={isSavingModal}
-                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isSavingModal ? "Saving..." : "Save Changes"}</span>
                 </button>
               </div>
             </div>
+
+          </div>
+        </div>
+      )}
+
+      {/* ========================================================================= */}
+      {/* EVENT CREATE / EDIT MODAL */}
+      {/* ========================================================================= */}
+      {eventModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
+          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl max-h-[90vh] overflow-y-auto">
+            
+            {/* Modal Header */}
+            <div className="flex items-start justify-between pb-4 border-b border-white/10">
+              <div>
+                <span className="text-[11px] font-mono text-amber-300 uppercase tracking-widest block mb-1">
+                  {editingEvent ? "Edit Event" : "Create New Event"}
+                </span>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  {editingEvent ? "कार्यक्रम संपादित करें" : "नया आगामी कार्यक्रम जोड़ें"}
+                </h3>
+              </div>
+              <button
+                onClick={() => setEventModalOpen(false)}
+                className="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-stone-300 hover:text-white transition-colors cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Event Form */}
+            <form onSubmit={handleSaveEvent} className="py-5 space-y-4">
+              
+              {/* Event Title */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  Event Title (कार्यक्रम का नाम) *
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={eventForm.title}
+                  onChange={(e) => setEventForm({ ...eventForm, title: e.target.value })}
+                  placeholder="e.g. हिमालयी मौन एवं ध्यान साधना शिविर"
+                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 font-serif"
+                />
+              </div>
+
+              {/* Subtitle & Category */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Subtitle (उपशीर्षक)
+                  </label>
+                  <input
+                    type="text"
+                    value={eventForm.subtitle}
+                    onChange={(e) => setEventForm({ ...eventForm, subtitle: e.target.value })}
+                    placeholder="e.g. 7-दिवसीय आवासीय साधना"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Category (श्रेणी)
+                  </label>
+                  <select
+                    value={eventForm.category}
+                    onChange={(e) => setEventForm({ ...eventForm, category: e.target.value })}
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white focus:outline-none focus:border-amber-400 cursor-pointer"
+                  >
+                    <option value="साधना शिविर">साधना शिविर (Retreat)</option>
+                    <option value="वैदिक कार्यशाला">वैदिक कार्यशाला (Workshop)</option>
+                    <option value="मौन साधना">मौन साधना (Silence)</option>
+                    <option value="विशेष सत्संग">विशेष सत्संग (Satsang)</option>
+                    <option value="दीक्षा अनुष्ठान">दीक्षा अनुष्ठान (Initiation)</option>
+                  </select>
+                </div>
+              </div>
+
+              {/* Date Display & Time */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Dates Display Text (तिथियाँ)
+                  </label>
+                  <input
+                    type="text"
+                    value={eventForm.dateDisplay}
+                    onChange={(e) => setEventForm({ ...eventForm, dateDisplay: e.target.value })}
+                    placeholder="e.g. 15 – 21 दिसंबर 2026"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 font-mono"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Daily Schedule Time (समय)
+                  </label>
+                  <input
+                    type="text"
+                    value={eventForm.time}
+                    onChange={(e) => setEventForm({ ...eventForm, time: e.target.value })}
+                    placeholder="e.g. प्रातः ०६:०० – सायं ०७:३०"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+              </div>
+
+              {/* Location & Capacity */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Venue / Location (स्थान)
+                  </label>
+                  <input
+                    type="text"
+                    value={eventForm.location}
+                    onChange={(e) => setEventForm({ ...eventForm, location: e.target.value })}
+                    placeholder="श्रीध्यान आश्रम, उत्तरकाशी"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                    Capacity (साधक संख्या)
+                  </label>
+                  <input
+                    type="text"
+                    value={eventForm.capacity}
+                    onChange={(e) => setEventForm({ ...eventForm, capacity: e.target.value })}
+                    placeholder="e.g. 25 साधक (सीमित सीटें)"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                  />
+                </div>
+              </div>
+
+              {/* Status & Registration Toggle */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3.5 rounded-xl bg-black/30 border border-white/10 items-center">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1">
+                    Publication Status:
+                  </label>
+                  <select
+                    value={eventForm.status}
+                    onChange={(e) =>
+                      setEventForm({
+                        ...eventForm,
+                        status: e.target.value as AshramEvent["status"],
+                      })
+                    }
+                    className="w-full p-2 rounded-lg bg-black/60 border border-white/20 text-xs text-white focus:outline-none focus:border-amber-400 cursor-pointer"
+                  >
+                    <option value="active">Active (सार्वजनिक वेबसाइट पर दिखेगा)</option>
+                    <option value="draft">Draft (ड्राफ्ट - अभी छिपाएं)</option>
+                    <option value="past">Past (संपन्न)</option>
+                    <option value="cancelled">Cancelled (स्थगित)</option>
+                  </select>
+                </div>
+
+                <div className="flex items-center gap-3 pt-2 sm:pt-4">
+                  <input
+                    type="checkbox"
+                    id="registrationOpen"
+                    checked={eventForm.registrationOpen}
+                    onChange={(e) =>
+                      setEventForm({ ...eventForm, registrationOpen: e.target.checked })
+                    }
+                    className="w-4 h-4 rounded text-amber-500 focus:ring-0 focus:outline-none cursor-pointer"
+                  />
+                  <label htmlFor="registrationOpen" className="text-xs text-stone-200 font-semibold cursor-pointer">
+                    Registration Open (पंजीकरण खुला है)
+                  </label>
+                </div>
+              </div>
+
+              {/* Description */}
+              <div>
+                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  Detailed Description (विवरण व नियम)
+                </label>
+                <textarea
+                  rows={4}
+                  value={eventForm.description}
+                  onChange={(e) => setEventForm({ ...eventForm, description: e.target.value })}
+                  placeholder="कार्यक्रम की साधना पद्धति, पात्रता एवं अन्य नियम..."
+                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 resize-none font-sans"
+                />
+              </div>
+
+              {/* Success Alert */}
+              {eventSaveSuccess && (
+                <div className="p-3 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs flex items-center gap-2">
+                  <Check className="w-4 h-4" />
+                  <span>कार्यक्रम सफलतापूर्वक सहेजा गया! (Event saved successfully!)</span>
+                </div>
+              )}
+
+              {/* Actions */}
+              <div className="pt-4 border-t border-white/10 flex items-center justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setEventModalOpen(false)}
+                  className="px-4 py-2.5 rounded-xl border border-white/15 text-stone-300 hover:bg-white/5 text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  Cancel
+                </button>
+
+                <button
+                  type="submit"
+                  disabled={isSavingEvent}
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <Save className="w-3.5 h-3.5" />
+                  <span>{isSavingEvent ? "Saving..." : editingEvent ? "Update Event" : "Publish Event"}</span>
+                </button>
+              </div>
+
+            </form>
 
           </div>
         </div>

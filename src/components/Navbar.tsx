@@ -153,6 +153,18 @@ export function Navbar() {
             {t('tapobhoomi')}
           </Link>
 
+          {/* Upcoming Events */}
+          <Link
+            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+              pathname === '/events' || pathname === '/upcoming'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+            }`}
+            href="/events"
+          >
+            {t('events')}
+          </Link>
+
           {/* Courses Dropdown */}
           <div
             ref={dropdownRef}
@@ -433,6 +445,19 @@ export function Navbar() {
             href="/tapobhoomi"
           >
             {t('tapobhoomi')}
+          </Link>
+
+          {/* Upcoming Events */}
+          <Link
+            onClick={() => setMobileMenuOpen(false)}
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/events' || pathname === '/upcoming'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
+            href="/events"
+          >
+            {t('events')}
           </Link>
 
           {/* Expandable Courses Accordion on Mobile */}

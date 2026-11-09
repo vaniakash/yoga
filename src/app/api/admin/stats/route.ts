@@ -11,11 +11,13 @@ export async function GET() {
 
     const db = client.db("shridhyan_ashram");
 
-    const [totalInquiries, newInquiries, enrolledCount, totalUsers] = await Promise.all([
+    const [totalInquiries, newInquiries, enrolledCount, totalUsers, totalEvents, activeEvents] = await Promise.all([
       db.collection("inquiries").countDocuments(),
       db.collection("inquiries").countDocuments({ status: "new" }),
       db.collection("inquiries").countDocuments({ status: "enrolled" }),
       db.collection("users").countDocuments(),
+      db.collection("events").countDocuments(),
+      db.collection("events").countDocuments({ status: "active" }),
     ]);
 
     const recentInquiries = await db
@@ -32,6 +34,8 @@ export async function GET() {
         newInquiries,
         enrolledCount,
         totalUsers,
+        totalEvents,
+        activeEvents,
         recentInquiries: recentInquiries.map((doc) => ({
           ...doc,
           _id: doc._id.toString(),
@@ -46,3 +50,4 @@ export async function GET() {
     );
   }
 }
+
