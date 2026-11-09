@@ -129,28 +129,16 @@ export function Navbar() {
             {t('home')}
           </Link>
 
-          {/* Guru Parampara */}
+          {/* About (Combined Ashram & Guru Parampara) */}
           <Link
             className={`font-medium tracking-wide text-sm py-1 transition-colors ${
-              pathname === '/guru-parampara'
+              pathname === '/about' || pathname === '/guru-parampara' || pathname === '/tapobhoomi'
                 ? 'text-amber-600 dark:text-amber-300 font-semibold'
                 : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
             }`}
-            href="/guru-parampara"
+            href="/about"
           >
-            {t('guru_parampara')}
-          </Link>
-
-          {/* Tapobhoomi */}
-          <Link
-            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
-              pathname === '/tapobhoomi'
-                ? 'text-amber-600 dark:text-amber-300 font-semibold'
-                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
-            }`}
-            href="/tapobhoomi"
-          >
-            {t('tapobhoomi')}
+            {t('about')}
           </Link>
 
           {/* Upcoming Events */}
@@ -421,30 +409,17 @@ export function Navbar() {
             {t('home')}
           </Link>
 
-          {/* Guru Parampara */}
+          {/* About (Combined Ashram & Guru Parampara) */}
           <Link
             onClick={() => setMobileMenuOpen(false)}
             className={`block font-medium text-base py-1.5 ${
-              pathname === '/guru-parampara'
+              pathname === '/about' || pathname === '/guru-parampara' || pathname === '/tapobhoomi'
                 ? 'text-amber-600 dark:text-amber-300 font-semibold'
                 : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
             }`}
-            href="/guru-parampara"
+            href="/about"
           >
-            {t('guru_parampara')}
-          </Link>
-
-          {/* Tapobhoomi */}
-          <Link
-            onClick={() => setMobileMenuOpen(false)}
-            className={`block font-medium text-base py-1.5 ${
-              pathname === '/tapobhoomi'
-                ? 'text-amber-600 dark:text-amber-300 font-semibold'
-                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
-            }`}
-            href="/tapobhoomi"
-          >
-            {t('tapobhoomi')}
+            {t('about')}
           </Link>
 
           {/* Upcoming Events */}

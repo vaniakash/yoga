@@ -1,6 +1,7 @@
 {
   "Navbar": {
     "home": "Home",
+    "about": "About",
     "guru_parampara": "Guru Parampara",
     "tapobhoomi": "Tapobhoomi",
     "events": "Upcoming Events",
@@ -329,6 +330,7 @@
     "chant_pill": "🕉️ Hari Om Tat Sat • Jai Gurudev",
     "portals_title": "Course & Portals",
     "link_home": "Home",
+    "link_about": "About Ashram",
     "link_course": "Vedic Bio Healing",
     "link_curriculum": "Curriculum",
     "link_parampara": "Guru Parampara",

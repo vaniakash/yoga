@@ -1,6 +1,7 @@
 {
   "Navbar": {
     "home": "मुखपृष्ठ",
+    "about": "आश्रम परिचय",
     "guru_parampara": "गुरु-परंपरा",
     "tapobhoomi": "तपोभूमि",
     "events": "आगामी कार्यक्रम",
@@ -329,6 +330,7 @@
     "chant_pill": "🕉️ हरिओम् तत्सत् 🙏 जय गुरुदेव",
     "portals_title": "पाठ्यक्रम एवं दर्शन",
     "link_home": "मुखपृष्ठ",
+    "link_about": "आश्रम परिचय (गुरु एवं तपोभूमि)",
     "link_course": "वैदिक बायो हीलिंग",
     "link_curriculum": "पाठ्यक्रम",
     "link_parampara": "गुरु-परंपरा",

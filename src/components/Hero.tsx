@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { ArrowRight, MapPin } from "lucide-react";
 
 interface HeroProps {
@@ -74,15 +75,14 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
               <ArrowRight className="w-3.5 h-3.5 text-amber-300 transform group-hover:translate-x-1 transition-transform" />
             </a>
 
-            {/* Secondary Button */}
-            <a
-              href="#guide"
-              onClick={(e) => handleScroll(e, "guide")}
+            {/* Secondary Button -> Links to /about */}
+            <Link
+              href="/about"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 sm:py-3 rounded-xl bg-white hover:bg-[#f6f2e8] text-[#092217] text-xs sm:text-sm font-semibold border border-[#d6cdb9] hover:border-amber-600/40 shadow-xs hover:shadow-sm transition-all duration-200 group"
             >
               <span className={isHi ? "font-devanagari" : ""}>{tHero("btn_about")}</span>
               <ArrowRight className="w-3.5 h-3.5 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -186,14 +186,13 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
                 </div>
 
                 {/* 6. Gold Pill CTA Button: आश्रम के बारे में जानें → */}
-                <a
-                  href="#guide"
-                  onClick={(e) => handleScroll(e, "guide")}
+                <Link
+                  href="/about"
                   className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 hover:from-amber-300 hover:via-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs sm:text-sm shadow-lg hover:shadow-amber-500/30 transition-all duration-200 group active:scale-95"
                 >
                   <span className={isHi ? "font-devanagari" : ""}>{tHero("banner_btn")}</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </a>
+                </Link>
 
               </div>
             </div>

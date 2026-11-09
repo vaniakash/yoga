@@ -1,6 +1,7 @@
 {
   "Navbar": {
     "home": "ホーム",
+    "about": "アシュラムについて",
     "guru_parampara": "グル・パランパラ",
     "tapobhoomi": "タポブーミ",
     "events": "今後のイベント",
@@ -329,6 +330,7 @@
     "chant_pill": "🕉️ ハリ・オーム・タット・サット 🙏 ジャイ・グルデブ",
     "portals_title": "コースと案内",
     "link_home": "ホーム",
+    "link_about": "アシュラムについて",
     "link_course": "ヴェーダ・バイオヒーリング",
     "link_curriculum": "カリキュラム",
     "link_parampara": "グル・パランパラ",

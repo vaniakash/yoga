@@ -158,20 +158,11 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/guru-parampara"
+                  href="/about"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span>{t('link_parampara')}</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/tapobhoomi"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span>{t('link_tapobhoomi')}</span>
+                  <span>{t('link_about')}</span>
                 </Link>
               </li>
               <li>
@@ -194,7 +185,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tapobhoomi#mauna"
+                  href="/about#mauna"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
@@ -203,7 +194,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tapobhoomi#gallery"
+                  href="/about#gallery"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />

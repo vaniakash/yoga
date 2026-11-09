@@ -206,10 +206,10 @@ export default function HomePage() {
                 </span>
                 <span className="text-stone-300">•</span>
                 <Link
-                  href="/guru-parampara"
+                  href="/about#lineage"
                   className="text-amber-800 hover:text-amber-600 font-semibold underline underline-offset-4 flex items-center gap-1 transition-colors"
                 >
-                  <span>{isHi ? "गुरु परंपरा देखें" : "View Guru Parampara"}</span>
+                  <span>{isHi ? "गुरु परंपरा एवं आश्रम परिचय देखें" : "View Guru Lineage & Ashram About"}</span>
                   <ArrowRight className="w-3 h-3" />
                 </Link>
               </div>
