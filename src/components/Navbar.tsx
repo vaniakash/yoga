@@ -69,21 +69,21 @@ export function Navbar() {
       title: t('course_vedic'),
       desc: t('course_vedic_desc'),
       href: '/courses/vedic-bio-healing',
-      icon: Sparkles,
+      icon: '/images/maharaj/vedicbio_healing.svg',
       active: pathname.includes('/courses/vedic-bio-healing')
     },
     {
       title: t('course_mtt'),
       desc: t('course_mtt_desc'),
       href: '/courses/meditation-teacher-training',
-      icon: Wind,
+      icon: '/images/maharaj/maditation.svg',
       active: pathname.includes('/courses/meditation-teacher-training')
     },
     {
       title: t('course_shrividya'),
       desc: t('course_shrividya_desc'),
       href: '/courses/shri-vidya',
-      icon: Flower2,
+      icon: '/images/maharaj/shreevidhya.svg',
       active: pathname.includes('/courses/shri-vidya')
     }
   ];
@@ -242,12 +242,16 @@ export function Navbar() {
                           : 'hover:bg-amber-500/10 text-on-surface dark:text-[#fcf9f3]'
                       }`}
                     >
-                      <div className={`w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors ${
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all p-1.5 border overflow-hidden ${
                         course.active
-                          ? 'bg-amber-500 text-[#061910]'
-                          : 'bg-amber-500/15 text-amber-600 dark:text-amber-300 group-hover:bg-amber-500 group-hover:text-[#061910]'
+                          ? 'bg-amber-500/20 border-amber-400 shadow-xs'
+                          : 'bg-amber-500/10 border-amber-400/25 group-hover:bg-amber-500/20 group-hover:border-amber-400/60'
                       }`}>
-                        <course.icon className="w-5 h-5" />
+                        <img
+                          src={course.icon}
+                          alt={course.title}
+                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                        />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between">
@@ -502,25 +506,34 @@ export function Navbar() {
             </button>
 
             {mobileCoursesOpen && (
-              <div className="pl-4 space-y-2 pt-1 pb-2">
+              <div className="pl-2 space-y-2 pt-1 pb-2">
                 {courseItems.map((course, idx) => (
                   <Link
                     key={idx}
                     href={course.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block p-2.5 rounded-lg transition-colors ${
+                    className={`flex items-start gap-3 p-2.5 rounded-xl transition-colors ${
                       course.active
                         ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 font-semibold border-l-2 border-amber-400'
                         : 'text-on-surface-variant dark:text-[#d0c9bc] hover:text-amber-500 dark:hover:text-amber-300'
                     }`}
                   >
-                    <div className="text-sm font-medium flex items-center justify-between">
-                      <span>{course.title}</span>
-                      {course.active && <span className="text-[10px] uppercase font-bold text-amber-400">Active</span>}
+                    <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-400/30 flex items-center justify-center flex-shrink-0 p-1 mt-0.5 overflow-hidden">
+                      <img
+                        src={course.icon}
+                        alt={course.title}
+                        className="w-full h-full object-contain"
+                      />
                     </div>
-                    <p className="text-xs text-on-surface-variant/70 dark:text-[#a09a8e] mt-0.5">
-                      {course.desc}
-                    </p>
+                    <div className="flex-1">
+                      <div className="text-sm font-medium flex items-center justify-between">
+                        <span>{course.title}</span>
+                        {course.active && <span className="text-[10px] uppercase font-bold text-amber-400">Active</span>}
+                      </div>
+                      <p className="text-xs text-on-surface-variant/70 dark:text-[#a09a8e] mt-0.5">
+                        {course.desc}
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>
