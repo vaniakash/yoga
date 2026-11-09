@@ -168,6 +168,15 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/ashram-glimpse"
+                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
+                >
+                  <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
+                  <span>{t('link_glimpse')}</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/events"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >

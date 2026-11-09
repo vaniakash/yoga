@@ -194,6 +194,18 @@ export function Navbar() {
             {t('about')}
           </Link>
 
+          {/* Ashram Glimpse */}
+          <Link
+            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+              pathname === '/ashram-glimpse' || pathname === '/ashram-glimps'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+            }`}
+            href="/ashram-glimpse"
+          >
+            {t('ashram_glimpse')}
+          </Link>
+
           {/* Upcoming Events */}
           <Link
             className={`font-medium tracking-wide text-sm py-1 transition-colors ${
@@ -477,6 +489,19 @@ export function Navbar() {
             href="/about"
           >
             {t('about')}
+          </Link>
+
+          {/* Ashram Glimpse */}
+          <Link
+            onClick={() => setMobileMenuOpen(false)}
+            className={`block font-medium text-base py-1.5 ${
+              pathname === '/ashram-glimpse' || pathname === '/ashram-glimps'
+                ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+            }`}
+            href="/ashram-glimpse"
+          >
+            {t('ashram_glimpse')}
           </Link>
 
           {/* Upcoming Events */}
