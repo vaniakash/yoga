@@ -32,27 +32,54 @@ export default function HomePage() {
   // Masterclass Modal State
   const [masterclassOpen, setMasterclassOpen] = useState(false);
 
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      window.history.pushState(null, "", `#${targetId}`);
+    }
+  };
+
   const coursesData = [
     {
       title: tTeach('c1_title'),
       category: tTeach('c1_category'),
-      desc: tTeach('c1_desc'),
+      desc: isHi
+        ? "अथर्ववेद काण्ड 4, सूक्त 13 पर आधारित पारंपरिक वैदिक शिक्षाओं, पवित्र मंत्रों और प्राण साधना का प्रामाणिक अध्ययन।"
+        : isJa
+        ? "アタルヴァ・ヴェーダ第13讃に基づく伝統的なヴェーダの教え、聖なるマントラ、プラーナ修練の本格的な入門。"
+        : "An authentic introduction to traditional Vedic teachings, sacred mantras, and prana sadhana based on Atharvaveda, Kanda 4, Sukta 13.",
       href: '/courses/vedic-bio-healing',
       image: '/images/ashram_courtyard.jpg',
+      icon: '/images/maharaj/vedicbio_healing.svg',
+      featured: false,
     },
     {
       title: tTeach('c2_title'),
       category: tTeach('c2_category'),
-      desc: tTeach('c2_desc'),
+      desc: isHi
+        ? "ध्यान की विभिन्न पद्धतियों, नियमित अभ्यास और ध्यान सत्रों के मार्गदर्शन से संबंधित आधारभूत अध्ययन कार्यक्रम।"
+        : isJa
+        ? "様々な瞑想技法、日々の修練、観想セッションの指導スキルを学ぶ基礎プログラム。"
+        : "A foundational study program exploring various meditation methods, disciplined daily practice, and guidance skills for contemplative sessions.",
       href: '/courses/meditation-teacher-training',
       image: '/images/meditation_hall.jpg',
+      icon: '/images/maharaj/maditation.svg',
+      featured: true,
     },
     {
       title: tTeach('c3_title'),
       category: tTeach('c3_category'),
-      desc: tTeach('c3_desc'),
+      desc: isHi
+        ? "श्रीविद्या परंपरा, उसके दर्शन, मंत्र-उपासना और श्रीचक्र के पारंपरिक आध्यात्मिक महत्व का गूढ़ अध्ययन।"
+        : isJa
+        ? "聖なるシュリ・ヴィディヤの系譜、シャクタ哲学、マントラ・ウパーサナ、シュリ・チャクラの重要性の探求。"
+        : "A deep study of the sacred Shri Vidya lineage, Shakta philosophy, mantra upasana, and the traditional spiritual significance of Shri Chakra.",
       href: '/courses/shri-vidya',
       image: '/images/sri_chakra.jpg',
+      icon: '/images/maharaj/shreevidhya.svg',
+      featured: false,
     },
   ];
 
@@ -222,90 +249,136 @@ export default function HomePage() {
       </section>
 
       {/* 3. OUR SPIRITUAL TEACHINGS / हमारे आध्यात्मिक पाठ्यक्रम */}
-      <section className="py-20 md:py-28 bg-[#fcfbf7] border-b border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="courses">
+      <section className="py-20 md:py-28 bg-[#faf8f5] border-b border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="courses">
         {/* Soft Ambient Warm Glow */}
         <div
           aria-hidden="true"
-          className="absolute top-1/3 right-0 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute top-1/4 right-0 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
         />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-margin relative z-10">
+        {/* Faded Mountain Silhouette at bottom behind CTA */}
+        <div
+          aria-hidden="true"
+          className="absolute bottom-0 inset-x-0 h-44 sm:h-56 pointer-events-none opacity-20 mix-blend-multiply select-none overflow-hidden -z-0"
+        >
+          <img
+            src="/images/himalaya_misty_peaks.jpg"
+            alt=""
+            className="w-full h-full object-cover object-bottom filter grayscale contrast-125"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#faf8f5]/40 to-[#faf8f5]" />
+        </div>
+
+        <div className="max-w-6xl mx-auto px-6 md:px-margin relative z-10">
           
           {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-800 text-xs font-bold tracking-[0.2em] uppercase mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
-              <span className={isHi ? 'font-devanagari' : ''}>{tTeach('label')}</span>
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            {/* Top Om Symbol with Divider Lines */}
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 text-[#c2410c]">
+              <span className="w-12 sm:w-16 h-px bg-[#c2410c]/30" />
+              <span className="text-2xl sm:text-3xl font-serif">ॐ</span>
+              <span className="w-12 sm:w-16 h-px bg-[#c2410c]/30" />
             </div>
+
+            {/* Category Tag */}
+            <p className={`text-xs sm:text-sm font-bold tracking-[0.25em] text-[#c2410c] uppercase mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+              {tTeach('label')}
+            </p>
             
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-4 ${isHi ? 'font-devanagari' : ''}`}>
-              {tTeach('heading')}
+            {/* Main Headline */}
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#1c2e24] tracking-tight leading-tight mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+              {isHi ? (
+                <>साधना, ध्यान और <span className="text-[#c2410c] italic font-serif">वैदिक ज्ञान</span> की यात्रा</>
+              ) : isJa ? (
+                <>修練・瞑想・<span className="text-[#c2410c] italic font-serif">ヴェーダの叡智</span>への旅</>
+              ) : (
+                <>A Journey of Sadhana,<br className="hidden sm:inline" /> Meditation & <span className="text-[#c2410c] italic font-serif">Vedic Wisdom</span></>
+              )}
             </h2>
             
-            <p className="text-stone-600 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+            {/* Subtitle */}
+            <p className="text-stone-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
               {tTeach('description')}
             </p>
           </div>
 
           {/* Three Course Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-            {coursesData.map((course, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl overflow-hidden border border-[#e8e2d4] hover:border-amber-400/50 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
-              >
-                <div>
-                  {/* Card Image */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-stone-100">
-                    <img
-                      src={course.image}
-                      alt={course.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-                    
-                    {/* Category Badge */}
-                    <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-900 border border-amber-400/30 shadow-sm flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3 text-amber-600" />
-                      <span className={isHi ? 'font-devanagari' : ''}>{course.category}</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+            {coursesData.map((course, idx) => {
+              const isFeatured = !!course.featured;
+              return (
+                <div
+                  key={idx}
+                  className={`rounded-3xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between group ${
+                    isFeatured
+                      ? 'bg-[#faf6ee] border-2 border-amber-400/80 shadow-md hover:shadow-xl'
+                      : 'bg-white border border-stone-200/90 shadow-xs hover:shadow-md'
+                  }`}
+                >
+                  <div>
+                    {/* Card Image */}
+                    <div className="relative aspect-[16/10] rounded-2xl overflow-hidden mb-5 bg-stone-100">
+                      <img
+                        src={course.image}
+                        alt={course.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      />
                     </div>
-                  </div>
 
-                  {/* Card Content */}
-                  <div className="p-6 sm:p-7">
-                    <h3 className={`text-xl sm:text-2xl font-serif font-bold text-[#092217] group-hover:text-amber-800 transition-colors mb-3 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
+                    {/* Custom SVG Icon */}
+                    <div className="mb-3.5 flex items-center">
+                      <img
+                        src={course.icon}
+                        alt=""
+                        className="w-7 h-7 sm:w-8 sm:h-8 object-contain"
+                      />
+                    </div>
+
+                    {/* Card Title */}
+                    <h3 className={`text-xl sm:text-2xl font-serif font-bold text-[#1c2e24] group-hover:text-[#c2410c] transition-colors mb-2.5 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
                       {course.title}
                     </h3>
-                    <p className="text-stone-600 text-sm leading-relaxed font-sans">
+
+                    {/* Card Description */}
+                    <p className="text-stone-600 text-xs sm:text-sm leading-relaxed mb-6 font-sans">
                       {course.desc}
                     </p>
                   </div>
-                </div>
 
-                {/* Card Action */}
-                <div className="px-6 pb-6 pt-2">
-                  <div className="pt-4 border-t border-stone-100">
-                    <Link
-                      href={course.href}
-                      className="inline-flex items-center justify-between w-full px-4 py-3 rounded-xl bg-[#faf7f0] group-hover:bg-[#092217] text-[#092217] group-hover:text-white font-semibold text-sm transition-all duration-300 border border-[#e8e2d4] group-hover:border-[#092217]"
-                    >
-                      <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                    </Link>
+                  {/* Card Action */}
+                  <div className="pt-2">
+                    {isFeatured ? (
+                      <Link
+                        href={course.href}
+                        className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#ea580c] hover:bg-[#c2410c] text-white font-semibold text-xs sm:text-sm shadow-sm hover:shadow transition-all duration-200 group/btn"
+                      >
+                        <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform" />
+                      </Link>
+                    ) : (
+                      <Link
+                        href={course.href}
+                        className="inline-flex items-center gap-1.5 text-[#c2410c] hover:text-[#9a3412] font-bold text-xs sm:text-sm transition-colors group/link"
+                      >
+                        <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
+                      </Link>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Bottom Action */}
-          <div className="mt-14 text-center">
+          <div className="mt-14 sm:mt-16 text-center relative z-10">
             <a
               href="#enroll"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-[#faf7f0] text-amber-900 border border-amber-300/60 shadow-sm hover:shadow font-semibold text-sm transition-all duration-200 group"
+              onClick={(e) => handleScroll(e, "enroll")}
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white hover:bg-[#faf7f0] text-[#c2410c] border border-amber-400/80 sm:border-2 shadow-xs hover:shadow font-semibold text-sm sm:text-base transition-all duration-200 group"
             >
               <span className={isHi ? 'font-devanagari' : ''}>{tTeach('view_all')}</span>
-              <ArrowRight className="w-4 h-4 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#c2410c] transform group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 

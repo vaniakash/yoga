@@ -156,3 +156,4 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
     </section>
   );
 }
+
