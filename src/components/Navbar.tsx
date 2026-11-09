@@ -103,7 +103,7 @@ export function Navbar() {
       <div className="bg-[#6b2a0c] dark:bg-[#4a1c06] text-white border-b border-amber-950/40 text-xs py-1.5 sm:py-2 px-4 sm:px-6 md:px-margin">
         <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-3">
           
-          {/* Left: General Name / Estd Text */}
+          {/* Left: General Name / Title Text */}
           <div className="flex items-center gap-2">
             <span className={`font-serif tracking-wide text-xs sm:text-[13px] text-amber-100 font-semibold truncate ${isHi ? 'font-devanagari' : ''}`}>
               {t('top_bar_title')}
