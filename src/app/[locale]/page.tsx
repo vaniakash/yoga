@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Hero } from '@/components/Hero';
+import { HomeCTA } from '@/components/HomeCTA';
 import {
   Sparkles,
   Award,
@@ -459,6 +460,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 7. HOME CTA BANNER & TRUST STRIP (DIRECTLY ABOVE FOOTER) */}
+      <HomeCTA onOpenVideo={() => setMasterclassOpen(true)} />
 
       {/* FREE MASTERCLASS MODAL */}
       {masterclassOpen && (

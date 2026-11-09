@@ -350,6 +350,21 @@
     "btn_contact": "Contact Ashram / Visit",
     "btn_events": "Upcoming Retreats"
   },
+  "HomeCTA": {
+    "badge": "Begin Your Inner Journey",
+    "title": "Experience Vedic Wisdom at Shridhyan Ashram",
+    "description": "Join our traditional programs in Vedic Bio Healing, Meditation, and Shri Vidya in the sacred Himalayas.",
+    "btn_courses": "Explore All Courses",
+    "btn_video": "Watch Ashram Video",
+    "f1_title": "Himalayan Location",
+    "f1_sub": "Uttarkashi, Uttarakhand",
+    "f2_title": "Authentic Lineage",
+    "f2_sub": "Guru-Shishya Tradition",
+    "f3_title": "Immersive Learning",
+    "f3_sub": "Practice • Study • Contemplation",
+    "f4_title": "Small Batch",
+    "f4_sub": "Personal Guidance & Attention"
+  },
   "Footer": {
     "shanti_mantra_label": "Vedic Shanti Mantra • Brihadaranyaka Upanishad",
     "shanti_mantra_trans": "From untruth lead us to Truth, from darkness lead us to Light, from mortality to Immortality.",
