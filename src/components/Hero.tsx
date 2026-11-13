@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Mountain } from "lucide-react";
 
 interface HeroProps {
   onOpenMasterclass?: () => void;
@@ -69,9 +69,9 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
               {/* ========================================================= */}
               <div className="absolute inset-0 z-20 flex flex-col justify-center items-start p-6 sm:p-10 md:p-12 lg:p-14 max-w-xl lg:max-w-2xl">
                 
-                {/* 1. Location Pill Badge */}
-                <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-white/90 dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-700 text-stone-800 dark:text-stone-200 text-[11px] sm:text-xs font-semibold shadow-xs mb-3 backdrop-blur-xs">
-                  <MapPin className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
+                {/* 1. Location / Tradition Pill Badge */}
+                <div className="inline-flex items-center gap-1.5 px-3 sm:px-3.5 py-1 rounded-full bg-white/90 dark:bg-stone-900/90 border border-stone-200/90 dark:border-stone-700 text-stone-800 dark:text-stone-200 text-[10px] sm:text-xs font-semibold tracking-wider uppercase shadow-xs mb-3 backdrop-blur-xs">
+                  <Mountain className="w-3.5 h-3.5 text-amber-700 dark:text-amber-400" />
                   <span className={isHi ? "font-devanagari" : ""}>{tHero("banner_badge")}</span>
                 </div>
 
@@ -116,14 +116,25 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
                   </p>
                 </div>
 
-                {/* 6. Gold Pill CTA Button: आश्रम के बारे में जानें → */}
-                <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 px-6 py-2.5 sm:px-7 sm:py-3 rounded-full bg-[#c2410c] hover:bg-[#a63408] text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-orange-500/25 transition-all duration-200 group active:scale-95"
-                >
-                  <span className={isHi ? "font-devanagari" : ""}>{tHero("banner_btn")}</span>
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
+                {/* 6. Action Buttons */}
+                <div className="flex flex-wrap items-center gap-2.5 sm:gap-3.5">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#c2410c] hover:bg-[#a63408] text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-orange-500/25 transition-all duration-200 group active:scale-95"
+                  >
+                    <span className={isHi ? "font-devanagari" : ""}>{tHero("banner_btn")}</span>
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                  </Link>
+
+                  <a
+                    href="#courses"
+                    onClick={(e) => handleScroll(e, "courses")}
+                    className="inline-flex items-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-white/90 hover:bg-white text-[#1c2e24] font-semibold text-xs sm:text-sm shadow-sm border border-stone-300/80 hover:border-amber-600/40 transition-all duration-200 group active:scale-95 backdrop-blur-xs"
+                  >
+                    <span className={isHi ? "font-devanagari" : ""}>{tHero("banner_btn_secondary")}</span>
+                    <ArrowRight className="w-4 h-4 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
 
               </div>
             </div>
@@ -136,7 +147,7 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
         <div className="text-center max-w-4xl mx-auto pt-10 sm:pt-14 pb-2 sm:pb-4">
           
           {/* Small Dot Label */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-900 text-xs font-semibold tracking-[0.2em] uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-400/25 text-amber-900 text-[11px] sm:text-xs font-semibold tracking-[0.2em] uppercase mb-3 shadow-2xs">
             <span className="text-amber-600 font-bold">•</span>
             <span className={isHi ? "font-devanagari" : ""}>{tHero("label")}</span>
             <span className="text-amber-600 font-bold">•</span>
@@ -144,7 +155,7 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
 
           {/* Main Heading (H1) */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-serif font-bold text-[#092217] tracking-tight leading-[1.1] mb-2 sm:mb-2.5 ${
+            className={`text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] font-serif font-bold text-[#162a1f] tracking-tight leading-[1.1] mb-2 sm:mb-2.5 ${
               isHi ? "font-devanagari" : ""
             }`}
           >
@@ -160,26 +171,26 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
             {tHero("subtitle")}
           </p>
 
-          {/* Two Action Buttons */}
+          {/* Two Action Buttons (Light, Soft Himalayan Palette) */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full max-w-md mx-auto sm:max-w-none">
-            {/* Primary Button */}
-            <a
-              href="#courses"
-              onClick={(e) => handleScroll(e, "courses")}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#092217] hover:bg-[#123624] text-white text-xs sm:text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-200 group"
-            >
-              <span className={isHi ? "font-devanagari" : ""}>{tHero("btn_courses")}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-amber-300 transform group-hover:translate-x-1 transition-transform" />
-            </a>
-
-            {/* Secondary Button */}
+            {/* Primary Button: Discover Shridhyan (Soft Warm Ivory/Amber) */}
             <Link
               href="/about"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-white hover:bg-[#f6f2e8] text-[#092217] text-xs sm:text-sm font-semibold border border-[#d6cdb9] hover:border-amber-600/40 shadow-xs hover:shadow-sm transition-all duration-200 group"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-[#faf5eb] hover:bg-[#f2e7d3] text-[#8a3800] text-xs sm:text-sm font-semibold border border-amber-400/50 hover:border-amber-600 shadow-xs hover:shadow-sm transition-all duration-200 group"
             >
               <span className={isHi ? "font-devanagari" : ""}>{tHero("btn_about")}</span>
               <ArrowRight className="w-3.5 h-3.5 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
             </Link>
+
+            {/* Secondary Button: Explore Our Teachings (Pure White) */}
+            <a
+              href="#courses"
+              onClick={(e) => handleScroll(e, "courses")}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-xl bg-white hover:bg-[#f6f2e8] text-[#1c2e24] text-xs sm:text-sm font-semibold border border-[#d6cdb9] hover:border-amber-600/40 shadow-xs hover:shadow-sm transition-all duration-200 group"
+            >
+              <span className={isHi ? "font-devanagari" : ""}>{tHero("btn_courses")}</span>
+              <ArrowRight className="w-3.5 h-3.5 text-amber-700 transform group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
 
         </div>

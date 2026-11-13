@@ -29,17 +29,18 @@
     "contact_btn": "Contact Ashram"
   },
   "Hero": {
-    "label": "Sacred Himalayan Tapobhoomi",
+    "label": "SHRIDHYAN ASHRAM · HIMALAYAN TAPOBHOOMI",
     "heading": "Shridhyan Ashram",
-    "subtitle": "Sadhana • Meditation • Vedic Wisdom",
-    "btn_courses": "Explore Our Courses",
-    "btn_about": "About the Ashram",
-    "banner_badge": "Himalayas, Uttarakhand",
-    "banner_title_1": "In the Lap of the Himalayas",
-    "banner_title_2": "Towards Inner Peace",
-    "banner_keywords": "Sadhana • Meditation • Yoga • Satsang • Contemplation",
-    "banner_desc": "A serene, sacred sanctuary for deep stillness of nature, spiritual practice, and self-discovery.",
-    "banner_btn": "Know More About Ashram"
+    "subtitle": "SHRI VIDYA · SADHANA · MEDITATION · VEDIC WISDOM",
+    "btn_courses": "Explore Our Teachings",
+    "btn_about": "Discover Shridhyan",
+    "banner_badge": "SHRIDHYAN ASHRAM · HIMALAYAN TAPOBHOOMI",
+    "banner_title_1": "The Sacred Art of",
+    "banner_title_2": "Knowing the Self.",
+    "banner_keywords": "SHRI VIDYA · SADHANA · MEDITATION · VEDIC WISDOM",
+    "banner_desc": "Rooted in the wisdom of ancient traditions, guided by the spirit of inquiry, and devoted to the deeper dimensions of spiritual life.",
+    "banner_btn": "Discover Shridhyan",
+    "banner_btn_secondary": "Explore Our Teachings"
   },
   "Guide": {
     "label": "Spiritual Guide",
