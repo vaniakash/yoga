@@ -195,7 +195,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about#mauna"
+                  href="/about/life-at-ashram"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
@@ -204,7 +204,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about#gallery"
+                  href="/ashram-glimpse"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
@@ -226,6 +226,15 @@ export function Footer() {
             <ul className="flex flex-col gap-2.5 text-sm">
               <li>
                 <Link
+                  href="/courses/shri-vidya"
+                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
+                >
+                  <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
+                  <span>Shri Vidya</span>
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/courses/vedic-bio-healing"
                   className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
                 >
@@ -240,15 +249,6 @@ export function Footer() {
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
                   <span>Meditation TTC</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/courses/shri-vidya"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-amber-300 transition-colors duration-200"
-                >
-                  <ChevronRight className="w-3.5 h-3.5 text-amber-400/50 group-hover:text-amber-300 group-hover:translate-x-0.5 transition-all" />
-                  <span>Shri Vidya</span>
                 </Link>
               </li>
               <li>

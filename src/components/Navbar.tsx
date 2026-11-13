@@ -18,7 +18,10 @@ import {
   Compass,
   Phone,
   PhoneCall,
-  MapPin
+  MapPin,
+  Heart,
+  Eye,
+  Mountain
 } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 
@@ -29,13 +32,68 @@ export function Navbar() {
 
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [coursesDropdownOpen, setCoursesDropdownOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
   const [mobileCoursesOpen, setMobileCoursesOpen] = useState(true);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const aboutDropdownRef = useRef<HTMLDivElement>(null);
   const langDropdownRef = useRef<HTMLDivElement>(null);
   const userMenuRef = useRef<HTMLDivElement>(null);
+  const coursesTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const aboutTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleCoursesMouseEnter = () => {
+    if (coursesTimeoutRef.current) {
+      clearTimeout(coursesTimeoutRef.current);
+      coursesTimeoutRef.current = null;
+    }
+    setCoursesDropdownOpen(true);
+  };
+
+  const handleCoursesMouseLeave = () => {
+    if (coursesTimeoutRef.current) {
+      clearTimeout(coursesTimeoutRef.current);
+    }
+    coursesTimeoutRef.current = setTimeout(() => {
+      setCoursesDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleCoursesClick = () => {
+    if (coursesTimeoutRef.current) {
+      clearTimeout(coursesTimeoutRef.current);
+      coursesTimeoutRef.current = null;
+    }
+    setCoursesDropdownOpen((prev) => !prev);
+  };
+
+  const handleAboutMouseEnter = () => {
+    if (aboutTimeoutRef.current) {
+      clearTimeout(aboutTimeoutRef.current);
+      aboutTimeoutRef.current = null;
+    }
+    setAboutDropdownOpen(true);
+  };
+
+  const handleAboutMouseLeave = () => {
+    if (aboutTimeoutRef.current) {
+      clearTimeout(aboutTimeoutRef.current);
+    }
+    aboutTimeoutRef.current = setTimeout(() => {
+      setAboutDropdownOpen(false);
+    }, 200);
+  };
+
+  const handleAboutClick = () => {
+    if (aboutTimeoutRef.current) {
+      clearTimeout(aboutTimeoutRef.current);
+      aboutTimeoutRef.current = null;
+    }
+    setAboutDropdownOpen((prev) => !prev);
+  };
 
   const { data: session, status } = useSession();
 
@@ -49,6 +107,9 @@ export function Navbar() {
       if (dropdownRef.current && !dropdownRef.current.contains(target)) {
         setCoursesDropdownOpen(false);
       }
+      if (aboutDropdownRef.current && !aboutDropdownRef.current.contains(target)) {
+        setAboutDropdownOpen(false);
+      }
       if (langDropdownRef.current && !langDropdownRef.current.contains(target)) {
         setLangDropdownOpen(false);
       }
@@ -61,10 +122,70 @@ export function Navbar() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("touchstart", handleClickOutside);
+      if (coursesTimeoutRef.current) {
+        clearTimeout(coursesTimeoutRef.current);
+      }
+      if (aboutTimeoutRef.current) {
+        clearTimeout(aboutTimeoutRef.current);
+      }
     };
   }, []);
 
+  const aboutItems = [
+    {
+      title: t('about_shridhyan'),
+      desc: isHi ? "आश्रम का पावन उद्गम एवं दर्शन" : isJa ? "アシュラムの起源と哲学" : "Sacred origin & hermitage philosophy",
+      href: '/about',
+      icon: Compass,
+      active: pathname === '/about'
+    },
+    {
+      title: t('about_mission_vision'),
+      desc: isHi ? "ध्येय, दृष्टि एवं वैदिक संकल्प" : isJa ? "使命、ビジョン、霊的指針" : "Guiding purpose & spiritual vision",
+      href: '/about/mission-vision',
+      icon: Eye,
+      active: pathname === '/about/mission-vision'
+    },
+    {
+      title: t('about_guru'),
+      desc: isHi ? "पूज्य स्वामी गोविंदानंद तीर्थ जी महाराज" : isJa ? "スワミ・ゴヴィンダナンダ・ティールタ師" : "Founder & Spiritual Guide",
+      href: '/about/our-guru',
+      icon: Heart,
+      active: pathname === '/about/our-guru'
+    },
+    {
+      title: t('about_lineage'),
+      desc: isHi ? "आदि शंकराचार्य एवं तीर्थ परंपरा" : isJa ? "ティールタ聖流・師弟の伝統" : "Tirtha stream & sacred masters",
+      href: '/about/lineage',
+      icon: Sparkles,
+      active: pathname === '/about/lineage' || pathname === '/guru-parampara'
+    },
+    {
+      title: t('about_life'),
+      desc: isHi ? "दैनिक प्रवाह, मौन, यज्ञ एवं आश्रम जीवन" : isJa ? "日課、沈黙、ヤジュニャ、生活" : "Daily rhythm, silence & routine",
+      href: '/about/life-at-ashram',
+      icon: Wind,
+      active: pathname === '/about/life-at-ashram'
+    },
+    {
+      title: t('about_why'),
+      desc: isHi ? "५ पावन स्तम्भ एवं तपोभूमि विशिष्टता" : isJa ? "5つの柱と聖なるタポブーミ" : "Five sacred pillars & atmosphere",
+      href: '/about/why-shridhyan',
+      icon: Mountain,
+      active: pathname === '/about/why-shridhyan' || pathname === '/tapobhoomi'
+    },
+  ];
+
+  const isAnyAboutActive = pathname.startsWith('/about') || pathname === '/guru-parampara' || pathname === '/tapobhoomi';
+
   const courseItems = [
+    {
+      title: t('course_shrividya'),
+      desc: t('course_shrividya_desc'),
+      href: '/courses/shri-vidya',
+      icon: '/images/maharaj/shreevidhya.svg',
+      active: pathname.includes('/courses/shri-vidya')
+    },
     {
       title: t('course_vedic'),
       desc: t('course_vedic_desc'),
@@ -78,13 +199,6 @@ export function Navbar() {
       href: '/courses/meditation-teacher-training',
       icon: '/images/maharaj/maditation.svg',
       active: pathname.includes('/courses/meditation-teacher-training')
-    },
-    {
-      title: t('course_shrividya'),
-      desc: t('course_shrividya_desc'),
-      href: '/courses/shri-vidya',
-      icon: '/images/maharaj/shreevidhya.svg',
-      active: pathname.includes('/courses/shri-vidya')
     }
   ];
 
@@ -93,19 +207,18 @@ export function Navbar() {
   const currentLangLabel = isHi ? 'हिन्दी' : isJa ? '日本語' : 'EN';
   const loginLabel = t('login');
   const logoutLabel = t('logout');
-  const contactBtnLabel = t('contact_btn');
 
   return (
     <header className="bg-surface/95 dark:bg-[#061910]/95 backdrop-blur-md text-primary dark:text-[#fcf9f3] docked full-width top-0 sticky z-50 shadow-sm border-b border-amber-500/20">
       {/* ========================================================================= */}
       {/* TOP UTILITY & INFO BAR (Shridhyan Ashram • Phone, Location & Call Button) */}
       {/* ========================================================================= */}
-      <div className="bg-[#6b2a0c] dark:bg-[#4a1c06] text-white border-b border-amber-950/40 text-xs py-1.5 sm:py-2 px-4 sm:px-6 md:px-margin">
+      <div className="bg-[#526B55] text-white border-b border-[#435846] text-xs py-1.5 sm:py-2 px-4 sm:px-6 md:px-margin">
         <div className="max-w-7xl mx-auto flex flex-row items-center justify-between gap-3">
           
           {/* Left: General Name / Title Text */}
           <div className="flex items-center gap-2">
-            <span className={`font-serif tracking-wide text-xs sm:text-[13px] text-amber-100 font-semibold truncate ${isHi ? 'font-devanagari' : ''}`}>
+            <span className={`font-serif tracking-wide text-xs sm:text-[13px] text-white font-semibold truncate ${isHi ? 'font-devanagari' : ''}`}>
               {t('top_bar_title')}
             </span>
           </div>
@@ -115,31 +228,31 @@ export function Navbar() {
             {/* Phone Number */}
             <a
               href="tel:+919301605957"
-              className="flex items-center gap-1.5 text-white/95 hover:text-amber-200 transition-colors font-medium text-xs sm:text-[13px] group"
+              className="flex items-center gap-1.5 text-white hover:text-white/80 transition-colors font-medium text-xs sm:text-[13px] group"
               title="Call Shridhyan Ashram"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform" />
+              <Phone className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
               <span className="tracking-wide font-sans">+91 93016 05957</span>
             </a>
 
             {/* Separator */}
-            <span className="text-white/30 hidden md:inline">|</span>
+            <span className="text-white/35 hidden md:inline">|</span>
 
             {/* Location Link */}
             <Link
               href="/contact"
-              className="hidden md:flex items-center gap-1.5 text-white/90 hover:text-amber-200 transition-colors text-xs sm:text-[13px] group"
+              className="hidden md:flex items-center gap-1.5 text-white hover:text-white/80 transition-colors text-xs sm:text-[13px] group"
             >
-              <MapPin className="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform" />
+              <MapPin className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
               <span className={isHi ? 'font-devanagari' : ''}>{t('top_bar_location')}</span>
             </Link>
 
-            {/* Dedicated Call Button (Like Brochure Button in reference) */}
+            {/* Dedicated Call Button */}
             <a
               href="tel:+919301605957"
-              className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-md bg-[#541f08] hover:bg-[#3f1604] border border-white/25 hover:border-amber-400/50 text-white font-semibold text-[11px] sm:text-xs tracking-wider transition-all shadow-2xs active:scale-95 group"
+              className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1 rounded-md bg-[#405443] hover:bg-[#354637] border border-white/30 hover:border-white/60 text-white font-semibold text-[11px] sm:text-xs tracking-wider transition-all shadow-2xs active:scale-95 group"
             >
-              <PhoneCall className="w-3 h-3 text-amber-300 group-hover:animate-pulse" />
+              <PhoneCall className="w-3 h-3 text-white group-hover:animate-pulse" />
               <span className={isHi ? 'font-devanagari' : ''}>{t('top_bar_call_btn')}</span>
             </a>
           </div>
@@ -182,17 +295,86 @@ export function Navbar() {
             {t('home')}
           </Link>
 
-          {/* About (Combined Ashram & Guru Parampara) */}
-          <Link
-            className={`font-medium tracking-wide text-sm py-1 transition-colors ${
-              pathname === '/about' || pathname === '/guru-parampara' || pathname === '/tapobhoomi'
-                ? 'text-amber-600 dark:text-amber-300 font-semibold'
-                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
-            }`}
-            href="/about"
+          {/* About Us Dropdown */}
+          <div
+            ref={aboutDropdownRef}
+            className="relative"
+            onMouseEnter={handleAboutMouseEnter}
+            onMouseLeave={handleAboutMouseLeave}
           >
-            {t('about')}
-          </Link>
+            <div className="flex items-center gap-1">
+              <Link
+                href="/about"
+                className={`font-medium tracking-wide text-sm py-1 transition-colors ${
+                  isAnyAboutActive
+                    ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                    : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-600 dark:hover:text-amber-300'
+                }`}
+              >
+                {t('about')}
+              </Link>
+              <button
+                type="button"
+                onClick={handleAboutClick}
+                className="p-1 text-on-surface-variant hover:text-amber-600 dark:text-[#e0dacd] dark:hover:text-amber-300 transition-colors cursor-pointer"
+                aria-expanded={aboutDropdownOpen}
+                aria-label="Toggle About Us Menu"
+              >
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-amber-500' : ''}`} />
+              </button>
+            </div>
+
+            {/* Dropdown Menu */}
+            {aboutDropdownOpen && (
+              <div
+                className="absolute top-full left-0 pt-2 w-80 z-50 animate-fade-in"
+                onMouseEnter={handleAboutMouseEnter}
+                onMouseLeave={handleAboutMouseLeave}
+              >
+                <div className="absolute -top-3 left-0 right-0 h-4 pointer-events-auto" />
+                <div className="bg-surface-container-lowest dark:bg-[#071f14] border border-amber-400/40 rounded-2xl shadow-2xl p-2 backdrop-blur-xl">
+                  <div className="space-y-1">
+                    {aboutItems.map((item, idx) => (
+                      <Link
+                        key={idx}
+                        href={item.href}
+                        onClick={() => {
+                          if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current);
+                          setAboutDropdownOpen(false);
+                        }}
+                        className={`flex items-start gap-3 p-2.5 rounded-xl transition-all duration-200 group ${
+                          item.active
+                            ? 'bg-amber-500/15 border border-amber-400/40 text-amber-700 dark:text-amber-200'
+                            : 'hover:bg-amber-500/10 text-on-surface dark:text-[#fcf9f3]'
+                        }`}
+                      >
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors mt-0.5 ${
+                          item.active
+                            ? 'bg-amber-500/25 border border-amber-400 text-amber-700 dark:text-amber-300 shadow-2xs'
+                            : 'bg-amber-500/10 border border-amber-400/25 text-amber-600 dark:text-amber-400 group-hover:bg-amber-500/20 group-hover:border-amber-400/50'
+                        }`}>
+                          <item.icon className="w-4 h-4" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center justify-between">
+                            <span className={`text-xs sm:text-sm font-semibold leading-tight ${item.active ? 'text-amber-700 dark:text-amber-300' : 'group-hover:text-amber-700 dark:group-hover:text-amber-300'}`}>
+                              {item.title}
+                            </span>
+                            {item.active && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse ml-2" />
+                            )}
+                          </div>
+                          <p className="text-[11px] text-on-surface-variant dark:text-surface-container-high/70 mt-0.5 line-clamp-1 leading-snug">
+                            {item.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
 
           {/* Ashram Glimpse */}
           <Link
@@ -222,11 +404,11 @@ export function Navbar() {
           <div
             ref={dropdownRef}
             className="relative"
-            onMouseEnter={() => setCoursesDropdownOpen(true)}
-            onMouseLeave={() => setCoursesDropdownOpen(false)}
+            onMouseEnter={handleCoursesMouseEnter}
+            onMouseLeave={handleCoursesMouseLeave}
           >
             <button
-              onClick={() => setCoursesDropdownOpen(!coursesDropdownOpen)}
+              onClick={handleCoursesClick}
               className={`flex items-center gap-1.5 font-medium tracking-wide text-sm py-1 transition-colors ${
                 isAnyCourseActive
                   ? 'text-amber-600 dark:text-amber-300 font-semibold'
@@ -241,45 +423,56 @@ export function Navbar() {
 
             {/* Dropdown Menu */}
             {coursesDropdownOpen && (
-              <div className="absolute top-full left-0 mt-2 w-80 bg-surface-container-lowest dark:bg-[#071f14] border border-amber-400/40 rounded-2xl shadow-2xl p-2 z-50 backdrop-blur-xl animate-fade-in">
-                <div className="space-y-1">
-                  {courseItems.map((course, idx) => (
-                    <Link
-                      key={idx}
-                      href={course.href}
-                      onClick={() => setCoursesDropdownOpen(false)}
-                      className={`flex items-start gap-3.5 p-3 rounded-xl transition-all duration-200 group ${
-                        course.active
-                          ? 'bg-amber-500/15 border border-amber-400/40 text-amber-700 dark:text-amber-200'
-                          : 'hover:bg-amber-500/10 text-on-surface dark:text-[#fcf9f3]'
-                      }`}
-                    >
-                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all p-1.5 border overflow-hidden ${
-                        course.active
-                          ? 'bg-amber-500/20 border-amber-400 shadow-xs'
-                          : 'bg-amber-500/10 border-amber-400/25 group-hover:bg-amber-500/20 group-hover:border-amber-400/60'
-                      }`}>
-                        <img
-                          src={course.icon}
-                          alt={course.title}
-                          className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
-                        />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between">
-                          <span className={`text-sm font-semibold leading-tight ${course.active ? 'text-amber-700 dark:text-amber-300' : 'group-hover:text-amber-600 dark:group-hover:text-amber-300'}`}>
-                            {course.title}
-                          </span>
-                          {course.active && (
-                            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                          )}
+              <div
+                className="absolute top-full left-0 pt-2 w-80 z-50 animate-fade-in"
+                onMouseEnter={handleCoursesMouseEnter}
+                onMouseLeave={handleCoursesMouseLeave}
+              >
+                {/* Invisible hover bridge to eliminate pointer-event dead zones */}
+                <div className="absolute -top-3 left-0 right-0 h-4 pointer-events-auto" />
+                <div className="bg-surface-container-lowest dark:bg-[#071f14] border border-amber-400/40 rounded-2xl shadow-2xl p-2 backdrop-blur-xl">
+                  <div className="space-y-1">
+                    {courseItems.map((course, idx) => (
+                      <Link
+                        key={idx}
+                        href={course.href}
+                        onClick={() => {
+                          if (coursesTimeoutRef.current) clearTimeout(coursesTimeoutRef.current);
+                          setCoursesDropdownOpen(false);
+                        }}
+                        className={`flex items-start gap-3.5 p-3 rounded-xl transition-all duration-200 group ${
+                          course.active
+                            ? 'bg-amber-500/15 border border-amber-400/40 text-amber-700 dark:text-amber-200'
+                            : 'hover:bg-amber-500/10 text-on-surface dark:text-[#fcf9f3]'
+                        }`}
+                      >
+                        <div className={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all p-1.5 border overflow-hidden ${
+                          course.active
+                            ? 'bg-amber-500/20 border-amber-400 shadow-xs'
+                            : 'bg-amber-500/10 border-amber-400/25 group-hover:bg-amber-500/20 group-hover:border-amber-400/60'
+                        }`}>
+                          <img
+                            src={course.icon}
+                            alt={course.title}
+                            className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                          />
                         </div>
-                        <p className="text-xs text-on-surface-variant dark:text-surface-container-high/70 mt-0.5 line-clamp-1 leading-snug">
-                          {course.desc}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
+                        <div className="flex-1">
+                          <div className="flex items-center justify-between">
+                            <span className={`text-sm font-semibold leading-tight ${course.active ? 'text-amber-700 dark:text-amber-300' : 'group-hover:text-amber-600 dark:group-hover:text-amber-300'}`}>
+                              {course.title}
+                            </span>
+                            {course.active && (
+                              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                            )}
+                          </div>
+                          <p className="text-xs text-on-surface-variant dark:text-surface-container-high/70 mt-0.5 line-clamp-1 leading-snug">
+                            {course.desc}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
             )}
@@ -442,15 +635,6 @@ export function Navbar() {
             </a>
           )}
 
-          {/* Contact Ashram Button */}
-          <Link
-            className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white text-xs sm:text-sm font-medium px-4 sm:px-5 py-2.5 rounded-lg shadow-md hover:shadow-amber-500/20 transition-all duration-200 active:scale-95"
-            href="/contact"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-amber-200" />
-            <span>{contactBtnLabel}</span>
-          </Link>
-
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -478,18 +662,55 @@ export function Navbar() {
             {t('home')}
           </Link>
 
-          {/* About (Combined Ashram & Guru Parampara) */}
-          <Link
-            onClick={() => setMobileMenuOpen(false)}
-            className={`block font-medium text-base py-1.5 ${
-              pathname === '/about' || pathname === '/guru-parampara' || pathname === '/tapobhoomi'
-                ? 'text-amber-600 dark:text-amber-300 font-semibold'
-                : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
-            }`}
-            href="/about"
-          >
-            {t('about')}
-          </Link>
+          {/* Expandable About Us Accordion on Mobile */}
+          <div className="py-1 border-t border-outline-variant/20 dark:border-amber-400/20">
+            <div className="flex items-center justify-between w-full">
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className={`font-medium text-base py-1.5 ${
+                  pathname === '/about'
+                    ? 'text-amber-600 dark:text-amber-300 font-semibold'
+                    : 'text-on-surface-variant dark:text-[#e0dacd] hover:text-amber-500 dark:hover:text-amber-300'
+                }`}
+              >
+                {t('about')}
+              </Link>
+              <button
+                type="button"
+                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                className="p-1.5 text-primary dark:text-amber-200"
+                aria-label="Toggle About Submenu"
+              >
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+
+            {mobileAboutOpen && (
+              <div className="pl-2 space-y-1 pt-1 pb-2">
+                {aboutItems.map((item, idx) => (
+                  <Link
+                    key={idx}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center justify-between p-2 rounded-lg text-sm transition-colors ${
+                      item.active
+                        ? 'bg-amber-500/20 text-amber-700 dark:text-amber-300 font-semibold border-l-2 border-amber-400'
+                        : 'text-on-surface-variant dark:text-[#d0c9bc] hover:bg-amber-500/10 hover:text-amber-600'
+                    }`}
+                  >
+                    <div className="flex items-center gap-2.5">
+                      <item.icon className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 flex-shrink-0" />
+                      <span>{item.title}</span>
+                    </div>
+                    {item.active && (
+                      <span className="text-[10px] uppercase font-bold text-amber-500">Active</span>
+                    )}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Ashram Glimpse */}
           <Link
@@ -646,15 +867,6 @@ export function Navbar() {
                 <span>{loginLabel}</span>
               </a>
             )}
-
-            <Link
-              onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg shadow-md transition-all"
-              href="/#contact"
-            >
-              <Sparkles className="w-4 h-4 text-amber-200" />
-              <span>{contactBtnLabel}</span>
-            </Link>
           </div>
         </div>
       )}

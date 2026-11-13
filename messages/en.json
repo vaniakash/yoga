@@ -1,10 +1,16 @@
 {
   "Navbar": {
     "top_bar_title": "Shridhyan Ashram",
-    "top_bar_location": "Uttarkashi, Himalayas",
+    "top_bar_location": "Himalayas",
     "top_bar_call_btn": "Call Us",
     "home": "Home",
-    "about": "About",
+    "about": "About Us",
+    "about_shridhyan": "About Shridhyan Ashram",
+    "about_mission_vision": "Our Mission & Vision",
+    "about_guru": "Our Guru / Our Teacher",
+    "about_lineage": "Our Lineage (Guru Parampara)",
+    "about_life": "Life at Shridhyan Ashram",
+    "about_why": "Why Shridhyan Ashram?",
     "ashram_glimpse": "Ashram Glimpse",
     "guru_parampara": "Guru Parampara",
     "tapobhoomi": "Tapobhoomi",
@@ -17,18 +23,18 @@
     "course_shrividya": "Shri Vidya",
     "course_shrividya_desc": "Sri Chakra & sacred geometry tradition",
     "contact": "Contact",
-    "subbrand": "Himalayan Tapobhoomi • Uttarkashi",
+    "subbrand": "Himalayan Tapobhoomi",
     "login": "Sign In",
     "logout": "Sign Out",
     "contact_btn": "Contact Ashram"
   },
   "Hero": {
-    "label": "Himalayas • Uttarkashi",
+    "label": "Sacred Himalayan Tapobhoomi",
     "heading": "Shridhyan Ashram",
     "subtitle": "Sadhana • Meditation • Vedic Wisdom",
     "btn_courses": "Explore Our Courses",
     "btn_about": "About the Ashram",
-    "banner_badge": "Uttarkashi, Uttarakhand",
+    "banner_badge": "Himalayas, Uttarakhand",
     "banner_title_1": "In the Lap of the Himalayas",
     "banner_title_2": "Towards Inner Peace",
     "banner_keywords": "Sadhana • Meditation • Yoga • Satsang • Contemplation",
@@ -47,7 +53,7 @@
     "pillar3_title": "Vedic Tradition",
     "pillar3_desc": "Preserving and transmitting ancient Indian spiritual wisdom and the sacred guru-shishya parampara.",
     "badge_exp": "50+ Years Sadhana",
-    "location": "Shridhyan Ashram • Uttarkashi"
+    "location": "Shridhyan Ashram • Himalayas"
   },
   "SpiritualTeachings": {
     "label": "Our Spiritual Teachings",
@@ -171,9 +177,9 @@
   "About": {
     "tagline": "Sacred Origin & Philosophy",
     "title": "Welcome to an Ancient Tapobhoomi",
-    "description_1": "The sacred sanctuary of Shridhyan is situated in Mathali, Uttarkashi amidst the serene heights of the Himalayas, consecrated under the guidance of Param Pujya Swami Ji Maharaj.",
+    "description_1": "The sacred sanctuary of Shridhyan is situated amidst the serene heights of the Himalayas, consecrated under the guidance of Param Pujya Swami Ji Maharaj.",
     "description_2": "This sacred ground is consecrated by the silent sadhana of Himalayan rishis and seekers of truth. Free from artificial discord, here flows only the pure mountain air, peaceful shade of deodar and pine groves, and the perpetual grace of the Guru lineage.",
-    "badge": "Himalayan Tapobhoomi • Mathali (Uttarkashi)",
+    "badge": "Himalayan Tapobhoomi",
     "badge_desc": "A consecrated Himalayan hermitage preserving traditional meditation practices, inner silence, and experiential yogic contemplation.",
     "quote": "“In the lap of penance and natural peace, the soul is reborn.”",
     "f1_title": "Sadhana",
@@ -193,12 +199,12 @@
     "description2": "Here, priority is given to natural resources, Vedic lifestyle, and the quiet Himalayan atmosphere to simplify life and awaken higher consciousness. Nature itself is the primary guide."
   },
   "Tapobhoomi": {
-    "label": "Himalayan Tapobhoomi • Mathali (Uttarkashi)",
+    "label": "Himalayan Tapobhoomi",
     "title": "The Spiritual Heritage of an Ancient Tapobhoomi",
     "description": "Rooted in authentic tradition, Shridhyan stands upon Himalayan ground revered for deep contemplation, silence, and communion with the eternal.",
     "card1_label": "Sacred Himalayan Valley",
-    "card1_title": "Mathali Tapobhoomi",
-    "card1_desc": "Nestled in the holy valley of Uttarkashi, Mathali offers a supremely serene and spiritually charged atmosphere for meditation, silence, and self-inquiry.",
+    "card1_title": "Pristine Tapobhoomi",
+    "card1_desc": "Nestled in the sacred Himalayan valley, Shridhyan offers a supremely serene and spiritually charged atmosphere for meditation, silence, and self-inquiry.",
     "card1_footer": "Sacred Himalayan Valley",
     "card2_label": "Silence & Solitude",
     "card2_title": "Sadhana & Self-Reflection",
@@ -368,7 +374,7 @@
   "Footer": {
     "shanti_mantra_label": "Vedic Shanti Mantra • Brihadaranyaka Upanishad",
     "shanti_mantra_trans": "From untruth lead us to Truth, from darkness lead us to Light, from mortality to Immortality.",
-    "subbrand": "Himalayan Tapobhoomi • Uttarkashi",
+    "subbrand": "Himalayan Tapobhoomi",
     "tagline": "Sadhana • Meditation • Yoga • Guru Parampara",
     "description": "A sacred Himalayan sanctuary located in Mathali, Uttarkashi. Dedicated to authentic meditation, inner silence, yogic contemplation, and the timeless Guru-Shishya tradition under the guidance of Swami Ji Maharaj.",
     "badge_tapobhoomi": "Himalayan Tapobhoomi • Mathali, Uttarkashi",

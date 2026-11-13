@@ -43,6 +43,19 @@ export default function HomePage() {
 
   const coursesData = [
     {
+      title: tTeach('c3_title'),
+      category: tTeach('c3_category'),
+      desc: isHi
+        ? "श्रीविद्या परंपरा, उसके दर्शन, मंत्र-उपासना और श्रीचक्र के पारंपरिक आध्यात्मिक महत्व का गूढ़ अध्ययन।"
+        : isJa
+        ? "聖なるシュリ・ヴィディヤの系譜、シャクタ哲学、マントラ・ウパーサナ、シュリ・チャクラの重要性の探求。"
+        : "A deep study of the sacred Shri Vidya lineage, Shakta philosophy, mantra upasana, and the traditional spiritual significance of Shri Chakra.",
+      href: '/courses/shri-vidya',
+      image: '/images/sri_chakra.jpg',
+      icon: '/images/maharaj/shreevidhya.svg',
+      featured: false,
+    },
+    {
       title: tTeach('c1_title'),
       category: tTeach('c1_category'),
       desc: isHi
@@ -53,7 +66,7 @@ export default function HomePage() {
       href: '/courses/vedic-bio-healing',
       image: '/images/ashram_courtyard.jpg',
       icon: '/images/maharaj/vedicbio_healing.svg',
-      featured: false,
+      featured: true,
     },
     {
       title: tTeach('c2_title'),
@@ -66,19 +79,6 @@ export default function HomePage() {
       href: '/courses/meditation-teacher-training',
       image: '/images/meditation_hall.jpg',
       icon: '/images/maharaj/maditation.svg',
-      featured: true,
-    },
-    {
-      title: tTeach('c3_title'),
-      category: tTeach('c3_category'),
-      desc: isHi
-        ? "श्रीविद्या परंपरा, उसके दर्शन, मंत्र-उपासना और श्रीचक्र के पारंपरिक आध्यात्मिक महत्व का गूढ़ अध्ययन।"
-        : isJa
-        ? "聖なるシュリ・ヴィディヤの系譜、シャクタ哲学、マントラ・ウパーサナ、シュリ・チャクラの重要性の探求。"
-        : "A deep study of the sacred Shri Vidya lineage, Shakta philosophy, mantra upasana, and the traditional spiritual significance of Shri Chakra.",
-      href: '/courses/shri-vidya',
-      image: '/images/sri_chakra.jpg',
-      icon: '/images/maharaj/shreevidhya.svg',
       featured: false,
     },
   ];

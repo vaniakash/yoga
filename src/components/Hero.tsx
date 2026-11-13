@@ -53,7 +53,7 @@ export function Hero({ onOpenMasterclass }: HeroProps) {
             <div className="relative w-full aspect-[16/11] sm:aspect-[21/9] min-h-[480px] sm:min-h-[520px] max-h-[640px] overflow-hidden">
               <Image
                 src="/images/shridhyan_hero.webp"
-                alt="श्रीध्यान आश्रम — हिमालय, उत्तरकाशी"
+                alt="श्रीध्यान आश्रम — पावन हिमालय"
                 fill
                 priority
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 95vw, 1280px"
