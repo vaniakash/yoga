@@ -55,7 +55,7 @@ export default function LifeAtAshramPage() {
 
   const otherAboutLinks = [
     {
-      title: tNav('about_ashram'),
+      title: tNav('about_shridhyan'),
       desc: isHi ? "आश्रम का मूल परिचय एवं इतिहास" : isJa ? "アシュラムの歴史と紹介" : "Origin, hermitage & sacred atmosphere",
       href: '/about',
       icon: Mountain,

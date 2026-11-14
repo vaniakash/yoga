@@ -27,7 +27,7 @@ export function Footer() {
   const isHi = locale === 'hi';
 
   return (
-    <footer className="relative bg-[#F8F6EF] text-[#234638] overflow-hidden border-t border-[#DADDD3] shadow-sm">
+    <footer className="relative bg-[#F3EFE5] text-[#234638] overflow-hidden border-t border-[#DADDD3] shadow-sm">
       {/* Ambient Spiritual Lighting & Sacred Aura */}
       <div 
         className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen"
@@ -63,7 +63,7 @@ export function Footer() {
           <p className="font-devanagari text-base sm:text-lg md:text-xl font-medium tracking-wider text-[#234638] mt-3 max-w-4xl leading-relaxed">
             ॥ ॐ असतो मा सद्गमय । तमसो मा ज्योतिर्गमय । मृत्योर्माऽमृतं गमय ॥
           </p>
-          <p className="text-xs sm:text-sm text-[#3D5447] tracking-wide mt-1 font-light italic">
+          <p className="text-xs sm:text-sm text-[#234638] tracking-wide mt-1 font-light italic">
             {t('shanti_mantra_trans')}
           </p>
         </div>
@@ -98,18 +98,18 @@ export function Footer() {
             {/* Sacred Tagline Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#789B80]/10 border border-[#789B80]/25 w-fit">
               <Sparkles className="w-3.5 h-3.5 text-[#789B80]" />
-              <span className={`text-xs font-medium text-[#3D5447] tracking-wider ${isHi ? 'font-devanagari' : ''}`}>
+              <span className={`text-xs font-medium text-[#234638] tracking-wider ${isHi ? 'font-devanagari' : ''}`}>
                 {t('tagline')}
               </span>
             </div>
 
             {/* Ashram Description */}
-            <p className="text-sm text-[#3D5447] leading-relaxed font-light">
+            <p className="text-sm text-[#234638]/90 leading-relaxed font-normal">
               {t('description')}
             </p>
 
             {/* Consecration & Traditional Credentials */}
-            <div className="space-y-2 pt-1 text-xs text-[#3D5447]">
+            <div className="space-y-2 pt-1 text-xs text-[#234638]">
               <div className="flex items-center gap-2 text-[#789B80]/90">
                 <ShieldCheck className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                 <span className={isHi ? 'font-devanagari' : ''}>
@@ -142,7 +142,7 @@ export function Footer() {
           <div className="md:col-span-6 lg:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-1 border-b border-[#DADDD3]">
               <span className="w-2 h-2 rounded-full bg-[#789B80]" />
-              <h4 className={`text-sm font-semibold tracking-wider text-[#789B80] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+              <h4 className={`text-sm font-bold tracking-wider text-[#234638] uppercase ${isHi ? 'font-devanagari' : ''}`}>
                 {t('portals_title')}
               </h4>
             </div>
@@ -151,7 +151,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_home')}</span>
@@ -160,7 +160,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_about')}</span>
@@ -169,7 +169,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/ashram-glimpse"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_glimpse')}</span>
@@ -178,7 +178,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/events"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_events')}</span>
@@ -187,7 +187,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/#courses"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_courses')}</span>
@@ -196,7 +196,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/about/life-at-ashram"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_silence')}</span>
@@ -205,7 +205,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/ashram-glimpse"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('link_gallery')}</span>
@@ -218,7 +218,7 @@ export function Footer() {
           <div className="md:col-span-6 lg:col-span-2 flex flex-col gap-4">
             <div className="flex items-center gap-2 pb-1 border-b border-[#DADDD3]">
               <span className="w-2 h-2 rounded-full bg-[#789B80]" />
-              <h4 className={`text-sm font-semibold tracking-wider text-[#789B80] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+              <h4 className={`text-sm font-bold tracking-wider text-[#234638] uppercase ${isHi ? 'font-devanagari' : ''}`}>
                 {t('courses_title')}
               </h4>
             </div>
@@ -227,7 +227,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/courses/shri-vidya"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>Shri Vidya</span>
@@ -236,7 +236,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/courses/vedic-bio-healing"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>Vedic Bio Healing</span>
@@ -245,7 +245,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/courses/meditation-teacher-training"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>Meditation TTC</span>
@@ -254,7 +254,7 @@ export function Footer() {
               <li>
                 <Link
                   href="/contact"
-                  className="group flex items-center gap-2 text-surface-container-high/80 hover:text-[#789B80] transition-colors duration-200"
+                  className="group flex items-center gap-2 text-[#234638] font-medium hover:text-[#789B80] transition-colors duration-200"
                 >
                   <ChevronRight className="w-3.5 h-3.5 text-[#789B80]/50 group-hover:text-[#789B80] group-hover:translate-x-0.5 transition-all" />
                   <span>{t('contact_btn')}</span>
@@ -274,7 +274,7 @@ export function Footer() {
                     <h4 className={`text-sm font-bold text-[#234638] tracking-wide leading-tight ${isHi ? 'font-devanagari' : ''}`}>
                       {t('contact_title')}
                     </h4>
-                    <span className="text-[11px] text-[#3D5447] font-sans">
+                    <span className="text-[11px] text-[#234638] font-sans">
                       {t('contact_city')}
                     </span>
                   </div>
@@ -303,7 +303,7 @@ export function Footer() {
                       <Phone className="w-4 h-4" />
                     </div>
                     <div className="text-left">
-                      <p className={`text-[11px] text-[#3D5447] leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                      <p className={`text-[11px] text-[#234638] leading-none ${isHi ? 'font-devanagari' : ''}`}>
                         {isHi ? "आश्रम संपर्क फोन" : "Ashram Contact Phone"}
                       </p>
                       <p className="text-xs font-semibold text-[#234638] mt-0.5 font-sans">
@@ -323,7 +323,7 @@ export function Footer() {
                       <Mail className="w-4 h-4" />
                     </div>
                     <div className="text-left">
-                      <p className={`text-[11px] text-[#3D5447] leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                      <p className={`text-[11px] text-[#234638] leading-none ${isHi ? 'font-devanagari' : ''}`}>
                         {t('email_label')}
                       </p>
                       <p className="text-xs font-semibold text-[#234638] mt-0.5 font-sans">
@@ -345,7 +345,7 @@ export function Footer() {
                       <ExternalLink className="w-4 h-4" />
                     </div>
                     <div className="text-left">
-                      <p className={`text-[11px] text-[#3D5447] leading-none ${isHi ? 'font-devanagari' : ''}`}>
+                      <p className={`text-[11px] text-[#234638] leading-none ${isHi ? 'font-devanagari' : ''}`}>
                         {t('maps_label')}
                       </p>
                       <p className="text-xs font-semibold text-[#234638] mt-0.5 font-mono">
@@ -358,7 +358,7 @@ export function Footer() {
 
                 <Link
                   href="/contact"
-                  className="mt-2 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#789B80]/15 hover:bg-[#789B80]/25 text-[#234638] hover:text-[#234638] border border-[#789B80]/40 font-semibold text-xs tracking-wide transition-all duration-200"
+                  className="mt-2 w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#234638] hover:bg-[#1a3329] text-[#F3EFE5] border border-[#234638] font-bold text-xs tracking-wide shadow-sm hover:shadow transition-all duration-200"
                 >
                   <span className={isHi ? 'font-devanagari' : ''}>
                     {t('contact_btn')}
@@ -372,14 +372,14 @@ export function Footer() {
         </div>
 
         {/* Consecrated Sub-Footer / Bottom Bar */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-[#3D5447]">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-[#234638]">
           {/* Copyright & Consecrated Notice */}
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-3 text-center sm:text-left">
             <span className="font-medium text-[#234638]">
               © {new Date().getFullYear()} {t('copyright')}
             </span>
             <span className="hidden sm:inline text-[#789B80]/40">•</span>
-            <span className={isHi ? 'font-devanagari text-[#3D5447]' : 'text-[#3D5447]'}>
+            <span className={isHi ? 'font-devanagari text-[#234638]' : 'text-[#234638]'}>
               {t('contact_city')}
             </span>
             <span className="hidden sm:inline text-[#789B80]/40">•</span>
@@ -398,7 +398,7 @@ export function Footer() {
               <a
                 href="mailto:shridhyan.com@gmail.com"
                 aria-label="Email Ashram"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-[#789B80]/20 border border-white/10 hover:border-[#789B80]/50 text-surface-container-high hover:text-[#789B80] flex items-center justify-center transition-all duration-200"
+                className="w-8 h-8 rounded-full bg-white/5 hover:bg-[#789B80]/20 border border-white/10 hover:border-[#789B80]/50 text-[#234638] hover:text-[#789B80] flex items-center justify-center transition-all duration-200"
               >
                 <Mail className="w-4 h-4" />
               </a>
@@ -408,7 +408,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google Maps Location"
-                className="w-8 h-8 rounded-full bg-white/5 hover:bg-[#789B80]/20 border border-white/10 hover:border-[#789B80]/50 text-surface-container-high hover:text-[#789B80] flex items-center justify-center transition-all duration-200"
+                className="w-8 h-8 rounded-full bg-white/5 hover:bg-[#789B80]/20 border border-white/10 hover:border-[#789B80]/50 text-[#234638] hover:text-[#789B80] flex items-center justify-center transition-all duration-200"
               >
                 <MapPin className="w-4 h-4" />
               </a>
@@ -419,7 +419,7 @@ export function Footer() {
             {/* Interactive Return to Top Button */}
             <button
               onClick={scrollToTop}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#789B80]/10 hover:bg-[#789B80]/20 text-[#234638] hover:text-[#234638] border border-[#789B80]/30 hover:border-[#789B80]/60 font-medium transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#234638] hover:bg-[#1a3329] text-[#F3EFE5] border border-[#234638] font-semibold transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 shadow-xs"
               aria-label="Scroll back to top"
             >
               <span>{t('back_to_top')}</span>
