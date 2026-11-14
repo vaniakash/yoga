@@ -475,8 +475,8 @@ export default function AdminDashboardPage() {
     switch (status) {
       case "new":
         return (
-          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-300 border border-amber-400/30">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold bg-[#789B80]/15 text-[#789B80] border border-[#789B80]/30">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#789B80] animate-pulse" />
             New
           </span>
         );
@@ -513,9 +513,9 @@ export default function AdminDashboardPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-[#04120b] text-[#fcfbf7]">
-        <div className="w-12 h-12 border-3 border-amber-400/30 border-t-amber-400 rounded-full animate-spin mb-4" />
-        <p className="font-serif text-amber-200 tracking-wider text-sm">
+      <div className="min-h-screen flex flex-col items-center justify-center bg-[#234638] text-[#fcfbf7]">
+        <div className="w-12 h-12 border-3 border-[#789B80]/30 border-t-[#789B80] rounded-full animate-spin mb-4" />
+        <p className="font-serif text-[#DADDD3] tracking-wider text-sm">
           श्रीध्यान आश्रम प्रशासनिक केंद्र लोड हो रहा है...
         </p>
       </div>
@@ -523,17 +523,17 @@ export default function AdminDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#030d07] via-[#05170e] to-[#04120b] text-[#fcfbf7] font-sans pb-16">
+    <div className="min-h-screen bg-gradient-to-b from-[#030d07] via-[#05170e] to-[#234638] text-[#fcfbf7] font-sans pb-16">
       
       {/* ========================================================================= */}
       {/* TOP NAVBAR */}
       {/* ========================================================================= */}
-      <header className="sticky top-0 z-40 bg-[#061910]/90 backdrop-blur-md border-b border-amber-500/20 shadow-xl">
+      <header className="sticky top-0 z-40 bg-[#234638]/90 backdrop-blur-md border-b border-[#789B80]/20 shadow-xl">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           
           {/* Logo & Ashram Name */}
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-xl bg-black/40 border border-amber-400/40 p-1.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center">
+            <div className="w-11 h-11 rounded-xl bg-black/40 border border-[#789B80]/40 p-1.5 shadow-[0_0_15px_rgba(212,175,55,0.2)] flex items-center justify-center">
               <img
                 src="/images/two-removebg-preview.svg"
                 alt="Shridhyan Emblem"
@@ -545,11 +545,11 @@ export default function AdminDashboardPage() {
                 <span className="font-serif text-lg sm:text-xl font-bold tracking-wider text-white">
                   SHRIDHYAN
                 </span>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-400/15 border border-amber-400/40 text-amber-300 uppercase tracking-widest">
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#789B80]/15 border border-[#789B80]/40 text-[#789B80] uppercase tracking-widest">
                   ADMIN
                 </span>
               </div>
-              <p className="text-[11px] text-amber-200/60 font-sans">
+              <p className="text-[11px] text-[#DADDD3]/60 font-sans">
                 प्रशासनिक नियंत्रण केंद्र • Uttarkashi
               </p>
             </div>
@@ -562,9 +562,9 @@ export default function AdminDashboardPage() {
             <Link
               href="/"
               target="_blank"
-              className="hidden md:inline-flex items-center gap-1.5 text-xs text-stone-300 hover:text-amber-300 px-3 py-1.5 rounded-lg border border-white/10 hover:border-amber-400/40 bg-white/5 transition-colors"
+              className="hidden md:inline-flex items-center gap-1.5 text-xs text-stone-300 hover:text-[#789B80] px-3 py-1.5 rounded-lg border border-white/10 hover:border-[#789B80]/40 bg-white/5 transition-colors"
             >
-              <ExternalLink className="w-3.5 h-3.5 text-amber-400" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#789B80]" />
               <span>वेबसाइट देखें</span>
             </Link>
 
@@ -572,16 +572,16 @@ export default function AdminDashboardPage() {
             <button
               onClick={loadData}
               disabled={isRefreshing}
-              className="p-2 rounded-lg border border-amber-400/30 text-amber-300 hover:bg-amber-400/10 transition-colors cursor-pointer"
+              className="p-2 rounded-lg border border-[#789B80]/30 text-[#789B80] hover:bg-[#789B80]/10 transition-colors cursor-pointer"
               title="Refresh Data"
             >
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
             </button>
 
             {/* Admin User Badge */}
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/40 border border-amber-400/30 text-xs">
+            <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-xl bg-black/40 border border-[#789B80]/30 text-xs">
               <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-              <span className="font-mono text-amber-200/90 text-xs truncate max-w-[160px]">
+              <span className="font-mono text-[#DADDD3]/90 text-xs truncate max-w-[160px]">
                 shridhyan108@gmail.com
               </span>
             </div>
@@ -605,14 +605,14 @@ export default function AdminDashboardPage() {
             onClick={() => setActiveTab("inquiries")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
               activeTab === "inquiries"
-                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                ? "border-[#789B80] text-[#789B80] bg-[#789B80]/5"
                 : "border-transparent text-stone-400 hover:text-stone-200"
             }`}
           >
             <Inbox className="w-4 h-4" />
             <span>आवेदन व पूछताछ (Inquiries)</span>
             {stats.newInquiries > 0 && (
-              <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-amber-500 text-stone-950">
+              <span className="px-1.5 py-0.2 rounded-full text-[10px] font-bold bg-[#789B80] text-stone-950">
                 {stats.newInquiries}
               </span>
             )}
@@ -623,7 +623,7 @@ export default function AdminDashboardPage() {
             onClick={() => setActiveTab("events")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
               activeTab === "events"
-                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                ? "border-[#789B80] text-[#789B80] bg-[#789B80]/5"
                 : "border-transparent text-stone-400 hover:text-stone-200"
             }`}
           >
@@ -637,7 +637,7 @@ export default function AdminDashboardPage() {
             onClick={() => setActiveTab("courses")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
               activeTab === "courses"
-                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                ? "border-[#789B80] text-[#789B80] bg-[#789B80]/5"
                 : "border-transparent text-stone-400 hover:text-stone-200"
             }`}
           >
@@ -650,7 +650,7 @@ export default function AdminDashboardPage() {
             onClick={() => setActiveTab("users")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
               activeTab === "users"
-                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                ? "border-[#789B80] text-[#789B80] bg-[#789B80]/5"
                 : "border-transparent text-stone-400 hover:text-stone-200"
             }`}
           >
@@ -664,7 +664,7 @@ export default function AdminDashboardPage() {
             onClick={() => setActiveTab("settings")}
             className={`py-3 px-3 sm:px-4 text-xs sm:text-sm font-semibold tracking-wide border-b-2 whitespace-nowrap transition-colors flex items-center gap-2 ${
               activeTab === "settings"
-                ? "border-amber-400 text-amber-300 bg-amber-400/5"
+                ? "border-[#789B80] text-[#789B80] bg-[#789B80]/5"
                 : "border-transparent text-stone-400 hover:text-stone-200"
             }`}
           >
@@ -683,12 +683,12 @@ export default function AdminDashboardPage() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8">
           
           {/* Card 1: Total Inquiries */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-amber-400/25 shadow-lg backdrop-blur-sm">
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/25 shadow-lg backdrop-blur-sm">
             <div className="flex items-center justify-between text-stone-400 mb-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-200/70">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/70">
                 कुल आवेदन (Total)
               </span>
-              <div className="w-8 h-8 rounded-lg bg-amber-400/10 text-amber-300 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#789B80]/10 text-[#789B80] flex items-center justify-center">
                 <Inbox className="w-4 h-4" />
               </div>
             </div>
@@ -701,31 +701,31 @@ export default function AdminDashboardPage() {
           </div>
 
           {/* Card 2: New / Action Required */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-amber-500/40 shadow-lg backdrop-blur-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-full blur-xl pointer-events-none" />
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/40 shadow-lg backdrop-blur-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-24 h-24 bg-[#789B80]/10 rounded-full blur-xl pointer-events-none" />
             <div className="flex items-center justify-between text-stone-400 mb-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-400">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#789B80]">
                 नए आवेदन (New)
               </span>
-              <div className="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#789B80]/20 text-[#789B80] flex items-center justify-center">
                 <Sparkles className="w-4 h-4" />
               </div>
             </div>
-            <div className="text-2xl sm:text-3xl font-serif font-bold text-amber-300">
+            <div className="text-2xl sm:text-3xl font-serif font-bold text-[#789B80]">
               {stats.newInquiries}
             </div>
-            <p className="text-[11px] text-amber-200/70 mt-1">
+            <p className="text-[11px] text-[#DADDD3]/70 mt-1">
               Awaiting response from Ashram
             </p>
           </div>
 
           {/* Card 3: Events Status */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-amber-400/25 shadow-lg backdrop-blur-sm">
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/25 shadow-lg backdrop-blur-sm">
             <div className="flex items-center justify-between text-stone-400 mb-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-200/70">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/70">
                 सक्रिय कार्यक्रम (Active Events)
               </span>
-              <div className="w-8 h-8 rounded-lg bg-amber-400/10 text-amber-300 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#789B80]/10 text-[#789B80] flex items-center justify-center">
                 <Calendar className="w-4 h-4" />
               </div>
             </div>
@@ -739,12 +739,12 @@ export default function AdminDashboardPage() {
           </div>
 
           {/* Card 4: Registered Users */}
-          <div className="p-5 sm:p-6 rounded-2xl bg-[#071f14]/80 border border-amber-400/25 shadow-lg backdrop-blur-sm">
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/25 shadow-lg backdrop-blur-sm">
             <div className="flex items-center justify-between text-stone-400 mb-3">
-              <span className="text-xs font-semibold uppercase tracking-wider text-amber-200/70">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/70">
                 पंजीकृत साधक (Seekers)
               </span>
-              <div className="w-8 h-8 rounded-lg bg-amber-400/10 text-amber-300 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-lg bg-[#789B80]/10 text-[#789B80] flex items-center justify-center">
                 <Users className="w-4 h-4" />
               </div>
             </div>
@@ -765,7 +765,7 @@ export default function AdminDashboardPage() {
           <div className="space-y-6">
             
             {/* Action Bar: Filters, Search, CSV Export */}
-            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-2xl bg-[#061910]/70 border border-white/10 backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 p-4 rounded-2xl bg-[#234638]/70 border border-white/10 backdrop-blur-sm">
               
               {/* Status Filters */}
               <div className="flex flex-wrap items-center gap-1.5">
@@ -781,7 +781,7 @@ export default function AdminDashboardPage() {
                     onClick={() => setStatusFilter(tab.id)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
                       statusFilter === tab.id
-                        ? "bg-amber-500 text-stone-950 shadow-md font-bold"
+                        ? "bg-[#789B80] text-stone-950 shadow-md font-bold"
                         : "bg-white/5 text-stone-300 hover:bg-white/10"
                     }`}
                   >
@@ -799,7 +799,7 @@ export default function AdminDashboardPage() {
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search name, email, course..."
-                    className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                    className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80]"
                   />
                   {searchQuery && (
                     <button
@@ -814,7 +814,7 @@ export default function AdminDashboardPage() {
                 <button
                   onClick={handleExportCSV}
                   disabled={inquiries.length === 0}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-amber-400/20 text-amber-200 border border-amber-400/30 text-xs font-semibold transition-colors disabled:opacity-40 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-white/5 hover:bg-[#789B80]/20 text-[#DADDD3] border border-[#789B80]/30 text-xs font-semibold transition-colors disabled:opacity-40 cursor-pointer"
                   title="Export all inquiries to CSV"
                 >
                   <Download className="w-3.5 h-3.5" />
@@ -825,7 +825,7 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Inquiries List Table */}
-            <div className="rounded-2xl bg-[#061910]/70 border border-white/10 overflow-hidden shadow-xl">
+            <div className="rounded-2xl bg-[#234638]/70 border border-white/10 overflow-hidden shadow-xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-xs">
                   <thead className="bg-black/40 text-stone-400 font-mono uppercase tracking-wider text-[11px] border-b border-white/10">
@@ -876,7 +876,7 @@ export default function AdminDashboardPage() {
 
                           {/* Course */}
                           <td className="py-3.5 px-4">
-                            <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-amber-200 text-xs font-medium inline-block max-w-[220px] truncate">
+                            <span className="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-[#DADDD3] text-xs font-medium inline-block max-w-[220px] truncate">
                               {inq.course}
                             </span>
                           </td>
@@ -913,7 +913,7 @@ export default function AdminDashboardPage() {
                                 onChange={(e) =>
                                   handleQuickStatus(inq._id, e.target.value as Inquiry["status"])
                                 }
-                                className="bg-black/50 border border-white/15 rounded-lg px-2 py-1 text-[11px] text-stone-300 focus:outline-none focus:border-amber-400 cursor-pointer"
+                                className="bg-black/50 border border-white/15 rounded-lg px-2 py-1 text-[11px] text-stone-300 focus:outline-none focus:border-[#789B80] cursor-pointer"
                               >
                                 <option value="new">New</option>
                                 <option value="contacted">Contacted</option>
@@ -924,7 +924,7 @@ export default function AdminDashboardPage() {
 
                               <button
                                 onClick={() => handleOpenModal(inq)}
-                                className="p-1.5 rounded-lg text-stone-400 hover:text-amber-300 hover:bg-white/5 cursor-pointer"
+                                className="p-1.5 rounded-lg text-stone-400 hover:text-[#789B80] hover:bg-white/5 cursor-pointer"
                                 title="View Details"
                               >
                                 <Eye className="w-4 h-4" />
@@ -957,10 +957,10 @@ export default function AdminDashboardPage() {
           <div className="space-y-6">
             
             {/* Header with Add Event Button */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#061910]/70 border border-white/10 backdrop-blur-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-2xl bg-[#234638]/70 border border-white/10 backdrop-blur-sm">
               <div>
                 <h2 className="text-xl font-serif font-bold text-white flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-amber-400" />
+                  <Calendar className="w-5 h-5 text-[#789B80]" />
                   <span>आश्रम कार्यक्रम प्रबंधन (Upcoming Events)</span>
                 </h2>
                 <p className="text-xs text-stone-400 mt-1">
@@ -970,7 +970,7 @@ export default function AdminDashboardPage() {
 
               <button
                 onClick={() => handleOpenEventModal()}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs sm:text-sm tracking-wide shadow-md transition-all cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-white font-bold text-xs sm:text-sm tracking-wide shadow-md transition-all cursor-pointer"
               >
                 <Plus className="w-4 h-4" />
                 <span>+ नया कार्यक्रम जोड़ें (Add Event)</span>
@@ -980,19 +980,19 @@ export default function AdminDashboardPage() {
             {/* Events Content */}
             {events.length === 0 ? (
               // Empty State in Admin
-              <div className="p-12 rounded-3xl bg-[#061910]/60 border border-white/10 text-center max-w-2xl mx-auto shadow-lg">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-amber-500/10 border border-amber-400/30 flex items-center justify-center text-amber-400">
+              <div className="p-12 rounded-3xl bg-[#234638]/60 border border-white/10 text-center max-w-2xl mx-auto shadow-lg">
+                <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-[#789B80]/10 border border-[#789B80]/30 flex items-center justify-center text-[#789B80]">
                   <Calendar className="w-8 h-8" />
                 </div>
                 <h3 className="text-lg font-serif font-bold text-white mb-2">
                   वर्तमान में कोई कार्यक्रम नहीं है
                 </h3>
                 <p className="text-xs sm:text-sm text-stone-400 max-w-md mx-auto leading-relaxed mb-6 font-sans">
-                  जब तक आप यहाँ कोई कार्यक्रम नहीं जोड़ते, तब तक वेबसाइट के <strong className="text-amber-300">/upcoming</strong> और <strong className="text-amber-300">/events</strong> पृष्ठ पर साधकों को <em>“वर्तमान में कोई आगामी कार्यक्रम निर्धारित नहीं है”</em> का शांत संदेश दिखाई देगा।
+                  जब तक आप यहाँ कोई कार्यक्रम नहीं जोड़ते, तब तक वेबसाइट के <strong className="text-[#789B80]">/upcoming</strong> और <strong className="text-[#789B80]">/events</strong> पृष्ठ पर साधकों को <em>“वर्तमान में कोई आगामी कार्यक्रम निर्धारित नहीं है”</em> का शांत संदेश दिखाई देगा।
                 </p>
                 <button
                   onClick={() => handleOpenEventModal()}
-                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all cursor-pointer"
+                  className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-[#789B80] hover:bg-[#789B80] text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all cursor-pointer"
                 >
                   <Plus className="w-4 h-4" />
                   <span>पहला कार्यक्रम जोड़ें (Create First Event)</span>
@@ -1004,12 +1004,12 @@ export default function AdminDashboardPage() {
                 {events.map((ev) => (
                   <div
                     key={ev._id}
-                    className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/25 hover:border-amber-400/50 shadow-lg flex flex-col justify-between transition-all"
+                    className="p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/25 hover:border-[#789B80]/50 shadow-lg flex flex-col justify-between transition-all"
                   >
                     <div>
                       {/* Top Badges */}
                       <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-amber-500/15 text-amber-300 border border-amber-400/30">
+                        <span className="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-[#789B80]/15 text-[#789B80] border border-[#789B80]/30">
                           {ev.category}
                         </span>
 
@@ -1033,7 +1033,7 @@ export default function AdminDashboardPage() {
                         {ev.title}
                       </h3>
                       {ev.subtitle && (
-                        <p className="text-xs text-amber-300/80 mb-3 font-medium">
+                        <p className="text-xs text-[#789B80]/80 mb-3 font-medium">
                           {ev.subtitle}
                         </p>
                       )}
@@ -1042,23 +1042,23 @@ export default function AdminDashboardPage() {
                       <div className="space-y-1.5 p-3 rounded-xl bg-black/40 border border-white/5 text-xs text-stone-300 mb-4 font-mono">
                         {ev.dateDisplay && (
                           <div className="flex items-center gap-2">
-                            <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                            <Calendar className="w-3.5 h-3.5 text-[#789B80]" />
                             <span>{ev.dateDisplay}</span>
                           </div>
                         )}
                         {ev.time && (
                           <div className="flex items-center gap-2">
-                            <Clock className="w-3.5 h-3.5 text-amber-400" />
+                            <Clock className="w-3.5 h-3.5 text-[#789B80]" />
                             <span>{ev.time}</span>
                           </div>
                         )}
                         <div className="flex items-center gap-2">
-                          <MapPin className="w-3.5 h-3.5 text-amber-400" />
+                          <MapPin className="w-3.5 h-3.5 text-[#789B80]" />
                           <span className="truncate">{ev.location}</span>
                         </div>
                         {ev.capacity && (
                           <div className="flex items-center gap-2">
-                            <Users className="w-3.5 h-3.5 text-amber-400" />
+                            <Users className="w-3.5 h-3.5 text-[#789B80]" />
                             <span>{ev.capacity}</span>
                           </div>
                         )}
@@ -1122,10 +1122,10 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
               {/* Course 1 */}
-              <div className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/30 flex flex-col justify-between shadow-lg">
+              <div className="p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/30 flex flex-col justify-between shadow-lg">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-semibold mb-3">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#789B80]/15 text-[#789B80] text-xs font-semibold mb-3">
+                    <Sparkles className="w-3.5 h-3.5 text-[#789B80]" />
                     <span>वैदिक अध्ययन</span>
                   </div>
                   <h3 className="text-lg font-serif font-bold text-white mb-2">
@@ -1138,7 +1138,7 @@ export default function AdminDashboardPage() {
                   <div className="space-y-2 p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs">
                     <div className="flex justify-between text-stone-300">
                       <span>Cohort Size:</span>
-                      <strong className="text-amber-300">Strict 25 Seats Limit</strong>
+                      <strong className="text-[#789B80]">Strict 25 Seats Limit</strong>
                     </div>
                     <div className="flex justify-between text-stone-300">
                       <span>Status:</span>
@@ -1153,17 +1153,17 @@ export default function AdminDashboardPage() {
 
                 <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
                   <span className="text-xs text-stone-400">Total Inquiries:</span>
-                  <span className="text-sm font-bold text-amber-300 font-mono">
+                  <span className="text-sm font-bold text-[#789B80] font-mono">
                     {inquiries.filter((i) => i.course.includes("Vedic Bio")).length}
                   </span>
                 </div>
               </div>
 
               {/* Course 2 */}
-              <div className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/30 flex flex-col justify-between shadow-lg">
+              <div className="p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/30 flex flex-col justify-between shadow-lg">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-semibold mb-3">
-                    <Compass className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#789B80]/15 text-[#789B80] text-xs font-semibold mb-3">
+                    <Compass className="w-3.5 h-3.5 text-[#789B80]" />
                     <span>ध्यान साधना</span>
                   </div>
                   <h3 className="text-lg font-serif font-bold text-white mb-2">
@@ -1176,7 +1176,7 @@ export default function AdminDashboardPage() {
                   <div className="space-y-2 p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs">
                     <div className="flex justify-between text-stone-300">
                       <span>Duration:</span>
-                      <strong className="text-amber-300">21-Day Intensive</strong>
+                      <strong className="text-[#789B80]">21-Day Intensive</strong>
                     </div>
                     <div className="flex justify-between text-stone-300">
                       <span>Format:</span>
@@ -1191,17 +1191,17 @@ export default function AdminDashboardPage() {
 
                 <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
                   <span className="text-xs text-stone-400">Total Inquiries:</span>
-                  <span className="text-sm font-bold text-amber-300 font-mono">
+                  <span className="text-sm font-bold text-[#789B80] font-mono">
                     {inquiries.filter((i) => i.course.includes("Meditation")).length}
                   </span>
                 </div>
               </div>
 
               {/* Course 3 */}
-              <div className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/30 flex flex-col justify-between shadow-lg">
+              <div className="p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/30 flex flex-col justify-between shadow-lg">
                 <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/15 text-amber-300 text-xs font-semibold mb-3">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#789B80]/15 text-[#789B80] text-xs font-semibold mb-3">
+                    <Sparkles className="w-3.5 h-3.5 text-[#789B80]" />
                     <span>शाक्त परंपरा</span>
                   </div>
                   <h3 className="text-lg font-serif font-bold text-white mb-2">
@@ -1214,7 +1214,7 @@ export default function AdminDashboardPage() {
                   <div className="space-y-2 p-3.5 rounded-xl bg-black/40 border border-white/5 text-xs">
                     <div className="flex justify-between text-stone-300">
                       <span>Guidance:</span>
-                      <strong className="text-amber-300">Direct Guru Sanctorum</strong>
+                      <strong className="text-[#789B80]">Direct Guru Sanctorum</strong>
                     </div>
                     <div className="flex justify-between text-stone-300">
                       <span>Eligibility:</span>
@@ -1222,14 +1222,14 @@ export default function AdminDashboardPage() {
                     </div>
                     <div className="flex justify-between text-stone-300">
                       <span>Initiation:</span>
-                      <span className="text-amber-400 font-semibold">Himalayan Retreat</span>
+                      <span className="text-[#789B80] font-semibold">Himalayan Retreat</span>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
                   <span className="text-xs text-stone-400">Total Inquiries:</span>
-                  <span className="text-sm font-bold text-amber-300 font-mono">
+                  <span className="text-sm font-bold text-[#789B80] font-mono">
                     {inquiries.filter((i) => i.course.includes("Shri Vidya")).length}
                   </span>
                 </div>
@@ -1255,7 +1255,7 @@ export default function AdminDashboardPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl bg-[#061910]/70 border border-white/10 overflow-hidden shadow-xl">
+            <div className="rounded-2xl bg-[#234638]/70 border border-white/10 overflow-hidden shadow-xl">
               <table className="w-full text-left text-xs">
                 <thead className="bg-black/40 text-stone-400 font-mono uppercase tracking-wider text-[11px] border-b border-white/10">
                   <tr>
@@ -1273,10 +1273,10 @@ export default function AdminDashboardPage() {
                           <img
                             src={user.image}
                             alt={user.name}
-                            className="w-8 h-8 rounded-full object-cover ring-1 ring-amber-400/40"
+                            className="w-8 h-8 rounded-full object-cover ring-1 ring-[#789B80]/40"
                           />
                         ) : (
-                          <div className="w-8 h-8 rounded-full bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-xs">
+                          <div className="w-8 h-8 rounded-full bg-[#789B80]/20 text-[#789B80] flex items-center justify-center font-bold text-xs">
                             {user.name.charAt(0)}
                           </div>
                         )}
@@ -1290,7 +1290,7 @@ export default function AdminDashboardPage() {
                       <td className="py-3.5 px-4">
                         <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold ${
                           user.email === "shridhyan108@gmail.com"
-                            ? "bg-amber-400/20 text-amber-300 border border-amber-400/40"
+                            ? "bg-[#789B80]/20 text-[#789B80] border border-[#789B80]/40"
                             : "bg-white/5 text-stone-300 border border-white/10"
                         }`}>
                           {user.email === "shridhyan108@gmail.com" ? "Super Admin" : "Seeker"}
@@ -1315,16 +1315,16 @@ export default function AdminDashboardPage() {
           <div className="max-w-3xl space-y-6">
             
             {/* Admin Credentials Card */}
-            <div className="p-6 rounded-2xl bg-[#061910]/80 border border-amber-400/30 shadow-lg">
+            <div className="p-6 rounded-2xl bg-[#234638]/80 border border-[#789B80]/30 shadow-lg">
               <h3 className="text-lg font-serif font-bold text-white mb-4 flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-amber-400" />
+                <ShieldCheck className="w-5 h-5 text-[#789B80]" />
                 <span>व्यवस्थापक खाता विवरण (Admin Profile)</span>
               </h3>
 
               <div className="space-y-3 text-xs sm:text-sm">
                 <div className="flex justify-between py-2 border-b border-white/5">
                   <span className="text-stone-400">Admin Email:</span>
-                  <span className="font-mono text-amber-300 font-semibold">
+                  <span className="font-mono text-[#789B80] font-semibold">
                     shridhyan108@gmail.com
                   </span>
                 </div>
@@ -1344,7 +1344,7 @@ export default function AdminDashboardPage() {
             </div>
 
             {/* Quick Actions */}
-            <div className="p-6 rounded-2xl bg-[#061910]/80 border border-white/10 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="p-6 rounded-2xl bg-[#234638]/80 border border-white/10 shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
               <div>
                 <h4 className="font-semibold text-white text-sm">प्रस्थान (Sign Out)</h4>
                 <p className="text-xs text-stone-400 mt-0.5">
@@ -1369,12 +1369,12 @@ export default function AdminDashboardPage() {
       {/* ========================================================================= */}
       {selectedInquiry && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-[#234638] border border-[#789B80]/40 rounded-3xl p-6 sm:p-8 text-[#F8F6EF] shadow-2xl max-h-[90vh] overflow-y-auto">
             
             {/* Modal Header */}
             <div className="flex items-start justify-between pb-4 border-b border-white/10">
               <div>
-                <span className="text-[11px] font-mono text-amber-300 uppercase tracking-widest block mb-1">
+                <span className="text-[11px] font-mono text-[#789B80] uppercase tracking-widest block mb-1">
                   Inquiry Details #{selectedInquiry._id.slice(-6)}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
@@ -1397,14 +1397,14 @@ export default function AdminDashboardPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a
                   href={`mailto:${selectedInquiry.email}?subject=Shridhyan Ashram Inquiry Response`}
-                  className="p-3 rounded-xl bg-black/40 border border-white/10 hover:border-amber-400/50 flex items-center gap-3 transition-colors group"
+                  className="p-3 rounded-xl bg-black/40 border border-white/10 hover:border-[#789B80]/50 flex items-center gap-3 transition-colors group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-400 flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-lg bg-[#789B80]/15 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
                   <div className="overflow-hidden">
                     <span className="text-[11px] text-stone-400 block">Click to Email:</span>
-                    <span className="text-xs font-mono text-amber-200 group-hover:text-amber-100 truncate block">
+                    <span className="text-xs font-mono text-[#DADDD3] group-hover:text-[#E8EBDD] truncate block">
                       {selectedInquiry.email}
                     </span>
                   </div>
@@ -1413,7 +1413,7 @@ export default function AdminDashboardPage() {
                 {selectedInquiry.phone ? (
                   <a
                     href={`tel:${selectedInquiry.phone}`}
-                    className="p-3 rounded-xl bg-black/40 border border-white/10 hover:border-amber-400/50 flex items-center gap-3 transition-colors group"
+                    className="p-3 rounded-xl bg-black/40 border border-white/10 hover:border-[#789B80]/50 flex items-center gap-3 transition-colors group"
                   >
                     <div className="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 flex items-center justify-center flex-shrink-0">
                       <Phone className="w-4 h-4" />
@@ -1437,7 +1437,7 @@ export default function AdminDashboardPage() {
               <div className="p-4 rounded-xl bg-black/30 border border-white/10 grid grid-cols-2 gap-4 text-xs">
                 <div>
                   <span className="text-stone-400 block mb-1">Selected Course:</span>
-                  <span className="font-semibold text-amber-300">
+                  <span className="font-semibold text-[#789B80]">
                     {selectedInquiry.course}
                   </span>
                 </div>
@@ -1451,8 +1451,8 @@ export default function AdminDashboardPage() {
 
               {/* Message from Seeker */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5 flex items-center gap-1.5">
-                  <MessageSquare className="w-3.5 h-3.5 text-amber-400" />
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5 flex items-center gap-1.5">
+                  <MessageSquare className="w-3.5 h-3.5 text-[#789B80]" />
                   <span>Seeker Message:</span>
                 </label>
                 <div className="p-4 rounded-xl bg-black/40 border border-white/10 text-xs sm:text-sm text-stone-200 leading-relaxed max-h-48 overflow-y-auto whitespace-pre-wrap font-sans">
@@ -1462,7 +1462,7 @@ export default function AdminDashboardPage() {
 
               {/* Status Selector */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                   Change Status:
                 </label>
                 <div className="grid grid-cols-3 sm:grid-cols-5 gap-2">
@@ -1474,7 +1474,7 @@ export default function AdminDashboardPage() {
                         onClick={() => setModalStatus(st)}
                         className={`py-2 px-2.5 rounded-xl text-xs font-semibold capitalize border transition-all cursor-pointer ${
                           modalStatus === st
-                            ? "bg-amber-500 text-stone-950 border-amber-400 font-bold shadow-md"
+                            ? "bg-[#789B80] text-stone-950 border-[#789B80] font-bold shadow-md"
                             : "bg-black/30 text-stone-400 border-white/10 hover:border-white/30"
                         }`}
                       >
@@ -1487,8 +1487,8 @@ export default function AdminDashboardPage() {
 
               {/* Internal Admin Notes */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5 flex items-center gap-1.5">
-                  <Edit3 className="w-3.5 h-3.5 text-amber-400" />
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5 flex items-center gap-1.5">
+                  <Edit3 className="w-3.5 h-3.5 text-[#789B80]" />
                   <span>Internal Admin Notes:</span>
                 </label>
                 <textarea
@@ -1496,7 +1496,7 @@ export default function AdminDashboardPage() {
                   value={modalNotes}
                   onChange={(e) => setModalNotes(e.target.value)}
                   placeholder="Add private ashram notes (e.g. called on Monday, confirmed arrival for Dec cohort...)"
-                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 transition-colors resize-none"
+                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80] transition-colors resize-none"
                 />
               </div>
 
@@ -1533,7 +1533,7 @@ export default function AdminDashboardPage() {
                   type="button"
                   onClick={handleSaveModal}
                   disabled={isSavingModal}
-                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="flex-1 sm:flex-none px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-white font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isSavingModal ? "Saving..." : "Save Changes"}</span>
@@ -1550,12 +1550,12 @@ export default function AdminDashboardPage() {
       {/* ========================================================================= */}
       {eventModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl max-h-[90vh] overflow-y-auto">
+          <div className="relative w-full max-w-2xl bg-[#234638] border border-[#789B80]/40 rounded-3xl p-6 sm:p-8 text-[#F8F6EF] shadow-2xl max-h-[90vh] overflow-y-auto">
             
             {/* Modal Header */}
             <div className="flex items-start justify-between pb-4 border-b border-white/10">
               <div>
-                <span className="text-[11px] font-mono text-amber-300 uppercase tracking-widest block mb-1">
+                <span className="text-[11px] font-mono text-[#789B80] uppercase tracking-widest block mb-1">
                   {editingEvent ? "Edit Event" : "Create New Event"}
                 </span>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
@@ -1576,7 +1576,7 @@ export default function AdminDashboardPage() {
               
               {/* Event Title */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                   Event Title (कार्यक्रम का नाम) *
                 </label>
                 <input
@@ -1585,14 +1585,14 @@ export default function AdminDashboardPage() {
                   value={eventForm.title}
                   onChange={(e) => setEventForm({ ...eventForm, title: e.target.value })}
                   placeholder="e.g. हिमालयी मौन एवं ध्यान साधना शिविर"
-                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 font-serif"
+                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80] font-serif"
                 />
               </div>
 
               {/* Subtitle & Category */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Subtitle (उपशीर्षक)
                   </label>
                   <input
@@ -1600,18 +1600,18 @@ export default function AdminDashboardPage() {
                     value={eventForm.subtitle}
                     onChange={(e) => setEventForm({ ...eventForm, subtitle: e.target.value })}
                     placeholder="e.g. 7-दिवसीय आवासीय साधना"
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Category (श्रेणी)
                   </label>
                   <select
                     value={eventForm.category}
                     onChange={(e) => setEventForm({ ...eventForm, category: e.target.value })}
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white focus:outline-none focus:border-amber-400 cursor-pointer"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white focus:outline-none focus:border-[#789B80] cursor-pointer"
                   >
                     <option value="साधना शिविर">साधना शिविर (Retreat)</option>
                     <option value="वैदिक कार्यशाला">वैदिक कार्यशाला (Workshop)</option>
@@ -1625,7 +1625,7 @@ export default function AdminDashboardPage() {
               {/* Date Display & Time */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Dates Display Text (तिथियाँ)
                   </label>
                   <input
@@ -1633,12 +1633,12 @@ export default function AdminDashboardPage() {
                     value={eventForm.dateDisplay}
                     onChange={(e) => setEventForm({ ...eventForm, dateDisplay: e.target.value })}
                     placeholder="e.g. 15 – 21 दिसंबर 2026"
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 font-mono"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80] font-mono"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Daily Schedule Time (समय)
                   </label>
                   <input
@@ -1646,7 +1646,7 @@ export default function AdminDashboardPage() {
                     value={eventForm.time}
                     onChange={(e) => setEventForm({ ...eventForm, time: e.target.value })}
                     placeholder="e.g. प्रातः ०६:०० – सायं ०७:३०"
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80]"
                   />
                 </div>
               </div>
@@ -1654,7 +1654,7 @@ export default function AdminDashboardPage() {
               {/* Location & Capacity */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Venue / Location (स्थान)
                   </label>
                   <input
@@ -1662,12 +1662,12 @@ export default function AdminDashboardPage() {
                     value={eventForm.location}
                     onChange={(e) => setEventForm({ ...eventForm, location: e.target.value })}
                     placeholder="श्रीध्यान आश्रम, उत्तरकाशी"
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                     Capacity (साधक संख्या)
                   </label>
                   <input
@@ -1675,7 +1675,7 @@ export default function AdminDashboardPage() {
                     value={eventForm.capacity}
                     onChange={(e) => setEventForm({ ...eventForm, capacity: e.target.value })}
                     placeholder="e.g. 25 साधक (सीमित सीटें)"
-                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-amber-400"
+                    className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80]"
                   />
                 </div>
               </div>
@@ -1683,7 +1683,7 @@ export default function AdminDashboardPage() {
               {/* Status & Registration Toggle */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-3.5 rounded-xl bg-black/30 border border-white/10 items-center">
                 <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1">
+                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1">
                     Publication Status:
                   </label>
                   <select
@@ -1694,7 +1694,7 @@ export default function AdminDashboardPage() {
                         status: e.target.value as AshramEvent["status"],
                       })
                     }
-                    className="w-full p-2 rounded-lg bg-black/60 border border-white/20 text-xs text-white focus:outline-none focus:border-amber-400 cursor-pointer"
+                    className="w-full p-2 rounded-lg bg-black/60 border border-white/20 text-xs text-white focus:outline-none focus:border-[#789B80] cursor-pointer"
                   >
                     <option value="active">Active (सार्वजनिक वेबसाइट पर दिखेगा)</option>
                     <option value="draft">Draft (ड्राफ्ट - अभी छिपाएं)</option>
@@ -1711,7 +1711,7 @@ export default function AdminDashboardPage() {
                     onChange={(e) =>
                       setEventForm({ ...eventForm, registrationOpen: e.target.checked })
                     }
-                    className="w-4 h-4 rounded text-amber-500 focus:ring-0 focus:outline-none cursor-pointer"
+                    className="w-4 h-4 rounded text-[#789B80] focus:ring-0 focus:outline-none cursor-pointer"
                   />
                   <label htmlFor="registrationOpen" className="text-xs text-stone-200 font-semibold cursor-pointer">
                     Registration Open (पंजीकरण खुला है)
@@ -1721,7 +1721,7 @@ export default function AdminDashboardPage() {
 
               {/* Description */}
               <div>
-                <label className="block text-xs font-semibold uppercase tracking-wider text-amber-200/80 mb-1.5">
+                <label className="block text-xs font-semibold uppercase tracking-wider text-[#DADDD3]/80 mb-1.5">
                   Detailed Description (विवरण व नियम)
                 </label>
                 <textarea
@@ -1729,7 +1729,7 @@ export default function AdminDashboardPage() {
                   value={eventForm.description}
                   onChange={(e) => setEventForm({ ...eventForm, description: e.target.value })}
                   placeholder="कार्यक्रम की साधना पद्धति, पात्रता एवं अन्य नियम..."
-                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-amber-400 resize-none font-sans"
+                  className="w-full p-3 rounded-xl bg-black/40 border border-white/15 text-xs sm:text-sm text-white placeholder-stone-500 focus:outline-none focus:border-[#789B80] resize-none font-sans"
                 />
               </div>
 
@@ -1754,7 +1754,7 @@ export default function AdminDashboardPage() {
                 <button
                   type="submit"
                   disabled={isSavingEvent}
-                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-white font-bold text-xs tracking-wide shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Save className="w-3.5 h-3.5" />
                   <span>{isSavingEvent ? "Saving..." : editingEvent ? "Update Event" : "Publish Event"}</span>

@@ -155,21 +155,21 @@ export default function LineagePage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] flex flex-col min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] flex flex-col min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       
       {/* ========================================================================= */}
       {/* 1. HERO / EDITORIAL HEADER */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f7f3ea] via-[#faf7f0] to-[#fcfbf7] pt-14 pb-20 border-b border-[#e8e2d4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F6EF] via-[#F0F2EA] to-[#F8F6EF] pt-14 pb-20 border-b border-[#DADDD3]">
         <div
           aria-hidden="true"
-          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-b from-amber-400/20 via-orange-300/10 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-b from-[#789B80]/15 via-[#789B80]/08 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
         />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-margin text-center">
           {/* Tradition Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-900 text-xs font-semibold tracking-[0.2em] uppercase mb-4 shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#789B80]/10 border border-[#789B80]/25 text-[#234638] text-xs font-semibold tracking-[0.2em] uppercase mb-4 shadow-2xs">
+            <Sparkles className="w-3.5 h-3.5 text-[#789B80]" />
             <span className={isHi ? 'font-devanagari' : ''}>
               {tGuru('label')}
             </span>
@@ -177,7 +177,7 @@ export default function LineagePage() {
 
           {/* Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-4 ${
+            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#234638] tracking-tight leading-tight mb-4 ${
               isHi ? 'font-devanagari' : ''
             }`}
           >
@@ -200,10 +200,10 @@ export default function LineagePage() {
       {/* ========================================================================= */}
       <section className="py-20 md:py-24 px-6 md:px-margin max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold text-amber-800 uppercase tracking-widest block mb-2">
+          <span className="text-xs font-bold text-[#234638] uppercase tracking-widest block mb-2">
             {isHi ? "पावन संत परंपरा" : "Sacred Lineage Stream"}
           </span>
-          <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#092217] ${isHi ? 'font-devanagari' : ''}`}>
+          <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#234638] ${isHi ? 'font-devanagari' : ''}`}>
             {tGuru('title')}
           </h2>
         </div>
@@ -212,7 +212,7 @@ export default function LineagePage() {
           {lineageGurus.map((guru, index) => (
             <div
               key={index}
-              className="bg-white rounded-3xl overflow-hidden border border-stone-200 hover:border-amber-400 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+              className="bg-white rounded-3xl overflow-hidden border border-stone-200 hover:border-[#789B80] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
             >
               <div className="relative aspect-[4/3] w-full overflow-hidden bg-stone-900">
                 <img
@@ -221,7 +221,7 @@ export default function LineagePage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent flex items-end p-5">
-                  <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold">
+                  <span className="text-xs uppercase tracking-wider text-[#789B80] font-semibold">
                     {guru.role}
                   </span>
                 </div>
@@ -229,7 +229,7 @@ export default function LineagePage() {
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className={`text-lg sm:text-xl font-serif font-bold text-[#092217] mb-2 group-hover:text-amber-800 transition-colors ${isHi ? 'font-devanagari' : ''}`}>
+                  <h3 className={`text-lg sm:text-xl font-serif font-bold text-[#234638] mb-2 group-hover:text-[#234638] transition-colors ${isHi ? 'font-devanagari' : ''}`}>
                     {guru.name}
                   </h3>
                   <p className="text-stone-600 text-sm leading-relaxed font-sans">
@@ -237,8 +237,8 @@ export default function LineagePage() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-amber-800">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                <div className="mt-6 pt-4 border-t border-stone-100 flex items-center gap-2 text-xs font-semibold text-[#234638]">
+                  <Sparkles className="w-3.5 h-3.5 text-[#789B80]" />
                   <span>{guru.footer}</span>
                 </div>
               </div>
@@ -250,9 +250,9 @@ export default function LineagePage() {
       {/* ========================================================================= */}
       {/* 3. SACRED LINEAGE SEAL / BANNER */}
       {/* ========================================================================= */}
-      <section className="py-16 bg-[#faf7f0] border-y border-[#e8e2d4]">
+      <section className="py-16 bg-[#F8F6EF] border-y border-[#DADDD3]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-2xl sm:text-3xl text-amber-800 font-serif font-bold block mb-4">
+          <span className="text-2xl sm:text-3xl text-[#234638] font-serif font-bold block mb-4">
             ॥ गुरु-कृपा ही केवलम् ॥
           </span>
           <p className={`text-base sm:text-lg text-stone-700 italic font-serif leading-relaxed max-w-2xl mx-auto ${isHi ? 'font-devanagari' : ''}`}>
@@ -267,10 +267,10 @@ export default function LineagePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-bold text-amber-800 uppercase tracking-widest block mb-2">
+            <span className="text-xs font-bold text-[#234638] uppercase tracking-widest block mb-2">
               {isHi ? "आश्रम परिचय के अन्य पृष्ठ" : "Explore About Us"}
             </span>
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#092217] ${isHi ? 'font-devanagari' : ''}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#234638] ${isHi ? 'font-devanagari' : ''}`}>
               {isHi ? "श्रीध्यान आश्रम के अन्य आयाम" : "Other Dimensions of Shridhyan Ashram"}
             </h2>
           </div>
@@ -280,20 +280,20 @@ export default function LineagePage() {
               <Link
                 key={idx}
                 href={item.href}
-                className="bg-[#faf7f0] border border-stone-200/90 hover:border-amber-400 p-6 rounded-2xl shadow-2xs hover:shadow-md transition-all group flex flex-col justify-between"
+                className="bg-[#F8F6EF] border border-stone-200/90 hover:border-[#789B80] p-6 rounded-2xl shadow-2xs hover:shadow-md transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/25 flex items-center justify-center text-amber-700 mb-4 group-hover:bg-amber-500/20 group-hover:scale-105 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 border border-[#789B80]/25 flex items-center justify-center text-[#789B80] mb-4 group-hover:bg-[#789B80]/20 group-hover:scale-105 transition-all">
                     <item.icon className="w-5 h-5" />
                   </div>
-                  <h3 className={`text-lg font-serif font-bold text-[#092217] group-hover:text-amber-800 transition-colors mb-1 ${isHi ? 'font-devanagari' : ''}`}>
+                  <h3 className={`text-lg font-serif font-bold text-[#234638] group-hover:text-[#234638] transition-colors mb-1 ${isHi ? 'font-devanagari' : ''}`}>
                     {item.title}
                   </h3>
                   <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-stone-200/60 flex items-center gap-1.5 text-xs font-semibold text-amber-800 group-hover:translate-x-1 transition-transform">
+                <div className="mt-5 pt-3 border-t border-stone-200/60 flex items-center gap-1.5 text-xs font-semibold text-[#234638] group-hover:translate-x-1 transition-transform">
                   <span>{isHi ? "आगे पढ़ें" : "Learn More"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
@@ -306,19 +306,19 @@ export default function LineagePage() {
       {/* ========================================================================= */}
       {/* 5. SPIRITUAL INVITATION */}
       {/* ========================================================================= */}
-      <section className="py-16 bg-gradient-to-b from-[#faf7f0] to-[#f7f3ea] border-t border-[#e8e2d4] text-center">
+      <section className="py-16 bg-gradient-to-b from-[#faf7f0] to-[#f7f3ea] border-t border-[#DADDD3] text-center">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/courses/shri-vidya"
-              className="inline-flex items-center gap-2 bg-[#092217] hover:bg-[#143a28] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all group"
+              className="inline-flex items-center gap-2 bg-[#234638] hover:bg-[#2D5444] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all group"
             >
               <span>{isHi ? "पाठ्यक्रम देखें" : isJa ? "コース案内を見る" : "Explore Courses"}</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-colors"
+              className="inline-flex items-center gap-2 bg-[#234638] hover:bg-[#1a3329] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>{isHi ? "आश्रम से संपर्क करें" : isJa ? "お問い合わせ" : "Contact Ashram"}</span>

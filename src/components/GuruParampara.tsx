@@ -4,17 +4,17 @@ export function GuruParampara() {
   const t = useTranslations("GuruParampara");
 
   return (
-    <section id="guru-parampara" className="py-24 bg-[#203A27] text-[#F8F5F0]">
+    <section id="guru-parampara" className="py-24 bg-[#234638] text-[#F8F6EF]">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="order-2 lg:order-1">
-            <h2 className="font-heading font-bold text-3xl md:text-5xl text-[#C5A866] mb-4 leading-tight">
+            <h2 className="font-heading font-bold text-3xl md:text-5xl text-[#E8EBDD] mb-4 leading-tight">
               {t("title")}
             </h2>
             <h3 className="font-sans text-xl md:text-2xl mb-8 opacity-90 font-medium">
               {t("subtitle")}
             </h3>
-            <div className="w-16 h-[2px] bg-[#C5A866] mb-8" />
+            <div className="w-16 h-[2px] bg-[#789B80] mb-8" />
             <p className="text-lg md:text-xl opacity-80 leading-relaxed">
               {t("description")}
             </p>

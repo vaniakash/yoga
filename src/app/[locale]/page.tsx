@@ -84,17 +84,17 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] flex flex-col min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] flex flex-col min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       
       {/* 1. HERO SECTION */}
       <Hero onOpenMasterclass={() => setMasterclassOpen(true)} />
 
       {/* 2. MEET YOUR GUIDE: MINIMAL SPIRITUAL MASTER SANCTUM */}
-      <section className="py-20 md:py-28 bg-[#faf7f0] border-y border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="guide">
+      <section className="py-20 md:py-28 bg-[#F8F6EF] border-y border-[#DADDD3] relative overflow-hidden scroll-mt-24" id="guide">
         {/* Subtle Ambient Warm Glow */}
         <div
           aria-hidden="true"
-          className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-[#789B80]/10 blur-3xl rounded-full pointer-events-none -z-0"
         />
 
         <div className="max-w-6xl mx-auto px-6 md:px-margin relative z-10">
@@ -106,11 +106,11 @@ export default function HomePage() {
                 {/* Soft Ambient Golden Ring */}
                 <div
                   aria-hidden="true"
-                  className="absolute -inset-2 bg-gradient-to-tr from-amber-500/20 via-amber-300/10 to-orange-400/20 rounded-[2.5rem] blur-xl opacity-60 group-hover:opacity-90 transition-opacity"
+                  className="absolute -inset-2 bg-gradient-to-tr from-[#789B80]/20 via-[#789B80]/10 to-[#789B80]/20 rounded-[2.5rem] blur-xl opacity-60 group-hover:opacity-90 transition-opacity"
                 />
 
                 {/* The Framed Portrait */}
-                <div className="relative rounded-[2rem] overflow-hidden bg-white p-3 shadow-xl border border-amber-400/30">
+                <div className="relative rounded-[2rem] overflow-hidden bg-white p-3 shadow-xl border border-[#DADDD3]">
                   <div className="relative aspect-[4/5] rounded-[1.5rem] overflow-hidden bg-stone-900 shadow-inner">
                     <img
                       alt={isHi ? "पूजनीय गोविंदानंद तीर्थ जी महाराज" : "Pujaniya Govindanand Teerth Ji Maharaj"}
@@ -120,14 +120,14 @@ export default function HomePage() {
                     
                     {/* Subtle Gradient & Location Badge */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                      <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold mb-1">
+                      <span className="text-xs uppercase tracking-widest text-[#789B80] font-semibold mb-1">
                         {tGuide('subtitle')}
                       </span>
                       <h3 className={`text-xl font-serif font-bold text-white ${isHi ? 'font-devanagari' : ''}`}>
                         {tGuide('title')}
                       </h3>
-                      <p className="text-xs text-amber-200/90 mt-1 flex items-center gap-1.5">
-                        <MapPin className="w-3 h-3 text-amber-400 inline" />
+                      <p className="text-xs text-[#E8EBDD]/90 mt-1 flex items-center gap-1.5">
+                        <MapPin className="w-3 h-3 text-[#789B80] inline" />
                         <span>{tGuide('location')}</span>
                       </p>
                     </div>
@@ -135,8 +135,8 @@ export default function HomePage() {
                 </div>
 
                 {/* Floating Experience Badge */}
-                <div className="absolute -bottom-4 right-4 sm:-right-3 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-amber-400/40 flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-lg bg-amber-500/15 text-amber-800 flex items-center justify-center">
+                <div className="absolute -bottom-4 right-4 sm:-right-3 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border border-[#789B80]/40 flex items-center gap-2">
+                  <div className="w-6 h-6 rounded-lg bg-[#789B80]/15 text-[#234638] flex items-center justify-center">
                     <Award className="w-3.5 h-3.5" />
                   </div>
                   <span className="text-xs font-bold text-stone-900 tracking-wide">
@@ -151,19 +151,19 @@ export default function HomePage() {
               
               {/* Category Tag */}
               <div className="inline-flex items-center gap-2 mb-3">
-                <span className="w-6 h-[1.5px] bg-amber-600"></span>
-                <span className={`text-amber-800 text-xs font-bold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+                <span className="w-6 h-[1.5px] bg-[#789B80]"></span>
+                <span className={`text-[#789B80] text-xs font-bold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
                   {tGuide('label')}
                 </span>
               </div>
 
               {/* Master Name / Main Headline */}
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-2 ${isHi ? 'font-devanagari' : ''}`}>
+              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#234638] tracking-tight leading-tight mb-2 ${isHi ? 'font-devanagari' : ''}`}>
                 {tGuide('title')}
               </h2>
 
               {/* Master Subtitle */}
-              <p className={`text-amber-800 text-sm sm:text-base font-medium mb-5 ${isHi ? 'font-devanagari' : ''}`}>
+              <p className={`text-[#789B80] text-sm sm:text-base font-medium mb-5 ${isHi ? 'font-devanagari' : ''}`}>
                 {tGuide('subtitle')}
               </p>
 
@@ -177,11 +177,11 @@ export default function HomePage() {
                 
                 {/* Pillar 1 */}
                 <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
-                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                  <div className="w-9 h-9 rounded-xl bg-[#789B80]/10 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#789B80]/20 transition-colors border border-[#789B80]/20">
                     <Flame className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
+                    <h4 className={`text-base font-bold text-[#234638] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar1_title')}
                     </h4>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
@@ -192,11 +192,11 @@ export default function HomePage() {
 
                 {/* Pillar 2 */}
                 <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
-                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                  <div className="w-9 h-9 rounded-xl bg-[#789B80]/10 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#789B80]/20 transition-colors border border-[#789B80]/20">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
+                    <h4 className={`text-base font-bold text-[#234638] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar2_title')}
                     </h4>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
@@ -207,11 +207,11 @@ export default function HomePage() {
 
                 {/* Pillar 3 */}
                 <div className="pt-4 border-t border-stone-200/90 flex items-start gap-4 group">
-                  <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-amber-500/20 transition-colors border border-amber-400/20">
+                  <div className="w-9 h-9 rounded-xl bg-[#789B80]/10 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-[#789B80]/20 transition-colors border border-[#789B80]/20">
                     <BookOpen className="w-4 h-4" />
                   </div>
                   <div>
-                    <h4 className={`text-base font-bold text-[#092217] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
+                    <h4 className={`text-base font-bold text-[#234638] ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                       {tGuide('pillar3_title')}
                     </h4>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans mt-0.5 leading-relaxed">
@@ -223,9 +223,9 @@ export default function HomePage() {
               </div>
 
               {/* Minimal Footnote Assurance Bar */}
-              <div className="mt-8 pt-5 border-t border-amber-500/20 flex flex-wrap items-center gap-4 text-xs text-stone-600">
-                <span className="font-semibold text-amber-800 flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-amber-700" />
+              <div className="mt-8 pt-5 border-t border-[#DADDD3] flex flex-wrap items-center gap-4 text-xs text-stone-600">
+                <span className="font-semibold text-[#789B80] flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-[#789B80]" />
                   <span>{tGuide('location')}</span>
                 </span>
                 <span className="text-stone-300">•</span>
@@ -235,7 +235,7 @@ export default function HomePage() {
                 <span className="text-stone-300">•</span>
                 <Link
                   href="/about#lineage"
-                  className="text-amber-800 hover:text-amber-600 font-semibold underline underline-offset-4 flex items-center gap-1 transition-colors"
+                  className="text-[#234638] hover:text-[#789B80] font-semibold underline underline-offset-4 flex items-center gap-1 transition-colors"
                 >
                   <span>{isHi ? "गुरु परंपरा एवं आश्रम परिचय देखें" : "View Guru Lineage & Ashram About"}</span>
                   <ArrowRight className="w-3 h-3" />
@@ -249,11 +249,11 @@ export default function HomePage() {
       </section>
 
       {/* 3. OUR SPIRITUAL TEACHINGS / हमारे आध्यात्मिक पाठ्यक्रम */}
-      <section className="py-20 md:py-28 bg-[#faf8f5] border-b border-[#e8e2d4] relative overflow-hidden scroll-mt-24" id="courses">
+      <section className="py-20 md:py-28 bg-[#F8F6EF] border-b border-[#DADDD3] relative overflow-hidden scroll-mt-24" id="courses">
         {/* Soft Ambient Warm Glow */}
         <div
           aria-hidden="true"
-          className="absolute top-1/4 right-0 w-96 h-96 bg-amber-400/10 blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute top-1/4 right-0 w-96 h-96 bg-[#789B80]/10 blur-3xl rounded-full pointer-events-none -z-0"
         />
 
         {/* Faded Mountain Silhouette at bottom behind CTA */}
@@ -266,7 +266,7 @@ export default function HomePage() {
             alt=""
             className="w-full h-full object-cover object-bottom filter grayscale contrast-125"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#faf8f5]/40 to-[#faf8f5]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-transparent via-[#F8F6EF]/40 to-[#F8F6EF]" />
         </div>
 
         <div className="max-w-6xl mx-auto px-6 md:px-margin relative z-10">
@@ -274,25 +274,25 @@ export default function HomePage() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
             {/* Top Om Symbol with Divider Lines */}
-            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 text-[#c2410c]">
-              <span className="w-12 sm:w-16 h-px bg-[#c2410c]/30" />
+            <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 text-[#789B80]">
+              <span className="w-12 sm:w-16 h-px bg-[#789B80]/30" />
               <span className="text-2xl sm:text-3xl font-serif">ॐ</span>
-              <span className="w-12 sm:w-16 h-px bg-[#c2410c]/30" />
+              <span className="w-12 sm:w-16 h-px bg-[#789B80]/30" />
             </div>
 
             {/* Category Tag */}
-            <p className={`text-xs sm:text-sm font-bold tracking-[0.25em] text-[#c2410c] uppercase mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+            <p className={`text-xs sm:text-sm font-bold tracking-[0.25em] text-[#789B80] uppercase mb-4 ${isHi ? 'font-devanagari' : ''}`}>
               {tTeach('label')}
             </p>
             
             {/* Main Headline */}
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#1c2e24] tracking-tight leading-tight mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#234638] tracking-tight leading-tight mb-4 ${isHi ? 'font-devanagari' : ''}`}>
               {isHi ? (
-                <>साधना, ध्यान और <span className="text-[#c2410c] italic font-serif">वैदिक ज्ञान</span> की यात्रा</>
+                <>साधना, ध्यान और <span className="text-[#789B80] italic font-serif">वैदिक ज्ञान</span> की यात्रा</>
               ) : isJa ? (
-                <>修練・瞑想・<span className="text-[#c2410c] italic font-serif">ヴェーダの叡智</span>への旅</>
+                <>修練・瞑想・<span className="text-[#789B80] italic font-serif">ヴェーダの叡智</span>への旅</>
               ) : (
-                <>A Journey of Sadhana,<br className="hidden sm:inline" /> Meditation & <span className="text-[#c2410c] italic font-serif">Vedic Wisdom</span></>
+                <>A Journey of Sadhana,<br className="hidden sm:inline" /> Meditation & <span className="text-[#789B80] italic font-serif">Vedic Wisdom</span></>
               )}
             </h2>
             
@@ -311,8 +311,8 @@ export default function HomePage() {
                   key={idx}
                   className={`rounded-3xl p-5 sm:p-6 transition-all duration-300 flex flex-col justify-between group ${
                     isFeatured
-                      ? 'bg-[#faf6ee] border-2 border-amber-400/80 shadow-md hover:shadow-xl'
-                      : 'bg-white border border-stone-200/90 shadow-xs hover:shadow-md'
+                      ? 'bg-[#F8F6EF] border-2 border-[#789B80]/50 shadow-md hover:shadow-xl'
+                      : 'bg-white border border-[#DADDD3] shadow-xs hover:shadow-md'
                   }`}
                 >
                   <div>
@@ -335,7 +335,7 @@ export default function HomePage() {
                     </div>
 
                     {/* Card Title */}
-                    <h3 className={`text-xl sm:text-2xl font-serif font-bold text-[#1c2e24] group-hover:text-[#c2410c] transition-colors mb-2.5 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
+                    <h3 className={`text-xl sm:text-2xl font-serif font-bold text-[#234638] group-hover:text-[#789B80] transition-colors mb-2.5 leading-snug ${isHi ? 'font-devanagari' : ''}`}>
                       {course.title}
                     </h3>
 
@@ -350,7 +350,7 @@ export default function HomePage() {
                     {isFeatured ? (
                       <Link
                         href={course.href}
-                        className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#ea580c] hover:bg-[#c2410c] text-white font-semibold text-xs sm:text-sm shadow-sm hover:shadow transition-all duration-200 group/btn"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#234638] hover:bg-[#1a3329] text-white font-semibold text-xs sm:text-sm shadow-sm hover:shadow transition-all duration-200 group/btn"
                       >
                         <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
                         <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1 transition-transform" />
@@ -358,7 +358,7 @@ export default function HomePage() {
                     ) : (
                       <Link
                         href={course.href}
-                        className="inline-flex items-center gap-1.5 text-[#c2410c] hover:text-[#9a3412] font-bold text-xs sm:text-sm transition-colors group/link"
+                        className="inline-flex items-center gap-1.5 text-[#789B80] hover:text-[#9a3412] font-bold text-xs sm:text-sm transition-colors group/link"
                       >
                         <span className={isHi ? 'font-devanagari' : ''}>{tTeach('btn_view')}</span>
                         <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
@@ -375,10 +375,10 @@ export default function HomePage() {
             <a
               href="#enroll"
               onClick={(e) => handleScroll(e, "enroll")}
-              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white hover:bg-[#faf7f0] text-[#c2410c] border border-amber-400/80 sm:border-2 shadow-xs hover:shadow font-semibold text-sm sm:text-base transition-all duration-200 group"
+              className="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-white hover:bg-[#faf7f0] text-[#789B80] border border-[#789B80]/80 sm:border-2 shadow-xs hover:shadow font-semibold text-sm sm:text-base transition-all duration-200 group"
             >
               <span className={isHi ? 'font-devanagari' : ''}>{tTeach('view_all')}</span>
-              <ArrowRight className="w-4 h-4 text-[#c2410c] transform group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 text-[#789B80] transform group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
 
@@ -386,13 +386,13 @@ export default function HomePage() {
       </section>
 
       {/* 4. DOCUMENTED TESTIMONIALS & CASE STUDIES */}
-      <section className="py-24 bg-[#faf7f0] border-b border-[#e8e2d4] px-6 md:px-margin" id="testimonials">
+      <section className="py-24 bg-[#F8F6EF] border-b border-[#DADDD3] px-6 md:px-margin" id="testimonials">
         <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-amber-800 text-xs sm:text-sm font-semibold tracking-widest uppercase block mb-2">
+            <span className="text-[#789B80] text-xs sm:text-sm font-semibold tracking-widest uppercase block mb-2">
               {tTestimonials('label')}
             </span>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] mb-4 ${isHi ? 'font-devanagari' : ''}`}>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#234638] mb-4 ${isHi ? 'font-devanagari' : ''}`}>
               {tTestimonials('title')}
             </h2>
             <p className="text-stone-600 text-base sm:text-lg">
@@ -401,41 +401,41 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-2xl bg-white border border-[#e8e2d4] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="p-8 rounded-2xl bg-white border border-[#DADDD3] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
-                <Quote className="w-8 h-8 text-amber-600/40 mb-4" />
+                <Quote className="w-8 h-8 text-[#789B80]/40 mb-4" />
                 <p className="text-sm text-stone-700 leading-relaxed italic mb-6 font-sans">
                   {tTestimonials('t1_text')}
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100">
-                <h4 className="font-bold text-[#092217] text-sm">{tTestimonials('t1_name')}</h4>
+                <h4 className="font-bold text-[#234638] text-sm">{tTestimonials('t1_name')}</h4>
                 <p className="text-xs text-stone-500">{tTestimonials('t1_role')}</p>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white border border-[#e8e2d4] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="p-8 rounded-2xl bg-white border border-[#DADDD3] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
-                <Quote className="w-8 h-8 text-amber-600/40 mb-4" />
+                <Quote className="w-8 h-8 text-[#789B80]/40 mb-4" />
                 <p className="text-sm text-stone-700 leading-relaxed italic mb-6 font-sans">
                   {tTestimonials('t2_text')}
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100">
-                <h4 className="font-bold text-[#092217] text-sm">{tTestimonials('t2_name')}</h4>
+                <h4 className="font-bold text-[#234638] text-sm">{tTestimonials('t2_name')}</h4>
                 <p className="text-xs text-stone-500">{tTestimonials('t2_role')}</p>
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-white border border-[#e8e2d4] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
+            <div className="p-8 rounded-2xl bg-white border border-[#DADDD3] shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between">
               <div>
-                <Quote className="w-8 h-8 text-amber-600/40 mb-4" />
+                <Quote className="w-8 h-8 text-[#789B80]/40 mb-4" />
                 <p className="text-sm text-stone-700 leading-relaxed italic mb-6 font-sans">
                   {tTestimonials('t3_text')}
                 </p>
               </div>
               <div className="pt-4 border-t border-stone-100">
-                <h4 className="font-bold text-[#092217] text-sm">{tTestimonials('t3_name')}</h4>
+                <h4 className="font-bold text-[#234638] text-sm">{tTestimonials('t3_name')}</h4>
                 <p className="text-xs text-stone-500">{tTestimonials('t3_role')}</p>
               </div>
             </div>
@@ -444,13 +444,13 @@ export default function HomePage() {
       </section>
 
       {/* 5. COURSE ENROLLMENT SECTION (LIMITED 25 SEATS) */}
-      <section className="py-20 bg-[#f7f3ea] border-b border-[#e8e2d4] text-[#1c2e24] relative scroll-mt-24" id="enroll">
+      <section className="py-20 bg-[#F8F6EF] border-b border-[#DADDD3] text-[#234638] relative scroll-mt-24" id="enroll">
         <div className="max-w-5xl mx-auto px-6 md:px-margin relative z-10">
-          <div className="relative overflow-hidden rounded-3xl p-8 sm:p-12 bg-white border-2 border-stone-200 shadow-xl">
+          <div className="relative overflow-hidden rounded-3xl p-8 sm:p-12 bg-white border border-[#DADDD3] shadow-md">
             {/* Top Cohort Pill */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-stone-200">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 text-xs sm:text-sm font-semibold">
-                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#789B80]/10 border border-[#789B80]/30 text-[#234638] text-xs sm:text-sm font-semibold">
+                <span className="w-2 h-2 rounded-full bg-[#789B80] animate-pulse"></span>
                 <span>{tEnroll('cohort_badge')}</span>
               </div>
               <span className="text-xs text-stone-500 font-mono">
@@ -460,7 +460,7 @@ export default function HomePage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-8 items-center">
               <div className="lg:col-span-7 space-y-5">
-                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#092217] leading-tight ${isHi ? 'font-devanagari' : ''}`}>
+                <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#234638] leading-tight ${isHi ? 'font-devanagari' : ''}`}>
                   {tEnroll('title')}
                 </h2>
                 <p className="text-sm sm:text-base text-stone-600 leading-relaxed font-sans">
@@ -468,10 +468,10 @@ export default function HomePage() {
                 </p>
 
                 {/* Strict 25 Seat Limit Banner */}
-                <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 flex items-start gap-3 text-amber-900">
-                  <Users className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
+                <div className="p-4 rounded-xl bg-[#E8EBDD] border border-[#789B80]/30 flex items-start gap-3 text-[#234638]">
+                  <Users className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
                   <div className="text-xs sm:text-sm leading-relaxed">
-                    <strong className="text-amber-800 font-semibold block">{tEnroll('limit_badge')}</strong>
+                    <strong className="text-[#234638] font-semibold block">{tEnroll('limit_badge')}</strong>
                     {tEnroll('limit_text')}
                   </div>
                 </div>
@@ -479,34 +479,34 @@ export default function HomePage() {
                 {/* Features List */}
                 <div className="space-y-2.5 pt-2">
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                     <span>{tEnroll('f1')}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                     <span>{tEnroll('f2')}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                     <span>{tEnroll('f3')}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                     <span>{tEnroll('f4')}</span>
                   </div>
                   <div className="flex items-center gap-3 text-xs sm:text-sm text-stone-700">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                     <span>{tEnroll('f5')}</span>
                   </div>
                 </div>
               </div>
 
               {/* Action Box */}
-              <div className="lg:col-span-5 flex flex-col gap-4 p-6 rounded-2xl bg-[#faf7f0] border border-amber-400/40 text-center shadow-sm">
-                <span className="text-xs uppercase tracking-widest text-amber-800 font-semibold">
+              <div className="lg:col-span-5 flex flex-col gap-4 p-6 rounded-2xl bg-[#E8EBDD] border border-[#789B80]/30 text-center shadow-sm">
+                <span className="text-xs uppercase tracking-widest text-[#789B80] font-semibold">
                   Cohort Enrollment
                 </span>
-                <div className="text-xl sm:text-2xl font-bold text-[#092217] font-serif">
+                <div className="text-xl sm:text-2xl font-bold text-[#234638] font-serif">
                   7-Day Foundation Course
                 </div>
                 <p className="text-xs text-stone-600 font-sans">
@@ -515,7 +515,7 @@ export default function HomePage() {
 
                 <Link
                   href="/contact"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-3.5 px-6 rounded-xl text-sm tracking-wide shadow-md transition-all duration-200 active:scale-95"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#234638] hover:bg-[#1a3329] text-white font-bold py-3.5 px-6 rounded-xl text-sm tracking-wide shadow-md transition-all duration-200 active:scale-95"
                 >
                   <span>{tEnroll('cta_enroll')}</span>
                   <ArrowRight className="w-4 h-4" />
@@ -523,9 +523,9 @@ export default function HomePage() {
 
                 <button
                   onClick={() => setMasterclassOpen(true)}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl border border-stone-300 hover:bg-stone-100 text-stone-800 text-xs sm:text-sm font-medium transition-colors cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3 px-6 rounded-xl border border-[#DADDD3] hover:bg-[#E8EBDD] text-[#234638] text-xs sm:text-sm font-medium transition-colors cursor-pointer"
                 >
-                  <Play className="w-4 h-4 text-amber-700 fill-current" />
+                  <Play className="w-4 h-4 text-[#789B80] fill-current" />
                   <span>{tEnroll('masterclass_btn')}</span>
                 </button>
               </div>
@@ -540,7 +540,7 @@ export default function HomePage() {
       {/* FREE MASTERCLASS MODAL */}
       {masterclassOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl">
+          <div className="relative w-full max-w-2xl bg-[#234638] border border-[#789B80]/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl">
             <button
               onClick={() => setMasterclassOpen(false)}
               className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer"
@@ -549,7 +549,7 @@ export default function HomePage() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-amber-300 uppercase mb-2">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-[#E8EBDD] uppercase mb-2">
               <Sparkles className="w-4 h-4" />
               <span>Free Masterclass Session</span>
             </div>
@@ -563,7 +563,7 @@ export default function HomePage() {
             </p>
 
             {/* Video Placeholder Container with Sacred Himalayan Visual */}
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-400/30 bg-black flex items-center justify-center group shadow-inner mb-6">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#DADDD3] bg-black flex items-center justify-center group shadow-inner mb-6">
               <img
                 src="/images/shridhyan_hero.webp"
                 alt="Shridhyan Masterclass Preview"
@@ -574,24 +574,24 @@ export default function HomePage() {
               <Link
                 href="/contact"
                 onClick={() => setMasterclassOpen(false)}
-                className="relative z-10 w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 text-[#061910] flex items-center justify-center shadow-[0_0_30px_rgba(212,175,55,0.6)] transition-all transform hover:scale-110"
+                className="relative z-10 w-16 h-16 rounded-full bg-[#789B80] hover:bg-[#5A7A62] text-white flex items-center justify-center shadow-[0_0_30px_rgba(120,155,128,0.6)] transition-all transform hover:scale-110"
               >
                 <Play className="w-8 h-8 fill-current ml-1" />
               </Link>
 
-              <div className="absolute bottom-3 left-4 text-xs font-mono text-amber-200/90">
+              <div className="absolute bottom-3 left-4 text-xs font-mono text-[#E8EBDD]/90">
                 Preview Session • 18 Minutes • Himalayan Tapasya
               </div>
             </div>
 
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-              <span className="text-xs text-amber-200/70 font-sans">
+              <span className="text-xs text-[#E8EBDD]/70 font-sans">
                 Ready to join the 7-day cohort? Only 25 seats per batch.
               </span>
               <Link
                 href="/contact"
                 onClick={() => setMasterclassOpen(false)}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#061910] font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm tracking-wide transition-all shadow-md active:scale-95"
+                className="inline-flex items-center gap-2 bg-[#789B80] hover:bg-[#5A7A62] text-white font-bold py-2.5 px-5 rounded-xl text-xs sm:text-sm tracking-wide transition-all shadow-md active:scale-95"
               >
                 <span>Enroll in 7-Day Course</span>
                 <ArrowRight className="w-4 h-4" />

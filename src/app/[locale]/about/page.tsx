@@ -58,21 +58,21 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] flex flex-col min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] flex flex-col min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       
       {/* ========================================================================= */}
       {/* 1. HERO / EDITORIAL HEADER */}
       {/* ========================================================================= */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f7f3ea] via-[#faf7f0] to-[#fcfbf7] pt-14 pb-20 border-b border-[#e8e2d4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F6EF] via-[#F0F2EA] to-[#F8F6EF] pt-14 pb-20 border-b border-[#DADDD3]">
         <div
           aria-hidden="true"
-          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-b from-amber-400/20 via-orange-300/10 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[340px] bg-gradient-to-b from-[#789B80]/15 via-[#789B80]/08 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
         />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-margin text-center">
           {/* Tradition Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-900 text-xs font-semibold tracking-[0.2em] uppercase mb-4 shadow-2xs">
-            <Compass className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#789B80]/10 border border-[#789B80]/25 text-[#234638] text-xs font-semibold tracking-[0.2em] uppercase mb-4 shadow-2xs">
+            <Compass className="w-3.5 h-3.5 text-[#789B80]" />
             <span className={isHi ? 'font-devanagari' : ''}>
               {isHi
                 ? "हिमालयी तपोभूमि | आश्रम परिचय"
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
           {/* Main Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-4 ${
+            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#234638] tracking-tight leading-tight mb-4 ${
               isHi ? 'font-devanagari' : ''
             }`}
           >
@@ -115,13 +115,13 @@ export default function AboutPage() {
           {/* Left Column: Text & Story */}
           <div className="lg:col-span-7 flex flex-col gap-6">
             <div className="inline-flex items-center gap-3">
-              <span className="w-8 h-[2px] bg-amber-600 rounded-full"></span>
-              <span className={`text-amber-800 text-xs font-bold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
+              <span className="w-8 h-[2px] bg-[#789B80] rounded-full"></span>
+              <span className={`text-[#234638] text-xs font-bold tracking-[0.2em] uppercase ${isHi ? 'font-devanagari' : ''}`}>
                 {tAbout('tagline')}
               </span>
             </div>
 
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#092217] leading-tight ${isHi ? 'font-devanagari' : ''}`}>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-[#234638] leading-tight ${isHi ? 'font-devanagari' : ''}`}>
               {tAbout('title')}
             </h2>
 
@@ -133,12 +133,12 @@ export default function AboutPage() {
             </p>
 
             {/* Featured Seal */}
-            <div className="p-6 bg-[#faf7f0] border border-amber-400/30 rounded-2xl flex items-start gap-4 shadow-2xs mt-2">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-800 flex items-center justify-center flex-shrink-0">
+            <div className="p-6 bg-[#F8F6EF] border border-[#789B80]/30 rounded-2xl flex items-start gap-4 shadow-2xs mt-2">
+              <div className="w-12 h-12 rounded-xl bg-[#789B80]/15 text-[#234638] flex items-center justify-center flex-shrink-0">
                 <Mountain className="w-6 h-6" />
               </div>
               <div>
-                <span className={`text-sm font-bold text-amber-900 tracking-wide uppercase block ${isHi ? 'font-devanagari' : ''}`}>
+                <span className={`text-sm font-bold text-[#234638] tracking-wide uppercase block ${isHi ? 'font-devanagari' : ''}`}>
                   {tAbout('badge')}
                 </span>
                 <p className="text-xs sm:text-sm text-stone-600 mt-1.5 leading-relaxed font-sans">
@@ -148,8 +148,8 @@ export default function AboutPage() {
             </div>
 
             {/* Sacred Quote Card */}
-            <div className="p-5 rounded-2xl bg-amber-500/10 border border-amber-500/25 mt-2">
-              <Quote className="w-5 h-5 text-amber-700 mb-2" />
+            <div className="p-5 rounded-2xl bg-[#789B80]/10 border border-[#789B80]/25 mt-2">
+              <Quote className="w-5 h-5 text-[#789B80] mb-2" />
               <p className={`text-sm sm:text-base text-stone-800 font-serif italic ${isHi ? 'font-devanagari' : ''}`}>
                 {tAbout('quote')}
               </p>
@@ -166,7 +166,7 @@ export default function AboutPage() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold mb-1">
+                  <span className="text-xs uppercase tracking-widest text-[#789B80] font-semibold mb-1">
                     {isHi ? "पवित्र हिमालयी अंचल" : "Sacred Himalayan Hermitage"}
                   </span>
                   <h3 className={`text-xl font-serif font-bold text-white mb-2 ${isHi ? 'font-devanagari' : ''}`}>
@@ -188,13 +188,13 @@ export default function AboutPage() {
       {/* ========================================================================= */}
       {/* 3. EXPLORE MORE ABOUT US (PAGES GRID) */}
       {/* ========================================================================= */}
-      <section className="py-20 bg-[#faf7f0] border-t border-[#e8e2d4]">
+      <section className="py-20 bg-[#F8F6EF] border-t border-[#DADDD3]">
         <div className="max-w-7xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-bold text-amber-800 uppercase tracking-widest block mb-2">
+            <span className="text-xs font-bold text-[#234638] uppercase tracking-widest block mb-2">
               {isHi ? "आश्रम परिचय के अन्य पृष्ठ" : "Explore About Us"}
             </span>
-            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#092217] ${isHi ? 'font-devanagari' : ''}`}>
+            <h2 className={`text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#234638] ${isHi ? 'font-devanagari' : ''}`}>
               {isHi ? "श्रीध्यान आश्रम के अन्य आयाम" : "Other Dimensions of Shridhyan Ashram"}
             </h2>
           </div>
@@ -204,20 +204,20 @@ export default function AboutPage() {
               <Link
                 key={idx}
                 href={item.href}
-                className="bg-white border border-stone-200/90 hover:border-amber-400 p-6 rounded-2xl shadow-2xs hover:shadow-md transition-all group flex flex-col justify-between"
+                className="bg-white border border-stone-200/90 hover:border-[#789B80] p-6 rounded-2xl shadow-2xs hover:shadow-md transition-all group flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-400/25 flex items-center justify-center text-amber-700 mb-4 group-hover:bg-amber-500/20 group-hover:scale-105 transition-all">
+                  <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 border border-[#789B80]/25 flex items-center justify-center text-[#789B80] mb-4 group-hover:bg-[#789B80]/20 group-hover:scale-105 transition-all">
                     <item.icon className="w-5 h-5" />
                   </div>
-                  <h3 className={`text-lg font-serif font-bold text-[#092217] group-hover:text-amber-800 transition-colors mb-1 ${isHi ? 'font-devanagari' : ''}`}>
+                  <h3 className={`text-lg font-serif font-bold text-[#234638] group-hover:text-[#234638] transition-colors mb-1 ${isHi ? 'font-devanagari' : ''}`}>
                     {item.title}
                   </h3>
                   <p className="text-stone-600 text-xs sm:text-sm leading-relaxed font-sans">
                     {item.desc}
                   </p>
                 </div>
-                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-xs font-semibold text-amber-800 group-hover:translate-x-1 transition-transform">
+                <div className="mt-5 pt-3 border-t border-stone-100 flex items-center gap-1.5 text-xs font-semibold text-[#234638] group-hover:translate-x-1 transition-transform">
                   <span>{isHi ? "आगे पढ़ें" : "Learn More"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>
@@ -230,19 +230,19 @@ export default function AboutPage() {
       {/* ========================================================================= */}
       {/* 4. SPIRITUAL INVITATION */}
       {/* ========================================================================= */}
-      <section className="py-16 bg-gradient-to-b from-[#faf7f0] to-[#f7f3ea] border-t border-[#e8e2d4] text-center">
+      <section className="py-16 bg-gradient-to-b from-[#faf7f0] to-[#f7f3ea] border-t border-[#DADDD3] text-center">
         <div className="max-w-4xl mx-auto px-6">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/courses/shri-vidya"
-              className="inline-flex items-center gap-2 bg-[#092217] hover:bg-[#143a28] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all group"
+              className="inline-flex items-center gap-2 bg-[#234638] hover:bg-[#2D5444] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm tracking-wide shadow-md transition-all group"
             >
               <span>{isHi ? "पाठ्यक्रम देखें" : isJa ? "コース案内を見る" : "Explore Courses"}</span>
               <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-colors"
+              className="inline-flex items-center gap-2 bg-[#234638] hover:bg-[#1a3329] text-white px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm shadow-md transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>{isHi ? "आश्रम से संपर्क करें" : isJa ? "お問い合わせ" : "Contact Ashram"}</span>

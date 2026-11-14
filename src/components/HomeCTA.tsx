@@ -54,7 +54,7 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
       {/* ========================================================================= */}
       {/* 1. HORIZONTAL BANNER (CTAIMAGE + TERRACOTTA CONTENT) */}
       {/* ========================================================================= */}
-      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#67260a] dark:bg-[#4a1905] border border-amber-900/40 shadow-2xl">
+      <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl bg-[#234638] border border-[#789B80]/30 shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
           
           {/* Left: Panoramic Himalayan Sunlight Artwork Image (5 cols) */}
@@ -67,7 +67,7 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
               className="object-cover object-center"
             />
             {/* Scrim blending into the terracotta card */}
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#67260a]/40 to-[#67260a] pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-transparent via-[#234638]/40 to-[#234638] pointer-events-none" />
           </div>
 
           {/* Right: Text Content & Action Buttons (7 cols) */}
@@ -78,11 +78,11 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
               <div className="md:col-span-8 text-white">
                 {/* Dash Label */}
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="w-4 h-[1px] bg-amber-300/80"></span>
-                  <span className={`text-[11px] sm:text-xs tracking-[0.2em] uppercase text-amber-200/90 font-semibold ${isHi ? 'font-devanagari' : ''}`}>
+                  <span className="w-4 h-[1px] bg-[#789B80]/80"></span>
+                  <span className={`text-[11px] sm:text-xs tracking-[0.2em] uppercase text-[#DADDD3]/90 font-semibold ${isHi ? 'font-devanagari' : ''}`}>
                     {t("badge")}
                   </span>
-                  <span className="w-4 h-[1px] bg-amber-300/80"></span>
+                  <span className="w-4 h-[1px] bg-[#789B80]/80"></span>
                 </div>
 
                 {/* Main Title */}
@@ -91,7 +91,7 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
                 </h3>
 
                 {/* Description */}
-                <p className="text-xs sm:text-sm text-amber-100/85 leading-relaxed font-sans max-w-md">
+                <p className="text-xs sm:text-sm text-[#E8EBDD]/85 leading-relaxed font-sans max-w-md">
                   {t("description")}
                 </p>
               </div>
@@ -101,7 +101,7 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
                 {/* Explore All Courses Button */}
                 <Link
                   href="/#courses"
-                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-stone-950 font-bold text-xs sm:text-sm shadow-md hover:shadow-amber-500/25 transition-all active:scale-95 group text-center"
+                  className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-[#789B80]/25 transition-all active:scale-95 group text-center"
                 >
                   <span className={isHi ? 'font-devanagari' : ''}>{t("btn_courses")}</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -113,7 +113,7 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
                   onClick={onOpenVideo}
                   className="w-full inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold text-xs sm:text-sm transition-all shadow-xs active:scale-95 cursor-pointer text-center"
                 >
-                  <Play className="w-3.5 h-3.5 text-amber-300 fill-current" />
+                  <Play className="w-3.5 h-3.5 text-[#789B80] fill-current" />
                   <span className={isHi ? 'font-devanagari' : ''}>{t("btn_video")}</span>
                 </button>
               </div>
@@ -127,8 +127,8 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
       {/* ========================================================================= */}
       {/* 2. FOUR TRUST BADGES STRIP (BELOW BANNER) */}
       {/* ========================================================================= */}
-      <div className="mt-5 bg-white dark:bg-[#071f14] border border-[#e8e2d4] dark:border-amber-400/25 rounded-2xl p-4 sm:p-5 shadow-xs">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-stone-200 dark:md:divide-amber-400/20">
+      <div className="mt-5 bg-white border border-[#DADDD3] rounded-2xl p-4 sm:p-5 shadow-xs">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-0 md:divide-x md:divide-[#DADDD3]">
           {trustFeatures.map((feat, idx) => {
             const Icon = feat.icon;
             return (
@@ -136,14 +136,14 @@ export function HomeCTA({ onOpenVideo }: HomeCTAProps) {
                 key={idx}
                 className="flex items-center gap-3 px-2 sm:px-4 py-2 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-[#c2410c] dark:text-amber-400 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                <div className="w-10 h-10 rounded-xl bg-[#789B80]/15 text-[#789B80] flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-xs sm:text-sm font-bold text-[#092217] dark:text-white leading-tight ${isHi ? 'font-devanagari' : 'font-serif'}`}>
+                  <h4 className={`text-xs sm:text-sm font-bold text-[#234638] leading-tight ${isHi ? 'font-devanagari' : 'font-serif'}`}>
                     {feat.title}
                   </h4>
-                  <p className="text-[11px] sm:text-xs text-stone-500 dark:text-stone-400 font-sans mt-0.5 leading-snug">
+                  <p className="text-[11px] sm:text-xs text-[#3D5447] font-sans mt-0.5 leading-snug">
                     {feat.sub}
                   </p>
                 </div>

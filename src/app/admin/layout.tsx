@@ -21,7 +21,7 @@ export default function AdminLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-[#04120b] text-[#fcfbf7] min-h-screen font-sans selection:bg-amber-400 selection:text-stone-950" suppressHydrationWarning>
+      <body className="bg-[#234638] text-[#fcfbf7] min-h-screen font-sans selection:bg-[#789B80] selection:text-[#234638]" suppressHydrationWarning>
         {children}
       </body>
     </html>

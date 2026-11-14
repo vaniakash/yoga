@@ -319,7 +319,7 @@ export default function MeditationTeacherTrainingPage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       {/* BREADCRUMB NAVIGATION */}
       <nav aria-label="Breadcrumb" className="bg-[#f5f2e9] border-b border-[#e6dfd1] py-3 text-xs">
         <div className="max-w-7xl mx-auto px-6 md:px-margin flex items-center gap-2 text-stone-600">
@@ -338,12 +338,12 @@ export default function MeditationTeacherTrainingPage() {
       </nav>
 
       {/* SECTION 1: HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f3eee2] via-[#faf7f0] to-[#fcfbf7] pt-12 pb-20 md:pt-16 md:pb-28 border-b border-[#e8e2d4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f3eee2] via-[#faf7f0] to-[#fcfbf7] pt-12 pb-20 md:pt-16 md:pb-28 border-b border-[#DADDD3]">
         <div className="max-w-7xl mx-auto px-6 md:px-margin">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Text */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 text-xs font-semibold tracking-wider uppercase mb-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#789B80]/10 border border-[#789B80]/30 text-[#789B80] text-xs font-semibold tracking-wider uppercase mb-5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>
                   {isHi
@@ -374,7 +374,7 @@ export default function MeditationTeacherTrainingPage() {
               <div className="flex flex-wrap items-center gap-4 mb-10">
                 <a
                   href="#curriculum"
-                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#234638] to-[#1a3329] hover:from-[#2D5444] hover:to-[#234638] text-white font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 flex items-center gap-2"
                 >
                   <span>
                     {isHi ? "प्रशिक्षण कार्यक्रम देखें" : isJa ? "プログラムの詳細を見る" : "Explore the Training Program"}
@@ -387,7 +387,7 @@ export default function MeditationTeacherTrainingPage() {
                   onClick={() => setIntroModalOpen(true)}
                   className="px-6 py-3.5 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest border border-outline-variant text-primary font-semibold text-sm transition-all flex items-center gap-2"
                 >
-                  <Play className="w-4 h-4 text-amber-600 fill-current" />
+                  <Play className="w-4 h-4 text-[#789B80] fill-current" />
                   <span>
                     {isHi ? "निःशुल्क परिचय सत्र में भाग लें" : isJa ? "無料ガイダンスセッションに参加" : "Attend a Free Introduction Session"}
                   </span>
@@ -397,7 +397,7 @@ export default function MeditationTeacherTrainingPage() {
               {/* Trust Badges */}
               <div className="pt-6 border-t border-stone-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -406,7 +406,7 @@ export default function MeditationTeacherTrainingPage() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <BookOpen className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -415,7 +415,7 @@ export default function MeditationTeacherTrainingPage() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -434,7 +434,7 @@ export default function MeditationTeacherTrainingPage() {
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold mb-1">
+                  <span className="text-xs uppercase tracking-wider text-[#789B80] font-semibold mb-1">
                     {isHi ? "तपोभूमि, उत्तरकाशी" : isJa ? "タポブーミ（北インド・ウッタラーカーシー）" : "Tapobhoomi, Uttarkashi"}
                   </span>
                   <h3 className="text-lg font-serif font-bold text-white">
@@ -479,7 +479,7 @@ export default function MeditationTeacherTrainingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0 font-bold text-sm">
                 01
               </div>
               <div>
@@ -497,7 +497,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0 font-bold text-sm">
                 02
               </div>
               <div>
@@ -515,7 +515,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0 font-bold text-sm">
                 03
               </div>
               <div>
@@ -533,7 +533,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-4">
-              <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+              <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0 font-bold text-sm">
                 04
               </div>
               <div>
@@ -552,9 +552,9 @@ export default function MeditationTeacherTrainingPage() {
           </div>
 
           {/* Ethical Disclaimer Callout */}
-          <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-300/50 flex items-start gap-3.5">
-            <AlertCircle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm text-amber-900 leading-relaxed">
+          <div className="p-5 rounded-2xl bg-[#E8EBDD]/80 border border-[#789B80]/40 flex items-start gap-3.5">
+            <AlertCircle className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
+            <div className="text-xs sm:text-sm text-[#234638] leading-relaxed">
               <strong>
                 {isHi ? "पारंपरिक एवं शैक्षणिक स्पष्टीकरण: " : isJa ? "伝統的・倫理的方針: " : "Contemplative & Ethical Scope: "}
               </strong>
@@ -569,7 +569,7 @@ export default function MeditationTeacherTrainingPage() {
       </section>
 
       {/* SECTION 3: MEET YOUR GUIDE */}
-      <section className="py-20 bg-[#f7f3ea] border-y border-[#e8e2d4]">
+      <section className="py-20 bg-[#F8F6EF] border-y border-[#DADDD3]">
         <div className="max-w-5xl mx-auto px-6 md:px-margin">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
             <div className="md:col-span-5 text-center md:text-left">
@@ -581,7 +581,7 @@ export default function MeditationTeacherTrainingPage() {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-xs shadow-lg">
+                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-[#789B80] text-stone-950 font-bold text-xs shadow-lg">
                   {isHi ? "दशकों की निरंतर साधना" : isJa ? "数十年におよぶ修練" : "Decades of Continuous Sadhana"}
                 </div>
               </div>
@@ -609,7 +609,7 @@ export default function MeditationTeacherTrainingPage() {
 
               <div className="space-y-2 mb-6 text-xs sm:text-sm text-stone-600">
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <Check className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                   <span>
                     {isHi
                       ? "पतंजलि योग सूत्र एवं हिमालयी परंपरा पर आधारित प्रामाणिक शिक्षा"
@@ -619,7 +619,7 @@ export default function MeditationTeacherTrainingPage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <Check className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                   <span>
                     {isHi
                       ? "प्रत्येक साधक की मानसिक प्रकृति के अनुकूल व्यक्तिगत सानिध्य"
@@ -629,7 +629,7 @@ export default function MeditationTeacherTrainingPage() {
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Check className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                  <Check className="w-4 h-4 text-[#789B80] flex-shrink-0" />
                   <span>
                     {isHi
                       ? "उत्तरदायी, नैतिक और आडंबरहीन शिक्षण की प्रेरणा"
@@ -641,7 +641,7 @@ export default function MeditationTeacherTrainingPage() {
               </div>
 
               <div className="p-4 rounded-xl bg-white/70 border border-stone-200 text-xs text-stone-600 italic flex items-start gap-3">
-                <Quote className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+                <Quote className="w-4 h-4 text-[#789B80] flex-shrink-0 mt-0.5" />
                 <span>
                   {isHi
                     ? '"ध्यान कोई थोपी हुई क्रिया नहीं, अपितु जब मन शांत होता है तो आत्मा का वास्तविक स्वरूप स्वतः प्रकाशित हो उठता है।"'
@@ -677,10 +677,10 @@ export default function MeditationTeacherTrainingPage() {
               return (
                 <div
                   key={i}
-                  className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/50 transition-all flex flex-col justify-between group shadow-sm hover:shadow-md"
+                  className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/50 transition-all flex flex-col justify-between group shadow-sm hover:shadow-md"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-5 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center mb-5 group-hover:bg-[#789B80] group-hover:text-white transition-colors">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold font-serif text-primary text-lg mb-3">
@@ -689,7 +689,7 @@ export default function MeditationTeacherTrainingPage() {
                     <ul className="space-y-2 text-xs sm:text-sm text-stone-600">
                       {h.points.map((pt, idx) => (
                         <li key={idx} className="flex items-start gap-2">
-                          <Check className="w-3.5 h-3.5 text-amber-600 flex-shrink-0 mt-1" />
+                          <Check className="w-3.5 h-3.5 text-[#789B80] flex-shrink-0 mt-1" />
                           <span>{pt}</span>
                         </li>
                       ))}
@@ -703,7 +703,7 @@ export default function MeditationTeacherTrainingPage() {
       </section>
 
       {/* SECTION 5: SUGGESTED CURRICULUM (8 MODULES) */}
-      <section id="curriculum" className="py-20 bg-[#f7f4ec] border-t border-[#e8e2d4]">
+      <section id="curriculum" className="py-20 bg-[#f7f4ec] border-t border-[#DADDD3]">
         <div className="max-w-5xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-3xl mx-auto mb-12">
             <span className="text-xs font-semibold tracking-widest text-tertiary uppercase">
@@ -739,11 +739,11 @@ export default function MeditationTeacherTrainingPage() {
                     className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-stone-50 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-800 font-bold flex items-center justify-center flex-shrink-0 text-sm">
+                      <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#234638] font-bold flex items-center justify-center flex-shrink-0 text-sm">
                         {m.num}
                       </div>
                       <div>
-                        <div className="text-xs text-amber-700 font-medium tracking-wide">
+                        <div className="text-xs text-[#789B80] font-medium tracking-wide">
                           {m.name}
                         </div>
                         <h3 className="font-bold text-primary text-base sm:text-lg">
@@ -753,7 +753,7 @@ export default function MeditationTeacherTrainingPage() {
                     </div>
                     <ChevronDown
                       className={`w-5 h-5 text-stone-500 transition-transform ${
-                        isOpen ? 'rotate-180 text-amber-700' : ''
+                        isOpen ? 'rotate-180 text-[#789B80]' : ''
                       }`}
                     />
                   </button>
@@ -770,7 +770,7 @@ export default function MeditationTeacherTrainingPage() {
                         <ul className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-stone-600">
                           {m.topics.map((t, tidx) => (
                             <li key={tidx} className="flex items-start gap-1.5">
-                              <span className="text-amber-600 font-bold">•</span>
+                              <span className="text-[#789B80] font-bold">•</span>
                               <span>{t}</span>
                             </li>
                           ))}
@@ -811,7 +811,7 @@ export default function MeditationTeacherTrainingPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "ध्यान साधक" : isJa ? "瞑想の実践者" : "Meditation Practitioners"}
@@ -827,7 +827,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "योग शिक्षक" : isJa ? "ヨガインストラクター" : "Yoga Teachers"}
@@ -843,7 +843,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "वेलनेस व स्वास्थ्य पेशेवर" : isJa ? "ウェルネス指導者・セラピスト" : "Wellness Professionals"}
@@ -859,7 +859,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "सत्संग व ध्यान मंडली आयोजक" : isJa ? "瞑想サークルの主催者" : "Meditation Circle Facilitators"}
@@ -875,7 +875,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "समर्पित शुरुआती जिज्ञासु" : isJa ? "真摯な初学者" : "Committed Beginners"}
@@ -891,7 +891,7 @@ export default function MeditationTeacherTrainingPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "आध्यात्मिक अन्वेषक" : isJa ? "精神的探求者" : "Spiritual Seekers"}
@@ -910,7 +910,7 @@ export default function MeditationTeacherTrainingPage() {
       </section>
 
       {/* SECTION 7: LEARNING FORMAT */}
-      <section className="py-20 bg-[#f6f2e8] border-t border-[#e8e2d4]">
+      <section className="py-20 bg-[#f6f2e8] border-t border-[#DADDD3]">
         <div className="max-w-5xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold tracking-widest text-tertiary uppercase">
@@ -928,7 +928,7 @@ export default function MeditationTeacherTrainingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center mb-4">
                   <Video className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-primary text-base mb-2">
@@ -942,14 +942,14 @@ export default function MeditationTeacherTrainingPage() {
                     : "Real-time online cohorts featuring direct instruction, real-time feedback, and group discussion."}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-amber-800 font-medium">
+              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-[#234638] font-medium">
                 {isHi ? "रिकॉर्डिंग उपलब्ध" : isJa ? "録画アーカイブ付き" : "Recordings provided for review"}
               </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center mb-4">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-primary text-base mb-2">
@@ -963,14 +963,14 @@ export default function MeditationTeacherTrainingPage() {
                     : "Optional residential training intensives at our sacred retreat in Uttarkashi beside the Ganga."}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-amber-800 font-medium">
+              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-[#234638] font-medium">
                 {isHi ? "उत्तरकाशी" : isJa ? "ウッタラーカーシー現地" : "Uttarkashi"}
               </div>
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200 shadow-sm flex flex-col justify-between">
               <div>
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center mb-4">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-primary text-base mb-2">
@@ -984,7 +984,7 @@ export default function MeditationTeacherTrainingPage() {
                     : "Live supervised practice teaching clinics, reflective journaling, and detailed mentor critiques."}
                 </p>
               </div>
-              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-amber-800 font-medium">
+              <div className="mt-4 pt-3 border-t border-stone-100 text-[11px] text-[#234638] font-medium">
                 {isHi ? "व्यावहारिक मूल्यांकन" : isJa ? "実践的スキル定着" : "Actionable feedback"}
               </div>
             </div>
@@ -1024,7 +1024,7 @@ export default function MeditationTeacherTrainingPage() {
                     <span>{f.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-stone-500 transition-transform ${
-                        isOpen ? 'rotate-180 text-amber-600' : ''
+                        isOpen ? 'rotate-180 text-[#789B80]' : ''
                       }`}
                     />
                   </button>
@@ -1049,10 +1049,10 @@ export default function MeditationTeacherTrainingPage() {
       </section>
 
       {/* SECTION 9: FINAL CTA & ENROLLMENT FORM */}
-      <section id="enrollment" className="py-20 bg-gradient-to-br from-[#0c2619] via-[#091f14] to-[#04120b] text-[#fcf9f3]">
+      <section id="enrollment" className="py-20 bg-gradient-to-br from-[#0c2619] via-[#091f14] to-[#234638] text-[#234638]">
         <div className="max-w-4xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#789B80] font-semibold">
               {isHi ? "साधना की अगली सीढ़ी" : isJa ? "次の一歩へ" : "TAKE THE NEXT STEP"}
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-4">
@@ -1071,31 +1071,31 @@ export default function MeditationTeacherTrainingPage() {
             </p>
           </div>
 
-          <div className="bg-[#0f2e1e]/90 border border-amber-400/30 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+          <div className="bg-[#0f2e1e]/90 border border-[#789B80]/30 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
             <form onSubmit={handleFormSubmit} className="space-y-4 text-xs sm:text-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "पूरा नाम *" : isJa ? "お名前 *" : "Full Name *"}
                   </label>
                   <input
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "फोन / व्हाट्सएप *" : isJa ? "電話番号 *" : "Phone / WhatsApp *"}
                   </label>
                   <input
                     type="tel"
                     required
                     placeholder="+91..."
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
@@ -1104,24 +1104,24 @@ export default function MeditationTeacherTrainingPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "ईमेल *" : isJa ? "メールアドレス *" : "Email Address *"}
                   </label>
                   <input
                     type="email"
                     required
                     placeholder="email@example.com"
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "ध्यान का पूर्व अनुभव" : isJa ? "瞑想の経験" : "Meditation Experience"}
                   </label>
                   <select
-                    className="w-full bg-[#0a2116] border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-[#0a2116] border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.experience}
                     onChange={(e) => setFormData({ ...formData, experience: e.target.value })}
                   >
@@ -1133,7 +1133,7 @@ export default function MeditationTeacherTrainingPage() {
               </div>
 
               <div>
-                <label className="block text-amber-100/90 mb-1 font-medium">
+                <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                   {isHi ? "संदेश / जिज्ञासा" : isJa ? "メッセージ・ご質問" : "Message / Questions"}
                 </label>
                 <textarea
@@ -1145,7 +1145,7 @@ export default function MeditationTeacherTrainingPage() {
                       ? "瞑想指導に興味を持ったきっかけやご希望をお書きください..."
                       : "Tell us about your background or aspirations in meditation..."
                   }
-                  className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 ></textarea>
@@ -1153,25 +1153,25 @@ export default function MeditationTeacherTrainingPage() {
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#061910] font-bold tracking-wide transition-all shadow-md active:scale-95"
+                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-[#234638] font-bold tracking-wide transition-all shadow-md active:scale-95"
               >
                 {isHi ? "आवेदन / नामांकन पूछताछ भेजें" : isJa ? "受講申し込み・問い合わせを送信" : "Submit Application / Inquiry"}
               </button>
             </form>
 
-            <div className="mt-6 pt-5 border-t border-amber-400/20 flex flex-wrap items-center justify-center gap-4 text-xs">
+            <div className="mt-6 pt-5 border-t border-[#789B80]/20 flex flex-wrap items-center justify-center gap-4 text-xs">
               <button
                 type="button"
                 onClick={() => setIntroModalOpen(true)}
-                className="text-amber-300 hover:underline flex items-center gap-1"
+                className="text-[#789B80] hover:underline flex items-center gap-1"
               >
                 <Play className="w-3 h-3 fill-current" />
                 <span>
                   {isHi ? "परिचय सत्र का विवरण देखें" : isJa ? "ガイダンス詳細を見る" : "Attend Intro Session"}
                 </span>
               </button>
-              <span className="text-amber-400/40">•</span>
-              <Link href="/contact" className="text-amber-300 hover:underline">
+              <span className="text-[#789B80]/40">•</span>
+              <Link href="/contact" className="text-[#789B80] hover:underline">
                 {isHi ? "आश्रम से सीधा संपर्क" : isJa ? "アシュラムへのお問い合わせ" : "Contact the Ashram"}
               </Link>
             </div>
@@ -1194,13 +1194,13 @@ export default function MeditationTeacherTrainingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link
               href="/courses/vedic-bio-healing"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Hand className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   {isHi ? "वैदिक बायो हीलिंग" : isJa ? "ヴェーダ・バイオヒーリング" : "Vedic Bio Healing"}
                 </h4>
                 <p className="text-xs text-stone-600 mt-1">
@@ -1215,13 +1215,13 @@ export default function MeditationTeacherTrainingPage() {
 
             <Link
               href="/courses/shri-vidya"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Flower2 className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   {isHi ? "श्री विद्या परंपरा" : isJa ? "シュリ・ヴィディヤ伝統" : "Shri Vidya Tradition"}
                 </h4>
                 <p className="text-xs text-stone-600 mt-1">
@@ -1240,7 +1240,7 @@ export default function MeditationTeacherTrainingPage() {
       {/* FREE INTRO SESSION MODAL */}
       {introModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl">
+          <div className="relative w-full max-w-2xl bg-[#234638] border border-[#789B80]/40 rounded-3xl p-6 sm:p-8 text-[#234638] shadow-2xl">
             <button
               onClick={() => setIntroModalOpen(false)}
               className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
@@ -1249,7 +1249,7 @@ export default function MeditationTeacherTrainingPage() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="text-xs font-semibold tracking-wider text-amber-300 uppercase mb-2">
+            <div className="text-xs font-semibold tracking-wider text-[#789B80] uppercase mb-2">
               {isHi ? "निःशुल्क परिचय सत्र" : isJa ? "無料ガイダンスセッション" : "Free Introduction Session"}
             </div>
             <h3 className="text-2xl font-serif font-bold text-white mb-2">
@@ -1267,7 +1267,7 @@ export default function MeditationTeacherTrainingPage() {
                 : "A 20-minute orientation on the 8 modules, establishing daily practice discipline, and holding ethical contemplative space."}
             </p>
 
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-400/30 bg-black flex items-center justify-center group shadow-inner mb-5">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#789B80]/30 bg-black flex items-center justify-center group shadow-inner mb-5">
               <img
                 src="/images/meditation_hall.jpg"
                 alt="Meditation Session Preview"
@@ -1276,23 +1276,23 @@ export default function MeditationTeacherTrainingPage() {
               <a
                 href="#enrollment"
                 onClick={() => setIntroModalOpen(false)}
-                className="relative z-10 w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 text-[#061910] flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                className="relative z-10 w-16 h-16 rounded-full bg-[#789B80] hover:bg-[#789B80] text-[#234638] flex items-center justify-center shadow-lg transition-transform hover:scale-110"
               >
                 <Play className="w-8 h-8 fill-current ml-1" />
               </a>
-              <div className="absolute bottom-3 left-4 text-xs font-mono text-amber-200">
+              <div className="absolute bottom-3 left-4 text-xs font-mono text-[#DADDD3]">
                 Orientation Preview • 20 Minutes
               </div>
             </div>
 
             <div className="flex items-center justify-between">
-              <span className="text-xs text-amber-200/80">
+              <span className="text-xs text-[#DADDD3]/80">
                 {isHi ? "नियमित लाइव वेबिनार आयोजित किए जाते हैं" : isJa ? "定期的にライブウェビナーを開催中" : "Live interactive webinars scheduled monthly"}
               </span>
               <button
                 type="button"
                 onClick={() => setIntroModalOpen(false)}
-                className="px-4 py-2 rounded-lg bg-amber-500 text-black font-semibold text-xs"
+                className="px-4 py-2 rounded-lg bg-[#789B80] text-black font-semibold text-xs"
               >
                 Close Preview
               </button>

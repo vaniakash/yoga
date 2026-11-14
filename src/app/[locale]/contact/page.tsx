@@ -75,26 +75,26 @@ export default function ContactPage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] flex flex-col min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] flex flex-col min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       
       {/* 1. HERO / HEADER */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f7f3ea] via-[#faf7f0] to-[#fcfbf7] pt-14 pb-20 border-b border-[#e8e2d4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F8F6EF] via-[#F0F2EA] to-[#F8F6EF] pt-14 pb-20 border-b border-[#DADDD3]">
         {/* Soft Ambient Warm Glow */}
         <div
           aria-hidden="true"
-          className="absolute -top-20 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-gradient-to-b from-amber-400/15 via-orange-300/10 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
+          className="absolute -top-20 left-1/2 -translate-x-1/2 w-[650px] h-[300px] bg-gradient-to-b from-[#789B80]/15 via-[#789B80]/08 to-transparent blur-3xl rounded-full pointer-events-none -z-0"
         />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-margin text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-900 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
-            <MapPin className="w-3.5 h-3.5 text-amber-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#789B80]/10 border border-[#789B80]/25 text-[#234638] text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+            <MapPin className="w-3.5 h-3.5 text-[#789B80]" />
             <span className={isHi ? 'font-devanagari' : ''}>{tCon('label')}</span>
           </div>
 
           {/* Heading */}
           <h1
-            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#092217] tracking-tight leading-tight mb-4 ${
+            className={`text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-[#234638] tracking-tight leading-tight mb-4 ${
               isHi ? 'font-devanagari' : ''
             }`}
           >
@@ -116,10 +116,10 @@ export default function ContactPage() {
           <div className="lg:col-span-7 flex flex-col gap-8">
             
             {/* Ashram Location Card */}
-            <div className="bg-[#faf7f0] border border-[#e8e2d4] rounded-2xl p-6 sm:p-8 shadow-xs">
+            <div className="bg-[#F8F6EF] border border-[#DADDD3] rounded-2xl p-6 sm:p-8 shadow-xs">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                <h2 className={`text-2xl font-serif font-bold text-[#092217] flex items-center gap-2.5 ${isHi ? 'font-devanagari' : ''}`}>
-                  <MapPin className="w-5 h-5 text-amber-700" />
+                <h2 className={`text-2xl font-serif font-bold text-[#234638] flex items-center gap-2.5 ${isHi ? 'font-devanagari' : ''}`}>
+                  <MapPin className="w-5 h-5 text-[#789B80]" />
                   <span>{tCon('location_title')}</span>
                 </h2>
                 <span className="text-xs font-mono bg-white px-3 py-1 rounded-full border border-stone-200 text-stone-600">
@@ -147,12 +147,12 @@ export default function ContactPage() {
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 border-t border-stone-200">
                 <a
-                  className="inline-flex items-center justify-center gap-2 bg-[#092217] hover:bg-[#143a28] text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm"
+                  className="inline-flex items-center justify-center gap-2 bg-[#234638] hover:bg-[#2D5444] text-white px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all shadow-sm"
                   href="https://maps.google.com/?q=30.821991,78.609482"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <ExternalLink className="w-4 h-4 text-amber-300" />
+                  <ExternalLink className="w-4 h-4 text-[#789B80]" />
                   <span>{tCon('view_map')}</span>
                 </a>
                 <span className="text-xs text-stone-600 font-sans">
@@ -162,18 +162,18 @@ export default function ContactPage() {
             </div>
 
             {/* Direct Phone & Calling Card */}
-            <div className="bg-[#faf7f0] border border-amber-300/60 rounded-2xl p-6 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="bg-[#F8F6EF] border border-[#789B80]/40 rounded-2xl p-6 shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3.5">
-                <div className="w-11 h-11 rounded-xl bg-[#6b2a0c] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
-                  <PhoneCall className="w-5 h-5 text-amber-300" />
+                <div className="w-11 h-11 rounded-xl bg-[#234638] text-white flex items-center justify-center flex-shrink-0 shadow-xs">
+                  <PhoneCall className="w-5 h-5 text-[#789B80]" />
                 </div>
                 <div>
-                  <span className={`text-[11px] font-bold text-amber-800 tracking-wider uppercase block ${isHi ? 'font-devanagari' : ''}`}>
+                  <span className={`text-[11px] font-bold text-[#234638] tracking-wider uppercase block ${isHi ? 'font-devanagari' : ''}`}>
                     {isHi ? "प्रत्यक्ष आश्रम संपर्क फोन" : "Direct Ashram Helpline"}
                   </span>
                   <a
                     href="tel:+919301605957"
-                    className="text-lg sm:text-xl font-bold text-[#092217] hover:text-amber-700 transition-colors font-sans"
+                    className="text-lg sm:text-xl font-bold text-[#234638] hover:text-[#789B80] transition-colors font-sans"
                   >
                     +91 93016 05957
                   </a>
@@ -181,28 +181,28 @@ export default function ContactPage() {
               </div>
               <a
                 href="tel:+919301605957"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#6b2a0c] hover:bg-[#521f07] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-95"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#234638] hover:bg-[#521f07] text-white text-xs sm:text-sm font-semibold transition-all shadow-sm active:scale-95"
               >
-                <PhoneCall className="w-4 h-4 text-amber-300" />
+                <PhoneCall className="w-4 h-4 text-[#789B80]" />
                 <span className={isHi ? 'font-devanagari' : ''}>{isHi ? "अभी कॉल करें" : "Call Now"}</span>
               </a>
             </div>
 
             {/* How to Reach Guide */}
-            <div className="bg-[#faf7f0] border border-[#e8e2d4] rounded-2xl p-6 sm:p-8 shadow-xs">
-              <h3 className={`text-xl font-serif font-bold text-[#092217] mb-6 flex items-center gap-2.5 ${isHi ? 'font-devanagari' : ''}`}>
-                <Compass className="w-5 h-5 text-amber-700" />
+            <div className="bg-[#F8F6EF] border border-[#DADDD3] rounded-2xl p-6 sm:p-8 shadow-xs">
+              <h3 className={`text-xl font-serif font-bold text-[#234638] mb-6 flex items-center gap-2.5 ${isHi ? 'font-devanagari' : ''}`}>
+                <Compass className="w-5 h-5 text-[#789B80]" />
                 <span>{tCon('how_to_reach')}</span>
               </h3>
 
               <div className="space-y-5">
                 {/* Air */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-stone-200">
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#789B80]/15 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Plane className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="text-[#092217] text-sm font-semibold block mb-0.5">
+                    <strong className="text-[#234638] text-sm font-semibold block mb-0.5">
                       {tCon('air_label')}
                     </strong>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
@@ -213,11 +213,11 @@ export default function ContactPage() {
 
                 {/* Rail */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-stone-200">
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#789B80]/15 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Train className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="text-[#092217] text-sm font-semibold block mb-0.5">
+                    <strong className="text-[#234638] text-sm font-semibold block mb-0.5">
                       {tCon('rail_label')}
                     </strong>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
@@ -228,11 +228,11 @@ export default function ContactPage() {
 
                 {/* Road */}
                 <div className="flex items-start gap-4 p-4 rounded-xl bg-white border border-stone-200">
-                  <div className="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-800 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <div className="w-9 h-9 rounded-lg bg-[#789B80]/15 text-[#234638] flex items-center justify-center flex-shrink-0 mt-0.5">
                     <Car className="w-5 h-5" />
                   </div>
                   <div>
-                    <strong className="text-[#092217] text-sm font-semibold block mb-0.5">
+                    <strong className="text-[#234638] text-sm font-semibold block mb-0.5">
                       {tCon('road_label')}
                     </strong>
                     <p className="text-xs sm:text-sm text-stone-600 font-sans leading-relaxed">
@@ -248,10 +248,10 @@ export default function ContactPage() {
           {/* Right Column: Application / Contact Form (5 cols) */}
           <div className="lg:col-span-5 bg-white border-2 border-stone-200 rounded-3xl p-7 sm:p-9 shadow-lg">
             <div className="mb-6">
-              <span className="text-xs uppercase tracking-widest text-amber-800 font-semibold block mb-1">
+              <span className="text-xs uppercase tracking-widest text-[#234638] font-semibold block mb-1">
                 {isHi ? "प्रवेश एवं पूछताछ" : "Enrollment & Inquiry"}
               </span>
-              <h2 className={`text-2xl sm:text-3xl font-serif font-bold text-[#092217] ${isHi ? 'font-devanagari' : ''}`}>
+              <h2 className={`text-2xl sm:text-3xl font-serif font-bold text-[#234638] ${isHi ? 'font-devanagari' : ''}`}>
                 {tCon('form_title')}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 mt-2 font-sans leading-relaxed">
@@ -265,7 +265,7 @@ export default function ContactPage() {
                   {tCon('name_label')}
                 </label>
                 <input
-                  className="w-full bg-[#fcfbf7] border border-stone-300 focus:border-amber-600 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
+                  className="w-full bg-[#F8F6EF] border border-stone-300 focus:border-[#789B80] focus:ring-1 focus:ring-[#789B80] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
                   placeholder={tCon('name_placeholder')}
                   required
                   type="text"
@@ -280,7 +280,7 @@ export default function ContactPage() {
                     {tCon('phone_label')}
                   </label>
                   <input
-                    className="w-full bg-[#fcfbf7] border border-stone-300 focus:border-amber-600 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
+                    className="w-full bg-[#F8F6EF] border border-stone-300 focus:border-[#789B80] focus:ring-1 focus:ring-[#789B80] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
                     placeholder="+91 9XXXXXXXXX"
                     type="tel"
                     value={formData.phone}
@@ -292,7 +292,7 @@ export default function ContactPage() {
                     {tCon('email_label')}
                   </label>
                   <input
-                    className="w-full bg-[#fcfbf7] border border-stone-300 focus:border-amber-600 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
+                    className="w-full bg-[#F8F6EF] border border-stone-300 focus:border-[#789B80] focus:ring-1 focus:ring-[#789B80] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors"
                     placeholder="email@example.com"
                     required
                     type="email"
@@ -307,7 +307,7 @@ export default function ContactPage() {
                   {tCon('subject_label')}
                 </label>
                 <select
-                  className="w-full bg-[#fcfbf7] border border-stone-300 focus:border-amber-600 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors cursor-pointer"
+                  className="w-full bg-[#F8F6EF] border border-stone-300 focus:border-[#789B80] focus:ring-1 focus:ring-[#789B80] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors cursor-pointer"
                   value={formData.course}
                   onChange={(e) => setFormData({ ...formData, course: e.target.value })}
                 >
@@ -324,7 +324,7 @@ export default function ContactPage() {
                   {tCon('message_label')}
                 </label>
                 <textarea
-                  className="w-full bg-[#fcfbf7] border border-stone-300 focus:border-amber-600 focus:ring-1 focus:ring-amber-500 rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors resize-none"
+                  className="w-full bg-[#F8F6EF] border border-stone-300 focus:border-[#789B80] focus:ring-1 focus:ring-[#789B80] rounded-xl px-4 py-3 text-sm text-stone-900 focus:outline-none transition-colors resize-none"
                   placeholder={tCon('message_placeholder')}
                   required
                   rows={4}
@@ -334,7 +334,7 @@ export default function ContactPage() {
               </div>
 
               <button
-                className="w-full bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold py-3.5 rounded-xl text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-amber-500/25 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
+                className="w-full bg-gradient-to-r from-[#234638] to-[#1a3329] hover:from-[#2D5444] hover:to-[#234638] text-white font-bold py-3.5 rounded-xl text-sm tracking-wide transition-all duration-200 shadow-md hover:shadow-[#789B80]/25 active:scale-95 flex items-center justify-center gap-2 cursor-pointer"
                 type="submit"
               >
                 <Send className="w-4 h-4" />
@@ -351,10 +351,10 @@ export default function ContactPage() {
 
             <div className="mt-6 pt-6 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
               <a
-                className="flex items-center gap-1.5 text-stone-700 hover:text-amber-800 font-medium transition-colors"
+                className="flex items-center gap-1.5 text-stone-700 hover:text-[#234638] font-medium transition-colors"
                 href="mailto:shridhyan.com@gmail.com"
               >
-                <Mail className="w-3.5 h-3.5 text-amber-700" />
+                <Mail className="w-3.5 h-3.5 text-[#789B80]" />
                 <span className="font-sans">shridhyan.com@gmail.com</span>
               </a>
               <span className="hidden sm:inline text-stone-300">•</span>
@@ -366,13 +366,13 @@ export default function ContactPage() {
       </section>
 
       {/* 3. ETHICAL POSITIONING & TRADITIONAL WISDOM */}
-      <section className="py-16 bg-[#faf7f0] border-y border-[#e8e2d4]">
+      <section className="py-16 bg-[#F8F6EF] border-y border-[#DADDD3]">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <div className="inline-flex items-center gap-2 text-amber-800 mb-3 text-xs font-semibold tracking-widest uppercase">
+          <div className="inline-flex items-center gap-2 text-[#234638] mb-3 text-xs font-semibold tracking-widest uppercase">
             <AlertCircle className="w-4 h-4" />
             <span>{isHi ? "नैतिक उत्तरदायित्व एवं स्पष्टता" : "Ethical Responsibility & Clarity"}</span>
           </div>
-          <h3 className={`text-2xl sm:text-3xl font-serif font-bold text-[#092217] mb-3 ${isHi ? 'font-devanagari' : ''}`}>
+          <h3 className={`text-2xl sm:text-3xl font-serif font-bold text-[#234638] mb-3 ${isHi ? 'font-devanagari' : ''}`}>
             {tPositioning('title')}
           </h3>
           <p className="text-xs sm:text-sm text-stone-600 leading-relaxed max-w-3xl mx-auto font-sans">
@@ -384,10 +384,10 @@ export default function ContactPage() {
       {/* 4. FREQUENTLY ASKED QUESTIONS (FAQ) */}
       <section className="py-24 max-w-4xl mx-auto px-6 md:px-margin" id="faq">
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-400/20 text-amber-800 text-xs font-bold tracking-[0.2em] uppercase mb-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#789B80]/10 border border-[#789B80]/20 text-[#234638] text-xs font-bold tracking-[0.2em] uppercase mb-3">
             <span className={isHi ? 'font-devanagari' : ''}>{tFAQ('label')}</span>
           </div>
-          <h2 className={`text-3xl sm:text-4xl font-serif font-bold text-[#092217] mb-3 ${isHi ? 'font-devanagari' : ''}`}>
+          <h2 className={`text-3xl sm:text-4xl font-serif font-bold text-[#234638] mb-3 ${isHi ? 'font-devanagari' : ''}`}>
             {tFAQ('title')}
           </h2>
         </div>
@@ -396,15 +396,15 @@ export default function ContactPage() {
           {faqItems.map((item, idx) => (
             <div
               key={idx}
-              className="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-xs hover:border-amber-400/50 transition-all duration-200"
+              className="rounded-2xl border border-stone-200 bg-white overflow-hidden shadow-xs hover:border-[#789B80]/50 transition-all duration-200"
             >
               <button
                 onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-semibold text-[#092217] text-base hover:text-amber-800 transition-colors cursor-pointer"
+                className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 font-semibold text-[#234638] text-base hover:text-[#234638] transition-colors cursor-pointer"
               >
                 <span>{item.q}</span>
                 <ChevronDown
-                  className={`w-5 h-5 text-amber-700 transition-transform duration-300 flex-shrink-0 ${
+                  className={`w-5 h-5 text-[#789B80] transition-transform duration-300 flex-shrink-0 ${
                     openFaq === idx ? 'rotate-180' : ''
                   }`}
                 />

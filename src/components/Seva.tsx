@@ -13,7 +13,7 @@ export function Seva() {
           <h3 className="font-heading text-2xl md:text-4xl italic mb-10 text-[#3A5A40]">
             {t("quote")}
           </h3>
-          <div className="w-16 h-[2px] bg-[#C5A866] mx-auto mb-10" />
+          <div className="w-16 h-[2px] bg-[#789B80] mx-auto mb-10" />
           <p className="text-lg md:text-xl leading-relaxed">
             {t("description")}
           </p>

@@ -273,7 +273,7 @@ export default function ShriVidyaPage() {
   ];
 
   return (
-    <div className="bg-[#fcfbf7] text-[#1c2e24] min-h-screen font-sans selection:bg-amber-200 selection:text-amber-900">
+    <div className="bg-[#F8F6EF] text-[#234638] min-h-screen font-sans selection:bg-[#789B80]/30 selection:text-[#234638]">
       {/* BREADCRUMB NAVIGATION */}
       <nav aria-label="Breadcrumb" className="bg-[#f5f2e9] border-b border-[#e6dfd1] py-3 text-xs">
         <div className="max-w-7xl mx-auto px-6 md:px-margin flex items-center gap-2 text-stone-600">
@@ -292,12 +292,12 @@ export default function ShriVidyaPage() {
       </nav>
 
       {/* SECTION 1: HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f3eee2] via-[#faf7f0] to-[#fcfbf7] pt-12 pb-20 md:pt-16 md:pb-28 border-b border-[#e8e2d4]">
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#f3eee2] via-[#faf7f0] to-[#fcfbf7] pt-12 pb-20 md:pt-16 md:pb-28 border-b border-[#DADDD3]">
         <div className="max-w-7xl mx-auto px-6 md:px-margin">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left Column: Text */}
             <div className="lg:col-span-7">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-700 text-xs font-semibold tracking-wider uppercase mb-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#789B80]/10 border border-[#789B80]/30 text-[#789B80] text-xs font-semibold tracking-wider uppercase mb-5">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>
                   {isHi
@@ -328,7 +328,7 @@ export default function ShriVidyaPage() {
               <div className="flex flex-wrap items-center gap-4 mb-10">
                 <a
                   href="#structure"
-                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 text-white font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 flex items-center gap-2"
+                  className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#234638] to-[#1a3329] hover:from-[#2D5444] hover:to-[#234638] text-white font-bold text-sm tracking-wide transition-all shadow-md active:scale-95 flex items-center gap-2"
                 >
                   <span>
                     {isHi ? "पाठ्यक्रम संरचना देखें" : isJa ? "プログラムの構成を見る" : "Explore the Program"}
@@ -340,7 +340,7 @@ export default function ShriVidyaPage() {
                   href="#inquiry"
                   className="px-6 py-3.5 rounded-xl bg-surface-container-highest/60 hover:bg-surface-container-highest border border-outline-variant text-primary font-semibold text-sm transition-all flex items-center gap-2"
                 >
-                  <Mail className="w-4 h-4 text-amber-600" />
+                  <Mail className="w-4 h-4 text-[#789B80]" />
                   <span>
                     {isHi ? "सीखने के लिए पूछताछ करें" : isJa ? "受講に関するお問い合わせ" : "Enquire About Learning"}
                   </span>
@@ -350,7 +350,7 @@ export default function ShriVidyaPage() {
               {/* Trust Badges */}
               <div className="pt-6 border-t border-stone-200/80 grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <ShieldCheck className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -359,7 +359,7 @@ export default function ShriVidyaPage() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <Layers className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -368,7 +368,7 @@ export default function ShriVidyaPage() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 rounded-full bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0">
                     <Award className="w-4 h-4" />
                   </div>
                   <span className="text-xs font-medium text-stone-700 leading-snug">
@@ -387,7 +387,7 @@ export default function ShriVidyaPage() {
                   className="w-full h-[420px] object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs uppercase tracking-wider text-amber-300 font-semibold mb-1">
+                  <span className="text-xs uppercase tracking-wider text-[#789B80] font-semibold mb-1">
                     {isHi ? "ब्रह्मांडीय महायंत्र" : isJa ? "至高の宇宙ヤントラ" : "Cosmic Mahayantra"}
                   </span>
                   <h3 className="text-lg font-serif font-bold text-white">
@@ -436,7 +436,7 @@ export default function ShriVidyaPage() {
                 key={idx}
                 className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 flex flex-col sm:flex-row sm:items-start gap-4"
               >
-                <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center flex-shrink-0 font-bold text-sm">
+                <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center flex-shrink-0 font-bold text-sm">
                   0{idx + 1}
                 </div>
                 <div>
@@ -452,9 +452,9 @@ export default function ShriVidyaPage() {
           </div>
 
           {/* Restraint & Respect Box */}
-          <div className="p-5 rounded-2xl bg-amber-50/80 border border-amber-300/50 flex items-start gap-3.5">
-            <AlertCircle className="w-5 h-5 text-amber-700 flex-shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm text-amber-900 leading-relaxed">
+          <div className="p-5 rounded-2xl bg-[#E8EBDD]/80 border border-[#789B80]/40 flex items-start gap-3.5">
+            <AlertCircle className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
+            <div className="text-xs sm:text-sm text-[#234638] leading-relaxed">
               <strong>
                 {isHi ? "पारंपरिक मर्यादा एवं सार्वजनिक मर्यादा: " : isJa ? "伝統的守秘義務と公開倫理: " : "Traditional Boundary & Public Disclosure: "}
               </strong>
@@ -469,7 +469,7 @@ export default function ShriVidyaPage() {
       </section>
 
       {/* SECTION 3: CORE AREAS OF STUDY */}
-      <section className="py-20 bg-[#f7f3ea] border-y border-[#e8e2d4]">
+      <section className="py-20 bg-[#F8F6EF] border-y border-[#DADDD3]">
         <div className="max-w-6xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold tracking-widest text-tertiary uppercase">
@@ -493,7 +493,7 @@ export default function ShriVidyaPage() {
                   className="p-6 rounded-2xl bg-white border border-stone-200/90 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
                 >
                   <div>
-                    <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-700 flex items-center justify-center mb-5">
+                    <div className="w-12 h-12 rounded-xl bg-[#789B80]/10 text-[#789B80] flex items-center justify-center mb-5">
                       <Icon className="w-6 h-6" />
                     </div>
                     <h3 className="font-bold font-serif text-primary text-lg mb-2">
@@ -547,11 +547,11 @@ export default function ShriVidyaPage() {
                     className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 hover:bg-stone-50 transition-colors"
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-800 font-bold flex items-center justify-center flex-shrink-0 text-sm">
+                      <div className="w-10 h-10 rounded-xl bg-[#789B80]/10 text-[#234638] font-bold flex items-center justify-center flex-shrink-0 text-sm">
                         {m.num}
                       </div>
                       <div>
-                        <div className="text-xs text-amber-700 font-medium tracking-wide">
+                        <div className="text-xs text-[#789B80] font-medium tracking-wide">
                           {m.name}
                         </div>
                         <h3 className="font-bold text-primary text-base sm:text-lg">
@@ -561,7 +561,7 @@ export default function ShriVidyaPage() {
                     </div>
                     <ChevronDown
                       className={`w-5 h-5 text-stone-500 transition-transform ${
-                        isOpen ? 'rotate-180 text-amber-700' : ''
+                        isOpen ? 'rotate-180 text-[#789B80]' : ''
                       }`}
                     />
                   </button>
@@ -589,7 +589,7 @@ export default function ShriVidyaPage() {
       </section>
 
       {/* SECTION 5: WHO IS THIS PROGRAM FOR? */}
-      <section className="py-20 bg-[#f6f2e8] border-t border-[#e8e2d4]">
+      <section className="py-20 bg-[#f6f2e8] border-t border-[#DADDD3]">
         <div className="max-w-5xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <span className="text-xs font-semibold tracking-widest text-tertiary uppercase">
@@ -606,7 +606,7 @@ export default function ShriVidyaPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "भारतीय दर्शन के अध्येता" : isJa ? "インド哲学の研究者・学生" : "Students of Indian Philosophy"}
@@ -622,7 +622,7 @@ export default function ShriVidyaPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "शाक्त परंपरा के साधक" : isJa ? "シャークタ伝統の実践者" : "Shakta Practitioners"}
@@ -638,7 +638,7 @@ export default function ShriVidyaPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "पवित्र ज्यामिति के प्रेमी" : isJa ? "神聖幾何学に関心のある方" : "Sacred Geometry Enthusiasts"}
@@ -654,7 +654,7 @@ export default function ShriVidyaPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "गंभीर आध्यात्मिक जिज्ञासु" : isJa ? "真摯な精神的探求者" : "Sincere Spiritual Seekers"}
@@ -670,7 +670,7 @@ export default function ShriVidyaPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "वर्तमान अभ्यासी" : isJa ? "既存の瞑想・修行者" : "Existing Practitioners"}
@@ -686,7 +686,7 @@ export default function ShriVidyaPage() {
             </div>
 
             <div className="p-6 rounded-2xl bg-white border border-stone-200/80 flex items-start gap-3 shadow-sm">
-              <CheckCircle2 className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-[#789B80] flex-shrink-0 mt-0.5" />
               <div>
                 <h3 className="font-bold text-primary text-sm mb-1">
                   {isHi ? "कला एवं संस्कृति प्रेमी" : isJa ? "伝統文化・芸術の研究者" : "Cultural Heritage Explorers"}
@@ -717,7 +717,7 @@ export default function ShriVidyaPage() {
                     className="w-full h-full object-cover object-top"
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-amber-500 text-stone-950 font-bold text-xs shadow-lg">
+                <div className="absolute -bottom-4 -right-4 px-4 py-2 rounded-xl bg-[#789B80] text-stone-950 font-bold text-xs shadow-lg">
                   {isHi ? "प्रामाणिक तपोनिष्ठ सानिध्य" : isJa ? "正統な導き" : "Authentic Himalayan Guidance"}
                 </div>
               </div>
@@ -743,7 +743,7 @@ export default function ShriVidyaPage() {
                   : "At Shridhyan Ashram, the study of Shri Vidya is approached not as a commercial offering, but as a sacred heritage requiring reverent intellectual preparation and mental purity under seasoned guidance."}
               </p>
 
-              <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs sm:text-sm text-amber-900 leading-relaxed">
+              <div className="p-4 rounded-xl bg-[#E8EBDD] border border-[#DADDD3] text-xs sm:text-sm text-[#234638] leading-relaxed">
                 <strong>{isHi ? "महत्वपूर्ण स्पष्टीकरण: " : isJa ? "ご留意事項: " : "Important Clarification: "}</strong>
                 {isHi
                   ? "यह कार्यक्रम किसी स्वतः दीक्षा, गुरु पदवी या संप्रदाय प्रमाणन का दावा नहीं करता। वास्तविक दीक्षा और अधिकार केवल व्यक्तिगत साधना और गुरु के प्रत्यक्ष निर्णय पर ही निर्भर है।"
@@ -757,7 +757,7 @@ export default function ShriVidyaPage() {
       </section>
 
       {/* SECTION 7: FAQS */}
-      <section className="py-20 bg-[#f7f3ea] border-t border-[#e8e2d4]">
+      <section className="py-20 bg-[#F8F6EF] border-t border-[#DADDD3]">
         <div className="max-w-4xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <span className="text-xs font-semibold tracking-widest text-tertiary uppercase">
@@ -788,7 +788,7 @@ export default function ShriVidyaPage() {
                     <span>{f.q}</span>
                     <ChevronDown
                       className={`w-5 h-5 text-stone-500 transition-transform ${
-                        isOpen ? 'rotate-180 text-amber-600' : ''
+                        isOpen ? 'rotate-180 text-[#789B80]' : ''
                       }`}
                     />
                   </button>
@@ -805,10 +805,10 @@ export default function ShriVidyaPage() {
       </section>
 
       {/* SECTION 8: FINAL CTA & INQUIRY FORM */}
-      <section id="inquiry" className="py-20 bg-gradient-to-br from-[#0c2619] via-[#091f14] to-[#04120b] text-[#fcf9f3]">
+      <section id="inquiry" className="py-20 bg-gradient-to-br from-[#0c2619] via-[#091f14] to-[#234638] text-[#234638]">
         <div className="max-w-4xl mx-auto px-6 md:px-margin">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <span className="text-xs uppercase tracking-widest text-amber-300 font-semibold">
+            <span className="text-xs uppercase tracking-widest text-[#789B80] font-semibold">
               {isHi ? "पवित्र विद्या का आरंभ" : isJa ? "聖なる探求の第一歩" : "BEGIN YOUR EXPLORATION"}
             </span>
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-white mt-2 mb-4">
@@ -827,31 +827,31 @@ export default function ShriVidyaPage() {
             </p>
           </div>
 
-          <div className="bg-[#0f2e1e]/90 border border-amber-400/30 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
+          <div className="bg-[#0f2e1e]/90 border border-[#789B80]/30 rounded-3xl p-6 sm:p-10 shadow-2xl backdrop-blur-md">
             <form onSubmit={handleFormSubmit} className="space-y-4 text-xs sm:text-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "पूरा नाम *" : isJa ? "お名前 *" : "Full Name *"}
                   </label>
                   <input
                     type="text"
                     required
                     placeholder="Your name"
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "फोन / व्हाट्सएप *" : isJa ? "電話番号 *" : "Phone / WhatsApp *"}
                   </label>
                   <input
                     type="tel"
                     required
                     placeholder="+91..."
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
@@ -860,24 +860,24 @@ export default function ShriVidyaPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "ईमेल *" : isJa ? "メールアドレス *" : "Email Address *"}
                   </label>
                   <input
                     type="email"
                     required
                     placeholder="email@example.com"
-                    className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                     {isHi ? "रुचि का मुख्य क्षेत्र" : isJa ? "ご関心のある主な領域" : "Primary Area of Interest"}
                   </label>
                   <select
-                    className="w-full bg-[#0a2116] border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-[#0a2116] border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.interest}
                     onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
                   >
@@ -898,7 +898,7 @@ export default function ShriVidyaPage() {
               </div>
 
               <div>
-                <label className="block text-amber-100/90 mb-1 font-medium">
+                <label className="block text-[#E8EBDD]/90 mb-1 font-medium">
                   {isHi ? "संदेश / जिज्ञासा" : isJa ? "メッセージ・ご質問" : "Message / Inquiry"}
                 </label>
                 <textarea
@@ -910,7 +910,7 @@ export default function ShriVidyaPage() {
                       ? "シュリ・ヴィディヤに関心を持たれた動機やご質問をお書きください..."
                       : "Share your background, motivation, or questions about the study..."
                   }
-                  className="w-full bg-white/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full bg-white/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 ></textarea>
@@ -918,18 +918,18 @@ export default function ShriVidyaPage() {
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#061910] font-bold tracking-wide transition-all shadow-md active:scale-95"
+                className="w-full py-3.5 rounded-lg bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-[#234638] font-bold tracking-wide transition-all shadow-md active:scale-95"
               >
                 {isHi ? "पूछताछ एवं अध्ययन आवेदन भेजें" : isJa ? "お問い合わせ・学習申請を送信" : "Submit Study Inquiry"}
               </button>
             </form>
 
-            <div className="mt-6 pt-5 border-t border-amber-400/20 flex flex-wrap items-center justify-center gap-4 text-xs">
-              <a href="#structure" className="text-amber-300 hover:underline">
+            <div className="mt-6 pt-5 border-t border-[#789B80]/20 flex flex-wrap items-center justify-center gap-4 text-xs">
+              <a href="#structure" className="text-[#789B80] hover:underline">
                 {isHi ? "पाठ्यक्रम संरचना" : isJa ? "カリキュラムを見る" : "Explore the Program"}
               </a>
-              <span className="text-amber-400/40">•</span>
-              <Link href="/contact" className="text-amber-300 hover:underline">
+              <span className="text-[#789B80]/40">•</span>
+              <Link href="/contact" className="text-[#789B80] hover:underline">
                 {isHi ? "आश्रम से सीधा संपर्क" : isJa ? "アシュラムへのお問い合わせ" : "Contact the Ashram"}
               </Link>
             </div>
@@ -952,13 +952,13 @@ export default function ShriVidyaPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link
               href="/courses/vedic-bio-healing"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Hand className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   {isHi ? "वैदिक बायो हीलिंग" : isJa ? "ヴェーダ・バイオヒーリング" : "Vedic Bio Healing"}
                 </h4>
                 <p className="text-xs text-stone-600 mt-1">
@@ -973,13 +973,13 @@ export default function ShriVidyaPage() {
 
             <Link
               href="/courses/meditation-teacher-training"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Wind className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   {isHi ? "ध्यान शिक्षक प्रशिक्षण" : isJa ? "瞑想指導者育成トレーニング" : "Meditation Teacher Training"}
                 </h4>
                 <p className="text-xs text-stone-600 mt-1">

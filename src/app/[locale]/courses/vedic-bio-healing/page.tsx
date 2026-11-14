@@ -175,7 +175,7 @@ export default function VedicBioHealingPage() {
       {/* Breadcrumb Navigation */}
       <div className="bg-surface-container-low border-b border-outline-variant/20 py-3">
         <div className="max-w-7xl mx-auto px-6 md:px-margin flex items-center gap-2 text-xs text-on-surface-variant font-medium">
-          <Link href="/" className="hover:text-amber-600 transition-colors">
+          <Link href="/" className="hover:text-[#789B80] transition-colors">
             {isHi ? "मुखपृष्ठ" : isJa ? "ホーム" : "Home"}
           </Link>
           <ChevronRight className="w-3.5 h-3.5 text-outline" />
@@ -183,7 +183,7 @@ export default function VedicBioHealingPage() {
             {isHi ? "पाठ्यक्रम" : isJa ? "コース" : "Courses"}
           </span>
           <ChevronRight className="w-3.5 h-3.5 text-outline" />
-          <span className="text-amber-700 dark:text-amber-300 font-semibold">
+          <span className="text-[#789B80] dark:text-[#789B80] font-semibold">
             {isHi ? "वैदिक बायो हीलिंग" : isJa ? "ヴェーダ・バイオヒーリング" : "Vedic Bio Healing"}
           </span>
         </div>
@@ -197,12 +197,12 @@ export default function VedicBioHealingPage() {
             className="w-full h-full object-cover object-center"
             src="/images/shridhyan_hero.webp"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#061910]/90 via-[#092217]/80 to-[#04120b]/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#234638]/90 via-[#234638]/80 to-[#234638]/95"></div>
         </div>
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 text-center flex flex-col items-center">
           {/* Eyebrow */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-mono uppercase tracking-widest mb-5 backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#789B80]/20 border border-[#789B80]/40 text-[#789B80] text-xs font-mono uppercase tracking-widest mb-5 backdrop-blur-sm">
             <Sparkles className="w-3.5 h-3.5" />
             <span>ANCIENT VEDIC WISDOM</span>
           </div>
@@ -229,33 +229,33 @@ export default function VedicBioHealingPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
             <a
               href="#enrollment"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#061910] font-bold px-7 py-3.5 rounded-xl text-sm sm:text-base tracking-wide shadow-lg hover:shadow-amber-500/25 transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-[#234638] font-bold px-7 py-3.5 rounded-xl text-sm sm:text-base tracking-wide shadow-lg hover:shadow-[#789B80]/25 transition-all"
             >
-              <Calendar className="w-4 h-4 text-[#061910]" />
+              <Calendar className="w-4 h-4 text-[#234638]" />
               <span>{isHi ? "7-दिवसीय फाउंडेशन पाठ्यक्रम देखें" : isJa ? "7日間の基礎コースを見る" : "Explore the 7-Day Foundation Course"}</span>
             </a>
 
             <button
               onClick={() => setMasterclassOpen(true)}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black/40 hover:bg-black/60 text-white border border-amber-400/50 px-6 py-3.5 rounded-xl text-sm sm:text-base font-medium backdrop-blur-md transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-black/40 hover:bg-black/60 text-white border border-[#789B80]/50 px-6 py-3.5 rounded-xl text-sm sm:text-base font-medium backdrop-blur-md transition-colors"
             >
-              <Play className="w-4 h-4 text-amber-300 fill-current" />
+              <Play className="w-4 h-4 text-[#789B80] fill-current" />
               <span>{isHi ? "निःशुल्क मास्टरक्लास देखें" : isJa ? "無料マスタークラスを見る" : "Watch the Free Masterclass"}</span>
             </button>
           </div>
 
           {/* Trust Highlights */}
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-amber-200/80 font-medium">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-xs text-[#DADDD3]/80 font-medium">
             <div className="flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-400" />
+              <Award className="w-4 h-4 text-[#789B80]" />
               <span>50 Years of Spiritual Practice</span>
             </div>
             <div className="flex items-center gap-2">
-              <BookOpen className="w-4 h-4 text-amber-400" />
+              <BookOpen className="w-4 h-4 text-[#789B80]" />
               <span>Atharvaveda-Inspired Learning</span>
             </div>
             <div className="flex items-center gap-2">
-              <Users className="w-4 h-4 text-amber-400" />
+              <Users className="w-4 h-4 text-[#789B80]" />
               <span>Guided Practical Sessions</span>
             </div>
           </div>
@@ -297,7 +297,7 @@ export default function VedicBioHealingPage() {
         <div className="max-w-6xl mx-auto px-6 md:px-margin">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative rounded-2xl p-2 bg-black/40 border border-amber-400/40 shadow-xl max-w-sm w-full">
+              <div className="relative rounded-2xl p-2 bg-black/40 border border-[#789B80]/40 shadow-xl max-w-sm w-full">
                 <img
                   src="/images/maharaj/swami_ji.jpeg"
                   alt="Param Pujya Swami Ji Maharaj"
@@ -305,7 +305,7 @@ export default function VedicBioHealingPage() {
                 />
                 <div className="p-3 text-center">
                   <h4 className="font-bold text-white text-lg">Param Pujya Swami Ji Maharaj</h4>
-                  <p className="text-xs text-amber-300 font-mono">Shridhyan Ashram • Uttarkashi</p>
+                  <p className="text-xs text-[#789B80] font-mono">Shridhyan Ashram • Uttarkashi</p>
                 </div>
               </div>
             </div>
@@ -423,7 +423,7 @@ export default function VedicBioHealingPage() {
 
         {/* Clear Educational Disclaimer Banner */}
         <div className="mt-10 p-4 rounded-xl bg-surface-container border border-outline-variant/30 text-center text-xs text-on-surface-variant max-w-3xl mx-auto flex items-center justify-center gap-2">
-          <AlertCircle className="w-4 h-4 text-amber-600 flex-shrink-0" />
+          <AlertCircle className="w-4 h-4 text-[#789B80] flex-shrink-0" />
           <span>
             This is an educational and spiritual self-care program, not a substitute for professional medical diagnosis or healthcare treatment.
           </span>
@@ -449,9 +449,9 @@ export default function VedicBioHealingPage() {
             {curriculumDays.map((item, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col sm:flex-row items-start gap-5 hover:border-amber-400/50 transition-colors"
+                className="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm flex flex-col sm:flex-row items-start gap-5 hover:border-[#789B80]/50 transition-colors"
               >
-                <div className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 text-amber-800 dark:text-amber-300 font-mono font-bold text-xs uppercase flex-shrink-0 border border-amber-400/30">
+                <div className="px-3.5 py-1.5 rounded-lg bg-[#789B80]/10 text-[#234638] dark:text-[#789B80] font-mono font-bold text-xs uppercase flex-shrink-0 border border-[#789B80]/30">
                   {item.day}
                 </div>
                 <div>
@@ -521,7 +521,7 @@ export default function VedicBioHealingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm">
-              <Quote className="w-8 h-8 text-amber-500/40 mb-3" />
+              <Quote className="w-8 h-8 text-[#789B80]/40 mb-3" />
               <p className="text-sm text-on-surface italic leading-relaxed mb-4">
                 “Learning the Sukta recitation and the awareness of the hands under Swami Ji’s direct guidance gave my personal meditation practice a level of stillness that modern books never conveyed.”
               </p>
@@ -530,7 +530,7 @@ export default function VedicBioHealingPage() {
             </div>
 
             <div className="p-7 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 shadow-sm">
-              <Quote className="w-8 h-8 text-amber-500/40 mb-3" />
+              <Quote className="w-8 h-8 text-[#789B80]/40 mb-3" />
               <p className="text-sm text-on-surface italic leading-relaxed mb-4">
                 “The clarity and ethics with which touch-based practices are taught here is exemplary. Completely grounded, peaceful, and respectful.”
               </p>
@@ -580,9 +580,9 @@ export default function VedicBioHealingPage() {
       </section>
 
       {/* SECTION 9: FINAL CTA & ENROLLMENT FORM */}
-      <section className="py-20 bg-gradient-to-b from-[#061910] via-[#092217] to-[#04120b] text-[#fcf9f3]" id="enrollment">
+      <section className="py-20 bg-gradient-to-b from-[#234638] via-[#234638] to-[#234638] text-[#234638]" id="enrollment">
         <div className="max-w-4xl mx-auto px-6 md:px-margin text-center">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-medium mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#789B80]/20 text-[#789B80] text-xs font-medium mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Limited to 25 Participants</span>
           </div>
@@ -595,18 +595,18 @@ export default function VedicBioHealingPage() {
           </p>
 
           {/* Quick Enrollment Card */}
-          <div className="bg-black/50 border border-amber-400/40 rounded-2xl p-6 sm:p-8 text-left max-w-xl mx-auto shadow-2xl backdrop-blur-md">
-            <h3 className="font-serif text-xl font-bold text-amber-200 mb-4 text-center">
+          <div className="bg-black/50 border border-[#789B80]/40 rounded-2xl p-6 sm:p-8 text-left max-w-xl mx-auto shadow-2xl backdrop-blur-md">
+            <h3 className="font-serif text-xl font-bold text-[#DADDD3] mb-4 text-center">
               Course Enrollment & Inquiry
             </h3>
             <form onSubmit={handleFormSubmit} className="space-y-4 text-xs sm:text-sm">
               <div>
-                <label className="block text-amber-100/90 mb-1 font-medium">Your Name *</label>
+                <label className="block text-[#E8EBDD]/90 mb-1 font-medium">Your Name *</label>
                 <input
                   type="text"
                   required
                   placeholder="Full name..."
-                  className="w-full bg-surface-container-lowest/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full bg-surface-container-lowest/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 />
@@ -614,22 +614,22 @@ export default function VedicBioHealingPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">Phone</label>
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">Phone</label>
                   <input
                     type="tel"
                     placeholder="+91..."
-                    className="w-full bg-surface-container-lowest/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-surface-container-lowest/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
                 </div>
                 <div>
-                  <label className="block text-amber-100/90 mb-1 font-medium">Email *</label>
+                  <label className="block text-[#E8EBDD]/90 mb-1 font-medium">Email *</label>
                   <input
                     type="email"
                     required
                     placeholder="email@example.com"
-                    className="w-full bg-surface-container-lowest/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                    className="w-full bg-surface-container-lowest/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
@@ -637,11 +637,11 @@ export default function VedicBioHealingPage() {
               </div>
 
               <div>
-                <label className="block text-amber-100/90 mb-1 font-medium">Message / Questions</label>
+                <label className="block text-[#E8EBDD]/90 mb-1 font-medium">Message / Questions</label>
                 <textarea
                   rows={3}
                   placeholder="Tell us about your background or inquiry..."
-                  className="w-full bg-surface-container-lowest/10 border border-amber-400/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-amber-400"
+                  className="w-full bg-surface-container-lowest/10 border border-[#789B80]/30 rounded-lg px-3 py-2 text-white focus:outline-none focus:border-[#789B80]"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 ></textarea>
@@ -649,22 +649,22 @@ export default function VedicBioHealingPage() {
 
               <button
                 type="submit"
-                className="w-full py-3 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-[#061910] font-bold tracking-wide transition-all shadow-md active:scale-95"
+                className="w-full py-3 rounded-lg bg-gradient-to-r from-[#789B80] to-[#5A7A62] hover:from-[#5A7A62] hover:to-[#789B80] text-[#234638] font-bold tracking-wide transition-all shadow-md active:scale-95"
               >
                 Join the Foundation Course
               </button>
             </form>
 
-            <div className="mt-5 pt-4 border-t border-amber-400/20 flex flex-wrap items-center justify-center gap-4 text-xs">
+            <div className="mt-5 pt-4 border-t border-[#789B80]/20 flex flex-wrap items-center justify-center gap-4 text-xs">
               <button
                 onClick={() => setMasterclassOpen(true)}
-                className="text-amber-300 hover:underline flex items-center gap-1"
+                className="text-[#789B80] hover:underline flex items-center gap-1"
               >
                 <Play className="w-3 h-3 fill-current" />
                 <span>Watch Free Masterclass</span>
               </button>
-              <span className="text-amber-400/40">•</span>
-              <Link href="/contact" className="text-amber-300 hover:underline">
+              <span className="text-[#789B80]/40">•</span>
+              <Link href="/contact" className="text-[#789B80] hover:underline">
                 Contact the Ashram
               </Link>
             </div>
@@ -683,13 +683,13 @@ export default function VedicBioHealingPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Link
               href="/courses/meditation-teacher-training"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Wind className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   Meditation Teacher Training
                 </h4>
                 <p className="text-xs text-on-surface-variant mt-1">
@@ -700,13 +700,13 @@ export default function VedicBioHealingPage() {
 
             <Link
               href="/courses/shri-vidya"
-              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-amber-400/60 transition-all group flex items-start gap-4"
+              className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30 hover:border-[#789B80]/60 transition-all group flex items-start gap-4"
             >
-              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-amber-500 group-hover:text-black transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center flex-shrink-0 group-hover:bg-[#789B80] group-hover:text-black transition-colors">
                 <Flower2 className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="font-bold text-primary group-hover:text-amber-700 transition-colors">
+                <h4 className="font-bold text-primary group-hover:text-[#789B80] transition-colors">
                   Shri Vidya Tradition
                 </h4>
                 <p className="text-xs text-on-surface-variant mt-1">
@@ -721,7 +721,7 @@ export default function VedicBioHealingPage() {
       {/* FREE MASTERCLASS MODAL */}
       {masterclassOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-          <div className="relative w-full max-w-2xl bg-[#071f14] border border-amber-400/40 rounded-3xl p-6 sm:p-8 text-[#fcf9f3] shadow-2xl">
+          <div className="relative w-full max-w-2xl bg-[#234638] border border-[#789B80]/40 rounded-3xl p-6 sm:p-8 text-[#234638] shadow-2xl">
             <button
               onClick={() => setMasterclassOpen(false)}
               className="absolute top-5 right-5 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
@@ -730,7 +730,7 @@ export default function VedicBioHealingPage() {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="text-xs font-semibold tracking-wider text-amber-300 uppercase mb-2">
+            <div className="text-xs font-semibold tracking-wider text-[#789B80] uppercase mb-2">
               Free Masterclass Session
             </div>
             <h3 className="text-2xl font-serif font-bold text-white mb-2">
@@ -740,7 +740,7 @@ export default function VedicBioHealingPage() {
               Explore the 7 healing mantras of Kanda 4, Sukta 13, hand energy activation, and foundational breathwork with Param Pujya Swami Ji Maharaj.
             </p>
 
-            <div className="relative aspect-video rounded-2xl overflow-hidden border border-amber-400/30 bg-black flex items-center justify-center group shadow-inner mb-5">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border border-[#789B80]/30 bg-black flex items-center justify-center group shadow-inner mb-5">
               <img
                 src="/images/shridhyan_hero.webp"
                 alt="Shridhyan Masterclass Preview"
@@ -749,11 +749,11 @@ export default function VedicBioHealingPage() {
               <a
                 href="#enrollment"
                 onClick={() => setMasterclassOpen(false)}
-                className="relative z-10 w-16 h-16 rounded-full bg-amber-500 hover:bg-amber-400 text-[#061910] flex items-center justify-center shadow-lg transition-transform hover:scale-110"
+                className="relative z-10 w-16 h-16 rounded-full bg-[#789B80] hover:bg-[#789B80] text-[#234638] flex items-center justify-center shadow-lg transition-transform hover:scale-110"
               >
                 <Play className="w-8 h-8 fill-current ml-1" />
               </a>
-              <div className="absolute bottom-3 left-4 text-xs font-mono text-amber-200">
+              <div className="absolute bottom-3 left-4 text-xs font-mono text-[#DADDD3]">
                 Preview Session • 18 Minutes
               </div>
             </div>
@@ -761,7 +761,7 @@ export default function VedicBioHealingPage() {
             <div className="flex items-center justify-end">
               <button
                 onClick={() => setMasterclassOpen(false)}
-                className="px-4 py-2 rounded-lg bg-amber-500 text-black font-semibold text-xs"
+                className="px-4 py-2 rounded-lg bg-[#789B80] text-black font-semibold text-xs"
               >
                 Close Preview
               </button>
